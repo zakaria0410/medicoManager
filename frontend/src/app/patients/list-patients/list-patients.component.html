@@ -4,13 +4,14 @@
     <div class="row">
       <div class="col-md-3">
         <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action active">Tous les patients</a>
-          <a href="#" class="list-group-item list-group-item-action">Patients actifs</a>
-          <a href="#" class="list-group-item list-group-item-action">Patients inactifs</a>
-          <a href="#" class="list-group-item list-group-item-action">Ajouter un nouveau patient</a>
+          <a (click)="choise('all')" class="list-group-item list-group-item-action active"><i class="fas fa-users"></i> Tous les patients</a>
+          <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user-check"></i> Patients actifs</a>
+          <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user-alt-slash mr-2"></i> Patients inactifs</a>
+          <a (click)="choise('new')" class="list-group-item list-group-item-action"><i class="fas fa-user-plus"></i> Ajouter un nouveau patient</a>
         </div>
       </div>
-      <div class="col-md-9 table-responsive">
+      <div *ngIf="user_choise=='all'" class="col-md-9 table-responsive">
+  
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
@@ -46,6 +47,10 @@
           </tbody>
         </table>
       </div>
+      <div *ngIf="user_choise=='new'" class="col-md-9">
+        <app-new-patient ></app-new-patient>
+      </div>
+    
     </div>
   </div>
   

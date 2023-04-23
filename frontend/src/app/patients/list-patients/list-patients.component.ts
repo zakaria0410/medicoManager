@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-patients.component.scss']
 })
 export class ListPatientsComponent implements OnInit {
+user_choise='all'
+
+choise(s){
+this.user_choise=s
+}
 
   constructor() { }
 
