@@ -1,4 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
-.fc-view-harness{
-    width: 95% !important;
+:root {
+  --bg-gray: #33CC99 !important; /* violet */
+--secondary: red;
 }
+
+.fc .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 1.5em;
+}
+.fc .fc-scrollgrid table {
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+.fc .fc-scrollgrid, .fc .fc-scrollgrid table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.fc table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1em;
+}
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+  position: relative;
+  min-height: 2em;
+}
+
+.fc .fc-daygrid-day-events {
+  margin-top: 1px;
+}
+/* Importing Bootstrap SCSS file. */
+.nav-tabs .nav-link.active{
+  background-color: #007bff !important;
+  color: #fff !important;
+}
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+} 

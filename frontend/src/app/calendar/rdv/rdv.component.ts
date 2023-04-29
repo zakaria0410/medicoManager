@@ -3,12 +3,12 @@ import { CalendarOptions, DateSelectArg, EventApi, EventClickArg, EventInput } f
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 @Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html',
-  styleUrls: ['./example.component.scss']
+  selector: 'app-rdv',
+  templateUrl: './rdv.component.html',
+  styleUrls: ['./rdv.component.scss']
 })
-export class ExampleComponent implements OnInit {
-
+export class RdvComponent implements OnInit {
+isList:boolean=false
   eventGuid = 0;
   TODAY_STR = new Date().toISOString().replace(/T.*$/, '');
  INITIAL_EVENTS: EventInput[] = [

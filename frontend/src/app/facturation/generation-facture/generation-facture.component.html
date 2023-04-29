@@ -1,0 +1,141 @@
+<div class="container">
+    <h2>Générer une facture</h2>
+    <form>
+      <div class="form-group">
+        <label for="patientName">Nom du patient:</label>
+        <input type="text" class="form-control" id="patientName" placeholder="Entrez le nom du patient">
+      </div>
+      <div class="form-group">
+        <label for="serviceCode">Code de service:</label>
+        <input type="text" class="form-control" id="serviceCode" placeholder="Entrez le code de service">
+      </div>
+      <div class="form-group">
+        <label for="serviceCost">Coût du service:</label>
+        <input type="number" class="form-control" id="serviceCost" placeholder="Entrez le coût du service">
+      </div>
+      <div class="form-group">
+        <label for="copayment">Co-paiement:</label>
+        <input type="number" class="form-control" id="copayment" placeholder="Entrez le co-paiement">
+      </div>
+      <div class="form-group">
+        <label for="insurance">Assurance maladie:</label>
+        <input type="text" class="form-control" id="insurance" placeholder="Entrez le nom de l'assurance maladie">
+      </div>
+      <button type="submit" class="btn btn-primary">Générer la facture</button>
+    </form>
+  </div>
+  <div class="container">
+    <h2>Suivi des paiements</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Numéro de facture</th>
+          <th>Date de facturation</th>
+          <th>Montant facturé</th>
+          <th>Montant payé</th>
+          <th>Montant restant dû</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12345</td>
+          <td>01/01/2023</td>
+          <td>$100.00</td>
+          <td>$50.00</td>
+          <td>$50.00</td>
+        </tr>
+        <tr>
+          <td>67890</td>
+          <td>02/01/2023</td>
+          <td>$200.00</td>
+          <td>$200.00</td>
+          <td>$0.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h2>Rapports financiers</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Revenus mensuels</h4>
+        <canvas id="monthlyRevenueChart"></canvas>
+      </div>
+      <div class="col-md-6">
+        <h4>Dépenses mensuelles</h4>
+        <canvas id="monthlyExpenseChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Suivi des remboursements</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Numéro de facture</th>
+          <th>Date de facturation</th>
+          <th>Montant facturé</th>
+          <th>Montant remboursé</th>
+          <th>Montant restant à rembourser</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12345</td>
+          <td>01/01/2023</td>
+          <td>$100.00</td>
+          <td>$50.00</td>
+          <td>$50.00</td>
+        </tr>
+        <tr>
+          <td>67890</td>
+          <td>02/01/2023</td>
+          <td>$200.00</td>
+          <td>$200.00</td>
+          <td>$0.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h2>Gestion des soldes de compte</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom du patient</th>
+          <th>Solde du compte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>$100.00</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>$50.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Ajouter une transaction de paiement</h3>
+    <form>
+      <div class="form-group">
+        <label for="nom-patient">Nom du patient</label>
+        <input type="text" class="form-control" id="nom-patient" placeholder="Entrez le nom du patient">
+      </div>
+      <div class="form-group">
+        <label for="montant-paiement">Montant du paiement</label>
+        <input type="text" class="form-control" id="montant-paiement" placeholder="Entrez le montant du paiement">
+      </div>
+      <div class="form-group">
+        <label for="type-paiement">Type de paiement</label>
+        <select class="form-control" id="type-paiement">
+          <option>Carte de crédit</option>
+          <option>Chèque</option>
+          <option>En espèces</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter la transaction de paiement</button>
+    </form>
+  </div>
+        

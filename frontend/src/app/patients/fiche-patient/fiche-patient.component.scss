@@ -1,0 +1,33 @@
+/* Afficher les onglets sous forme de liste pour les petits écrans */
+@media (max-width: 576px) {
+    .nav-tabs {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+    .nav-tabs .nav-item {
+      margin-bottom: 0;
+    }
+    .nav-tabs .nav-link {
+      border: 1px solid #dee2e6;
+      border-radius: 0;
+    }
+  }
+  
+  /* Afficher les onglets sous forme d'onglets pour les grands écrans */
+  @media (min-width: 576px) {
+    .nav-tabs .nav-item {
+      display: inline-block;
+    }
+    .nav-tabs .nav-link {
+      border: 1px solid #dee2e6;
+      border-radius: 0.25rem 0.25rem 0 0;
+    }
+    .nav-tabs .nav-link.active {
+      border-color: #007bff;
+    }
+    .nav-tabs .tab-content {
+      border: 1px solid #dee2e6;
+      border-top: none;
+      padding: 15px;
+    }
+  }

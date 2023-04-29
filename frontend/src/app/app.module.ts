@@ -10,6 +10,17 @@ import { ExampleComponent } from './calendar/example/example.component';
 import { ListPatientsComponent } from './patients/list-patients/list-patients.component';
 import { MainMenuComponent } from './navigation/main-menu/main-menu.component';
 import { NewPatientComponent } from './patients/new-patient/new-patient.component';
+import { RdvComponent } from './calendar/rdv/rdv.component';
+import { GenerationFactureComponent } from './facturation/generation-facture/generation-facture.component';
+import { TabviewComponent } from './example/tabview/tabview.component';
+import {TabsModule} from 'ngx-bootstrap/tabs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FichePatientComponent } from './patients/fiche-patient/fiche-patient.component';
+import { TableCalendarComponent } from './calendar/table-calendar/table-calendar.component';
+import { HistoriqueConsultationComponent } from './patients/historique-consultation/historique-consultation.component'
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { MadalComponent } from './example/madal/madal.component';
+import { NewRdvComponent } from './calendar/new-rdv/new-rdv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +28,24 @@ import { NewPatientComponent } from './patients/new-patient/new-patient.componen
     ExampleComponent,
     ListPatientsComponent,
     MainMenuComponent,
-    NewPatientComponent
+    NewPatientComponent,
+    RdvComponent,
+    GenerationFactureComponent,
+    TabviewComponent,
+    FichePatientComponent,
+    TableCalendarComponent,
+    HistoriqueConsultationComponent,
+    MadalComponent,
+    NewRdvComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    TabsModule,
+    NgbModule,
+    BsDropdownModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

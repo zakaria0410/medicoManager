@@ -1,0 +1,159 @@
+<div class="row">
+  <div class="d-flex justify-content-between">
+    <h1>
+      Consultation #[ID] - <span class="text-primary">Kabouri Hamid</span>
+    </h1>
+    <div class="d-flex justify-content-center">
+        <button [routerLink]="['/', 'historique-fiches-patient']"  class="btn btn-primary m-2">
+            <i class="fas fa-list-alt"></i>
+            Historique Consultation
+          </button>
+          <button [routerLink]="['']" class="btn btn-success m-2">
+            <i class="fas fa-check"></i>
+            Finaliser
+          </button>
+    </div>
+   
+
+  </div>
+<hr class="mt-2">
+<div class="row">
+    <div class="col-md-8">
+        <form class="row">
+            <div class="form-group col-md-4">
+                <label for="nb_enfants">Antécédent Familiale:</label>
+                <textarea type="text" class="form-control" id="profession"></textarea>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="nb_enfants">Histoires Clinique:</label>
+                <textarea type="text" class="form-control" id="profession"></textarea>
+            </div>
+<div class="form-group col-md-4">
+<label for="profession">Antécédents Chrirugicaux:</label>
+<textarea type="text" class="form-control" id="profession"></textarea>
+</div></form>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Revenus</h5>
+              <div class="card bg-success text-white">
+                <div class="card-body">
+                  <p class="card-text">1 500€</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Dépenses</h5>
+              <div class="card bg-danger text-white">
+          
+                <div class="card-body">
+             
+                  <p class="card-text">900€</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Attente</h5>
+              <div class="card bg-warning text-white">
+                <div class="card-body">
+                  
+                  <p class="card-text">25</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+</div>
+<div class="row mt-3">
+
+  <tabset #tabset class="bg-white p-2 shadow-sm nav-tabs">
+    <tab heading="Bilan">
+      <div class="row m-2">
+        <div class="col-md-3 px-2 border shadow-sm  border-primary">
+          <div class="row">
+            <div class="col-md-12 text-end">
+              
+           <button class="btn btn-block btn-primary p-2 mt-3 ">
+            <i class="fas fa-plus"></i> Bilans Types
+     </button>
+            </div>
+            <form class="col-md-12 mt-3">
+              <h5>Bilan Personalisé</h5>
+              <hr>
+              <div class="p-3">
+                <div class="form-group">
+                  <label for="nomBilan">Nom du bilan</label>
+                  <input type="text" class="form-control" id="nomBilan" placeholder="Entrez le nom du bilan">
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary m-3">Enregistrer</button>
+        
+                </div>
+              </div>
+           
+             </form>  </div>
+          
+        
+        </div>
+        <div class="col-md-9">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nom du bilan</th>
+                  <th>Date d'analyse</th>
+                  <th>Résultat</th>
+                  <th>Commentaire</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bilan 1</td>
+                  <td><input type="date" class="form-control" placeholder="Entrez la date d'analyse"></td>
+                  <td><input type="text" class="form-control" placeholder="Entrez le résultat"></td>
+                  <td><textarea class="form-control" placeholder="Entrez un commentaire"></textarea></td>
+                  <td><button type="button" class="btn btn-primary"><i class="fa fa-save"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Bilan 2</td>
+                  <td><input type="date" class="form-control" placeholder="Entrez la date d'analyse"></td>
+                  <td><input type="text" class="form-control" placeholder="Entrez le résultat"></td>
+                  <td><textarea class="form-control" placeholder="Entrez un commentaire"></textarea></td>
+                  <td><button type="button" class="btn btn-primary"><i class="fa fa-save"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Bilan 3</td>
+                  <td><input type="date" class="form-control" placeholder="Entrez la date d'analyse"></td>
+                  <td><input type="text" class="form-control" placeholder="Entrez le résultat"></td>
+                  <td><textarea class="form-control" placeholder="Entrez un commentaire"></textarea></td>
+                  <td><button type="button" class="btn btn-primary"><i class="fa fa-save"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+      </div>
+    </tab>
+    <tab heading="Analyses">
+      Contenu du tab Analyses
+    </tab>
+    <tab heading="Ordonnance">
+      Contenu du tab Ordonnance
+    </tab>
+    <tab heading="Certificat médical">
+      Contenu du tab Certificat médical
+    </tab>
+    <tab heading="Actes">
+      Contenu du tab Actes
+    </tab>
+    <tab heading="Radios">
+      Contenu du tab Radios
+    </tab>
+  </tabset>
+  
+</div>
+</div>

@@ -1,51 +1,137 @@
+<!-- Contenu de la page -->
 
-
-  <!-- Contenu de la page -->
-
+<div class="row">
+  <div class="col-md-4">
+    <div class="card mb-2" style="min-height: calc(33%);max-height: calc(33%); overflow-y: scroll;">
+      <div class="card-body">
+        <h5 class="card-title text-primary">Les Patients En Attente</h5>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Patient</th>
+                <th>Heure d'arrivée</th>
+                <th>Temps d'attente</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Smith</td>
+                <td>09:00</td>
+                <td>00:15</td>
+                <td><button type="button" [routerLink]="['/', 'fiche-patient']" class="btn btn-success"><i class="fas fa-stethoscope"></i> </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jane Doe</td>
+                <td>09:30</td>
+                <td>00:30</td>
+<td><button type="button" class="btn btn-success"><i class="fas fa-stethoscope"></i> </button>
+</td>              </tr>
+              <tr>
+                <td>Pablo Garcia</td>
+                <td>10:00</td>
+                <td>01:00</td>
+<td><button type="button" class="btn btn-success"><i class="fas fa-stethoscope"></i> </button>
+</td>              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div class="card mb-2" style="min-height: calc(33%);max-height: calc(33%);">
+      <div class="card-body">
+        <h5 class="card-title text-primary">Les Consultation En Cours</h5>
+      </div>
+    </div>
+    <div class="card card-primary" style="min-height: calc(33%);max-height: calc(33%);">
+      <div class="card-body">
+        <h5 class="card-title text-primary">Les Consultation Finalisé</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    
     <div class="row">
       <div class="col-md-4 d-flex">
-        <div class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center">
-          <i class="fas fa-user-md fa-5x mb-3"></i>
+        <div
+          class="card bg-white text-primary border border-primary p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center"
+        >
+          <i class="fas fa-users fa-5x mb-3"></i>
           <div class="text-center">
-            <h5 class="card-title">Gestion des patients</h5>
-            <p class="card-text">Gérez les informations des patients et leur historique médical</p>
-            <a [routerLink]="['/','patients']" class="btn btn-light">Accéder</a>
+            <h5 class="card-title" style="color: #FF0000;">Gestion des patients</h5>
+            <p class="card-text text-muted">
+              Gérez les informations des patients et leur historique médical
+            </p>
+            <a [routerLink]="['/', 'patients']" class="btn btn-secondary" style="background-color:  #33CC99;"
+              >Accéder</a
+            >
           </div>
         </div>
       </div>
       <div class="col-md-4 d-flex">
-        <div class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center">
+        <div
+          class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center"
+        >
           <i class="far fa-calendar-alt fa-5x mb-3"></i>
           <div class="text-center">
             <h5 class="card-title">Gestion de l'agenda</h5>
-            <p class="card-text">Planifiez les rendez-vous et gérez l'emploi du temps du médecin</p>
-            <a href="#" class="btn btn-light">Accéder</a>
+            <p class="card-text">
+              Planifiez les rendez-vous et gérez l'emploi du temps du médecin
+            </p>
+            <a [routerLink]="['/', 'agenda']" class="btn btn-light">Accéder</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 d-flex">
-        <div class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center">
+        <div
+          class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center"
+        >
           <i class="fas fa-file-invoice-dollar fa-5x mb-3"></i>
           <div class="text-center">
             <h5 class="card-title">Gestion de la facturation</h5>
-            <p class="card-text">Gérez les factures et les paiements des patients</p>
-            <a href="#" class="btn btn-light">Accéder</a>
+            <p class="card-text">
+              Gérez les factures et les paiements des patients
+            </p>
+            <a [routerLink]="['/', 'factures']" class="btn btn-light"
+              >Accéder</a
+            >
           </div>
         </div>
       </div>
       <div class="col-md-4 d-flex">
-        <div class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center">
+        <div
+          class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center"
+        >
           <i class="fas fa-chair fa-5x mb-3"></i>
           <div class="text-center">
             <h5 class="card-title">Salle D'attente</h5>
-            <p class="card-text">Regardez En tout Moment la situation de votre salle d'attente</p>
-            <a href="#" class="btn btn-light">Accéder</a>
+            <p class="card-text">
+              Regardez En tout Moment la situation de votre salle d'attente
+            </p>
+            <a [routerLink]="['/', 'modal']" class="btn btn-light">Accéder</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div
+          class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center"
+        >
+          <i class="fas fa-file-medical fa-5x mb-3"></i>
+          <div class="text-center">
+            <h5 class="card-title">Fiche patients</h5>
+            <p class="card-text">
+              Gérez les informations des patients et leur historique médical
+            </p>
+            <a [routerLink]="['/', 'historique-fiches-patient']" class="btn btn-light"
+              >Accéder</a
+            >
           </div>
         </div>
       </div>
     </div>
-
-  
-  
-  
-  
+  </div>
+</div>

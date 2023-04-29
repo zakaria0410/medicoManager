@@ -1,0 +1,68 @@
+<div class="container-fluid bg-white">
+    <h1>Calendrier</h1>
+    <hr>
+    <div class="row mt-3 mb-3">
+      <div class="col-md-6">
+        <button (click)="isList=!isList" class="btn btn-primary btn-icon" id="switch-to-calendar-view">
+            <span *ngIf="isList==false"><i class="fas fa-list-alt mx-3"></i>Mode List</span>
+            <span *ngIf="isList==true"><i class="fas fa-calendar mx-3"></i>Mode Calendrier</span>
+           </button>         </div>
+      <div class="col-md-6 text-md-end">
+        <app-madal
+        [title]="'Nouveau Rdv'"
+        [component]="'rdv'"
+        [modalStyle]="{size:'lg',fullScreen:false}"
+        [icon]="'plus'"
+      ></app-madal>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Rechercher par nom du patient...">
+      </div>
+    </div>
+    <div class="row">
+      <div *ngIf="isList==true" class="col-md-12">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Nom du patient</th>
+                <th>Médecin</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>24 avril 2023</td>
+                <td>09:30</td>
+                <td>John Doe</td>
+                <td>Dr. Smith</td>
+                <td><span class="badge bg-success">Confirmé</span></td>
+              </tr>
+              <tr>
+                <td>24 avril 2023</td>
+                <td>10:00</td>
+                <td>Jane Doe</td>
+                <td>Dr. Johnson</td>
+                <td><span class="badge bg-warning text-dark">En attente</span></td>
+              </tr>
+              <tr>
+                <td>25 avril 2023</td>
+                <td>11:00</td>
+                <td>Bob Smith</td>
+                <td>Dr. Johnson</td>
+                <td><span class="badge bg-danger">Non confirmé</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div *ngIf="isList==false" class="col-md-12">
+    <app-table-calendar *ngIf="isList==false"></app-table-calendar>
+      </div>
+    </div>
+  </div>
+  
