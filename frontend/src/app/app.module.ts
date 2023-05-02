@@ -21,6 +21,8 @@ import { HistoriqueConsultationComponent } from './patients/historique-consultat
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MadalComponent } from './example/madal/madal.component';
 import { NewRdvComponent } from './calendar/new-rdv/new-rdv.component';
+import { NewTraitementComponent } from './patients/fiche-patient/new-traitement/new-traitement.component';
+import { ShcemaDentaireComponent } from './patients/fiche-patient/shcema-dentaire/shcema-dentaire.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { NewRdvComponent } from './calendar/new-rdv/new-rdv.component';
     TableCalendarComponent,
     HistoriqueConsultationComponent,
     MadalComponent,
-    NewRdvComponent
+    NewRdvComponent,
+    NewTraitementComponent,
+    ShcemaDentaireComponent
   ],
   imports: [
     BrowserModule,

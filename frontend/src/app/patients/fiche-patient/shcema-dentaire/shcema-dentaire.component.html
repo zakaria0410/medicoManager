@@ -1,0 +1,40 @@
+<div class="col-md-7 text-center my-auto">
+  <div class="row">
+    <div class="col-md-6 d-flex flex-row">
+      <img
+        *ngFor="let d of dents1"
+        (click)="clickDent(d)"
+        class="dent"
+        src="assets/images/{{ d }}-removebg-preview.png"
+        alt=""
+      />
+    </div>
+    <div class="col-md-6 d-flex flex-row">
+      <img
+        *ngFor="let d of dents2"
+        (click)="clickDent(d)"
+        class="dent"
+        src="assets/images/{{ d }}-removebg-preview.png"
+        alt=""
+      />
+    </div>
+    <div class="col-md-6 d-flex flex-row">
+      <img
+        *ngFor="let d of dents4"
+        (click)="clickDent(d)"
+        class="dent"
+        src="assets/images/{{ d }}-removebg-preview.png"
+        alt=""
+      />
+    </div>
+    <div class="col-md-6 d-flex flex-row">
+      <img
+        *ngFor="let d of dents3"
+        (click)="clickDent(d)"
+        class="dent"
+        src="assets/images/{{ d }}-removebg-preview.png"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

@@ -4,156 +4,322 @@
       Consultation #[ID] - <span class="text-primary">Kabouri Hamid</span>
     </h1>
     <div class="d-flex justify-content-center">
-        <button [routerLink]="['/', 'historique-fiches-patient']"  class="btn btn-primary m-2">
-            <i class="fas fa-list-alt"></i>
-            Historique Consultation
-          </button>
-          <button [routerLink]="['']" class="btn btn-success m-2">
-            <i class="fas fa-check"></i>
-            Finaliser
-          </button>
+      <button
+        [routerLink]="['/', 'historique-fiches-patient']"
+        class="btn btn-primary m-2"
+      >
+        <i class="fas fa-list-alt"></i>
+        Historique Consultation
+      </button>
+      <button [routerLink]="['']" class="btn btn-success m-2">
+        <i class="fas fa-check"></i>
+        Finaliser
+      </button>
     </div>
-   
-
   </div>
-<hr class="mt-2">
-<div class="row">
+  <hr class="mt-2" />
+  <div class="row">
     <div class="col-md-8">
-        <form class="row">
-            <div class="form-group col-md-4">
-                <label for="nb_enfants">Antécédent Familiale:</label>
-                <textarea type="text" class="form-control" id="profession"></textarea>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="nb_enfants">Histoires Clinique:</label>
-                <textarea type="text" class="form-control" id="profession"></textarea>
-            </div>
-<div class="form-group col-md-4">
-<label for="profession">Antécédents Chrirugicaux:</label>
-<textarea type="text" class="form-control" id="profession"></textarea>
-</div></form>
+      <form class="row">
+        <div class="form-group col-md-4">
+          <label for="nb_enfants">Antécédent Familiale:</label>
+          <textarea type="text" class="form-control" id="profession"></textarea>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="nb_enfants">Histoires Clinique:</label>
+          <textarea type="text" class="form-control" id="profession"></textarea>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="profession">Antécédents Chrirugicaux:</label>
+          <textarea type="text" class="form-control" id="profession"></textarea>
+        </div>
+      </form>
     </div>
     <div class="col-md-4">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Revenus</h5>
-              <div class="card bg-success text-white">
-                <div class="card-body">
-                  <p class="card-text">1 500€</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-                <h5>Dépenses</h5>
-              <div class="card bg-danger text-white">
-          
-                <div class="card-body">
-             
-                  <p class="card-text">900€</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-                <h5>Attente</h5>
-              <div class="card bg-warning text-white">
-                <div class="card-body">
-                  
-                  <p class="card-text">25</p>
-                </div>
-              </div>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Revenus</h5>
+          <div class="card bg-success text-white">
+            <div class="card-body">
+              <p class="card-text">1 500€</p>
             </div>
           </div>
-          
-    </div>
-</div>
-<div class="row mt-3">
-
-  <tabset #tabset class="bg-white p-2 shadow-sm nav-tabs">
-    <tab heading="Bilan">
-      <div class="row m-2">
-        <div class="col-md-3 px-2 border shadow-sm  border-primary">
-          <div class="row">
-            <div class="col-md-12 text-end">
-              
-           <button class="btn btn-block btn-primary p-2 mt-3 ">
-            <i class="fas fa-plus"></i> Bilans Types
-     </button>
-            </div>
-            <form class="col-md-12 mt-3">
-              <h5>Bilan Personalisé</h5>
-              <hr>
-              <div class="p-3">
-                <div class="form-group">
-                  <label for="nomBilan">Nom du bilan</label>
-                  <input type="text" class="form-control" id="nomBilan" placeholder="Entrez le nom du bilan">
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary m-3">Enregistrer</button>
-        
-                </div>
-              </div>
-           
-             </form>  </div>
-          
-        
         </div>
-        <div class="col-md-9">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Nom du bilan</th>
-                  <th>Date d'analyse</th>
-                  <th>Résultat</th>
-                  <th>Commentaire</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Bilan 1</td>
-                  <td><input type="date" class="form-control" placeholder="Entrez la date d'analyse"></td>
-                  <td><input type="text" class="form-control" placeholder="Entrez le résultat"></td>
-                  <td><textarea class="form-control" placeholder="Entrez un commentaire"></textarea></td>
-                  <td><button type="button" class="btn btn-primary"><i class="fa fa-save"></i></button></td>
-                </tr>
-                <tr>
-                  <td>Bilan 2</td>
-                  <td><input type="date" class="form-control" placeholder="Entrez la date d'analyse"></td>
-                  <td><input type="text" class="form-control" placeholder="Entrez le résultat"></td>
-                  <td><textarea class="form-control" placeholder="Entrez un commentaire"></textarea></td>
-                  <td><button type="button" class="btn btn-primary"><i class="fa fa-save"></i></button></td>
-                </tr>
-                <tr>
-                  <td>Bilan 3</td>
-                  <td><input type="date" class="form-control" placeholder="Entrez la date d'analyse"></td>
-                  <td><input type="text" class="form-control" placeholder="Entrez le résultat"></td>
-                  <td><textarea class="form-control" placeholder="Entrez un commentaire"></textarea></td>
-                  <td><button type="button" class="btn btn-primary"><i class="fa fa-save"></i></button></td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="col-md-4">
+          <h5>Dépenses</h5>
+          <div class="card bg-danger text-white">
+            <div class="card-body">
+              <p class="card-text">900€</p>
+            </div>
           </div>
-          
+        </div>
+        <div class="col-md-4">
+          <h5>Attente</h5>
+          <div class="card bg-warning text-white">
+            <div class="card-body">
+              <p class="card-text">25</p>
+            </div>
+          </div>
         </div>
       </div>
-    </tab>
-    <tab heading="Analyses">
-      Contenu du tab Analyses
-    </tab>
-    <tab heading="Ordonnance">
-      Contenu du tab Ordonnance
-    </tab>
-    <tab heading="Certificat médical">
-      Contenu du tab Certificat médical
-    </tab>
-    <tab heading="Actes">
-      Contenu du tab Actes
-    </tab>
-    <tab heading="Radios">
-      Contenu du tab Radios
-    </tab>
-  </tabset>
-  
-</div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <tabset #tabset class="bg-white p-2 shadow-sm nav-tabs">
+      <tab heading="Bilan">
+        <div class="row m-2">
+          <div class="col-md-3 px-2 border shadow-sm border-primary">
+            <div class="row">
+              <div class="col-md-12 text-end">
+                <button class="btn btn-block btn-primary p-2 mt-3">
+                  <i class="fas fa-plus"></i> Bilans Types
+                </button>
+              </div>
+              <form class="col-md-12 mt-3">
+                <h5>Bilan Personalisé</h5>
+                <hr />
+                <div class="p-3">
+                  <div class="form-group">
+                    <label for="nomBilan">Nom du bilan</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nomBilan"
+                      placeholder="Entrez le nom du bilan"
+                    />
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary m-3">
+                      Enregistrer
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nom du bilan</th>
+                    <th>Date d'analyse</th>
+                    <th>Résultat</th>
+                    <th>Commentaire</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bilan 1</td>
+                    <td>
+                      <input
+                        type="date"
+                        class="form-control"
+                        placeholder="Entrez la date d'analyse"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Entrez le résultat"
+                      />
+                    </td>
+                    <td>
+                      <textarea
+                        class="form-control"
+                        placeholder="Entrez un commentaire"
+                      ></textarea>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary">
+                        <i class="fa fa-save"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Bilan 2</td>
+                    <td>
+                      <input
+                        type="date"
+                        class="form-control"
+                        placeholder="Entrez la date d'analyse"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Entrez le résultat"
+                      />
+                    </td>
+                    <td>
+                      <textarea
+                        class="form-control"
+                        placeholder="Entrez un commentaire"
+                      ></textarea>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary">
+                        <i class="fa fa-save"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Bilan 3</td>
+                    <td>
+                      <input
+                        type="date"
+                        class="form-control"
+                        placeholder="Entrez la date d'analyse"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Entrez le résultat"
+                      />
+                    </td>
+                    <td>
+                      <textarea
+                        class="form-control"
+                        placeholder="Entrez un commentaire"
+                      ></textarea>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary">
+                        <i class="fa fa-save"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </tab>
+      <tab heading="Analyses"> Contenu du tab Analyses </tab>
+      <tab heading="Ordonnance"> Contenu du tab Ordonnance </tab>
+      <tab heading="Certificat médical">
+        Contenu du tab Certificat médical
+      </tab>
+      <tab heading="Actes">
+        <div class="row">
+          <div class="col-md-7 text-center my-auto">
+       <app-shcema-dentaire></app-shcema-dentaire>
+          </div>
+          <div class="col-md-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-primary">
+                  Dent sélectionnée : Incisive centrale supérieure droite
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Position buccale : En haut, à droite
+                </h6>
+                <p class="card-text">
+                  État actuel de la dent : Carie de stade 2, nécessite un
+                  traitement de canal
+                </p>
+                <ul>
+                  <li>Traitement 1 : Obturation en résine composite (2018)</li>
+                  <li>Traitement 2 : Extraction de la dent voisine (2019)</li>
+                  <li>Traitement 3 : Blanchiment des dents (2020)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="text-primary">Liste des traitements</h2>
+                <app-madal
+                [title]="'Nouveu traîtement'"
+                [component]="'traitement'"
+                [modalStyle]="{fullscreen:true}"
+                [icon]="'plus'"
+              ></app-madal>
+              </div>
+              
+              <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Date <i class="fas fa-sort"></i></th>
+                      <th>Type de traitement <i class="fas fa-sort"></i></th>
+                      <th>Informations sur le traitement</th>
+                      <th>Matières consommées</th>
+                      <th>Dispositifs médicaux</th>
+                      <th>Dépense <i class="fas fa-sort"></i></th>
+                      <th>Revenu <i class="fas fa-sort"></i></th>
+                      <th>Total gain</th>
+                    </tr>
+                  </thead>
+                  <tbody >
+                    <tr class="text-center">
+                      <td>1</td>
+                      <td>01/01/2022</td>
+                      <td>Traitement de la bouche entière</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                      <td>Amalgames (2), Résine composite (1)</td>
+                      <td>Pinces (2), Miroirs (3)</td>
+                      <td>$200</td>
+                      <td>$500</td>
+                      <td>$300</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>15/06/2022</td>
+                      <td>Traitement d'une dent spécifique</td>
+                      <td>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec rutrum blandit metus, et blandit risus fermentum ac.</td>
+                      <td>Amalgames (1), Résine composite (2)</td>
+                      <td>Spatules (3), Pinces (1)</td>
+                      <td>$150</td>
+                      <td>$300</td>
+                      <td>$150</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>22/12/2022</td>
+                      <td>Traitement de la bouche entière</td>
+                      <td>Maecenas eu nibh non sapien tincidunt blandit in a elit.</td>
+                      <td>Amalgames (3), Résine composite (2)</td>
+                      <td>Miroirs (2), Pinces (2)</td>
+                      <td>$250</td>
+                      <td>$600</td>
+                      <td>$350</td>
+                    </tr>
+                    <!-- Ajouter plus de lignes ici pour une pagination -->
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="6"></td>
+                      <td>Total dépense : $600</td>
+                      <td>Total revenu : $1400</td>
+                      <td>Total gain : $800</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+           </li>
+           </ul></nav>
+              
+            </div>
+            
+          </div>
+        </div>
+      </tab>
+      <tab heading="Radios"> Contenu du tab Radios </tab>
+    </tabset>
+  </div>
 </div>

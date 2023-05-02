@@ -1,19 +1,20 @@
 <ng-template #content let-modal>
 	<div class="modal-header">
 		<h4 class="modal-title text-primary" id="modal-basic-title">{{title}}</h4>
-		<button type="button" class="btn-close bg-outline-primary" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+		<button type="button" class="btn-close bg-secondary" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
 	
 <app-new-patient *ngIf="component=='patient'"></app-new-patient>
 <app-new-rdv *ngIf="component=='rdv'"></app-new-rdv>
+<app-new-traitement *ngIf="component=='traitement'"></app-new-traitement>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn btn-primary text-white btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+		<button type="button" class="btn btn-secondary text-white btn-outline-dark" (click)="modal.close('Save click')">Save</button>
 	</div>
 </ng-template>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+<button class="btn btn-lg btn-secondary" (click)="open(content)">
   <i [ngClass]="'fas fa-'+icon"></i>
   {{title}}</button>
 

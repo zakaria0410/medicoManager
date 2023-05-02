@@ -1,0 +1,116 @@
+<form class="row">
+  
+  <div class="form-group col-md-6">
+    <label for="type_traitement">Type de traitement :</label>
+    <select class="form-control" id="type_traitement" name="type_traitement">
+      <option value="toute_la_bouche">Traitement dans toute la bouche</option>
+      <option value="une_dent">Traitement au niveau d'une dent</option>
+    </select>
+<app-shcema-dentaire></app-shcema-dentaire>
+  
+  </div>
+  <div class="form-group col-md-6">
+    <label for="date_traitement">Date du traitement :</label>
+    <input
+      type="date"
+      class="form-control"
+      id="date_traitement"
+      name="date_traitement"
+disabled    />
+  </div>
+  <!-- Tableau des matières consommées -->
+  <div class="table-responsive mt-3">
+    <h5 class="text-primary">Matière Consommée</h5>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Type de traitement</th>
+          <th scope="col">Matière consommée</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Prix unitaire d'achat</th>
+          <th scope="col">Prix total d'achat</th>
+          <th scope="col">Prix d'amortissement</th>
+          <th scope="col">Prix total d'amortissement</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01/05/2023</td>
+          <td>Extraction dentaire</td>
+          <td>Anesthésique local</td>
+          <td>2</td>
+          <td>10€</td>
+          <td>20€</td>
+          <td>2€</td>
+          <td>4€</td>
+          <td>
+            <button class="btn btn-warning btn-sm">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+        <!-- Ajouter une nouvelle matière consommée -->
+        <tr>
+          <td colspan="9" class="text-center">
+            <button class="btn btn-success btn-sm">
+              <i class="fas fa-plus"></i> Ajouter une matière consommée
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tableau des dispositifs médicaux -->
+  <div class="table-responsive">
+    <h5>dispositifs Médical</h5>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Type de traitement</th>
+          <th scope="col">Dispositif médical</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Prix unitaire d'achat</th>
+          <th scope="col">Prix total d'achat</th>
+          <th scope="col">Prix d'amortissement</th>
+          <th scope="col">Prix total d'amortissement</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01/05/2023</td>
+          <td>Extraction dentaire</td>
+          <td>Pince à extractions</td>
+          <td>1</td>
+          <td>50€</td>
+          <td>50€</td>
+          <td>10€</td>
+          <td>10€</td>
+          <td>
+            <button class="btn btn-warning btn-sm">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+            <td colspan="9" class="text-center">
+              <button class="btn btn-success btn-sm">
+                <i class="fas fa-plus"></i> Ajouter une matière consommée
+              </button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Ajouter-->
+</form>

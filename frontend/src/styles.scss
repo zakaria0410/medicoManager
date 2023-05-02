@@ -1,17 +1,54 @@
 :root {
-  --bg-gray: #33CC99 !important; /* violet */
---secondary: red;
-}
+ 
+  --bs-secondary:#33CC99 !important; 
+--bs-primary: #0D6EFD;
+--bs-danger: #FF0000;
+--bs-warning:#FFC107;}
+.btn-secondary,.btn-success{
+  background: var(--bs-secondary) !important;
 
+}
+.btn-warning{
+  background: var(--bs-warning) !important;
+
+}
+.btn-danger{
+  background: var(--bs-danger) !important;
+
+}
+.text-primary,.text-success{
+  color: var(--bs-primary) !important;
+}
+.text-warning{
+  color: var(--bs-warning) !important;
+}
+.text-danger{
+  color: var(--bs-danger) !important;
+}
+.btn-primary, .bg-primary{
+background: var(--bs-primary) !important;
+}
+.btn-danger, .bg-danger{
+  background: var(--bs-danger) !important;
+  }
+  .bg-secondary,.bg-success{
+    background-color: var(--bs-secondary) !important;
+  }
+  .btn-warning, .bg-warning{
+    background: var(--bs-warning) !important;
+    }
 .fc .fc-toolbar.fc-header-toolbar {
   margin-bottom: 1.5em;
 }
+
 .fc .fc-scrollgrid table {
   border-top-style: hidden;
   border-left-style: hidden;
   border-right-style: hidden;
 }
-.fc .fc-scrollgrid, .fc .fc-scrollgrid table {
+
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid table {
   width: 100%;
   table-layout: fixed;
 }
@@ -21,6 +58,7 @@
   border-spacing: 0;
   font-size: 1em;
 }
+
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
   position: relative;
   min-height: 2em;
@@ -29,18 +67,30 @@
 .fc .fc-daygrid-day-events {
   margin-top: 1px;
 }
+
 /* Importing Bootstrap SCSS file. */
-.nav-tabs .nav-link.active{
+.nav-tabs .nav-link.active {
   background-color: #007bff !important;
   color: #fff !important;
 }
+
 .dark-modal .modal-content {
   background-color: #292b2c;
   color: white;
 }
+
 .dark-modal .close {
   color: white;
 }
+
 .light-blue-backdrop {
   background-color: #5cb3fd;
-} 
+}
+
+.dent {
+  width: 50px;
+  /* Mettez ici la largeur souhaitée pour les images */
+  height: 50px;
+  /* Mettez ici la hauteur souhaitée pour les images */
+  object-fit: fill;
+}
