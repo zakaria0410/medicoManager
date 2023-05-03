@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col">
+    
+    <h5 class="m-3 text-primary">Médicaments prescrits :</h5>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="text-muted text-center">
+          <tr>
+            <th>Nom</th>
+            <th>Dosage</th>
+            <th>Durée</th>
+            <th>Posologie</th>
+            <th>Date de prescription</th>
+            <th>Notes du médecin</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Entrez le nom du médicament"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Entrez le dosage du médicament"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Entrez la durée de la prise du médicament"
+                required
+              />
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-3">
+                  <input type="text" class="form-control" placeholder="Matin" />
+                </div>
+                <div class="col-3">
+                  <input type="text" class="form-control" placeholder="Midi" />
+                </div>
+                <div class="col-3">
+                  <input type="text" class="form-control" placeholder="Soir" />
+                </div>
+              </div>
+            </td>
+            <td><input type="date" class="form-control" /></td>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Entrez les notes du médecin"
+              />
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary">
+                <i class="fa fa-plus"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Amoxicilline</td>
+            <td>500mg</td>
+            <td>7 jours</td>
+            <td>
+              <div class="row">
+                <div class="col-3">1</div>
+                <div class="col-3">0</div>
+                <div class="col-3">1</div>
+              </div>
+            </td>
+            <td>2023-05-03</td>
+            <td>Ce médicament doit être pris avec de la nourriture.</td>
+            <td>
+              <button type="button" class="btn btn-secondary">
+                <i class="fa fa-pencil"></i>
+              </button>
+              <button type="button" class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Ibuprofène</td>
+            <td>200mg</td>
+            <td>3 jours</td>
+            <td>
+              <div class="row">
+                <div class="col-3">1</div>
+                <div class="col-3">1</div>
+                <div class="col-3">1</div>
+              </div>
+            </td>
+            <td>2023-</td>
+            <td>Ce médicament doit être pris pour chaque repas</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

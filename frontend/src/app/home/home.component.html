@@ -4,7 +4,15 @@
   <div class="col-md-4">
     <div class="card mb-2" style="min-height: calc(33%);max-height: calc(33%); overflow-y: scroll;">
       <div class="card-body">
-        <h5 class="card-title text-primary">Les Patients En Attente</h5>
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="card-title text-primary">Les Patients En Attente</h5>  <app-madal
+          [title]="'Nouvel Arrivée'"
+          [component]="'rdv'"
+          [modalStyle]="{size:'lg',fullScreen:false}"
+          [icon]="'plus'"
+        ></app-madal>
+        </div>
+        
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>

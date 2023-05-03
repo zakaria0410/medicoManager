@@ -71,9 +71,12 @@
           <div class="col-md-3 px-2 border shadow-sm border-primary">
             <div class="row">
               <div class="col-md-12 text-end">
-                <button class="btn btn-block btn-primary p-2 mt-3">
-                  <i class="fas fa-plus"></i> Bilans Types
-                </button>
+                <app-madal
+                  [title]="'Bilan Type'"
+                  [component]="'bilan-type'"
+                  [modalStyle]="{ size: 'lg' }"
+                  [icon]="'list-alt'"
+                ></app-madal>
               </div>
               <form class="col-md-12 mt-3">
                 <h5>Bilan Personalisé</h5>
@@ -201,14 +204,16 @@
         </div>
       </tab>
       <tab heading="Analyses"> Contenu du tab Analyses </tab>
-      <tab heading="Ordonnance"> Contenu du tab Ordonnance </tab>
+      <tab heading="Ordonnance"> 
+        <app-ordonnace></app-ordonnace>
+      </tab>
       <tab heading="Certificat médical">
         Contenu du tab Certificat médical
       </tab>
       <tab heading="Actes">
         <div class="row">
           <div class="col-md-7 text-center my-auto">
-       <app-shcema-dentaire></app-shcema-dentaire>
+            <app-shcema-dentaire></app-shcema-dentaire>
           </div>
           <div class="col-md-5">
             <div class="card">
@@ -233,16 +238,18 @@
           </div>
           <div class="col-md-12">
             <div class="table-responsive">
-              <div class="d-flex justify-content-between align-items-center mb-3">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
                 <h2 class="text-primary">Liste des traitements</h2>
                 <app-madal
-                [title]="'Nouveu traîtement'"
-                [component]="'traitement'"
-                [modalStyle]="{fullscreen:true}"
-                [icon]="'plus'"
-              ></app-madal>
+                  [title]="'Nouveu traîtement'"
+                  [component]="'traitement'"
+                  [modalStyle]="{ fullscreen: true }"
+                  [icon]="'plus'"
+                ></app-madal>
               </div>
-              
+
               <div class="table-responsive">
                 <table class="table table-striped table-hover">
                   <thead>
@@ -258,12 +265,14 @@
                       <th>Total gain</th>
                     </tr>
                   </thead>
-                  <tbody >
+                  <tbody>
                     <tr class="text-center">
                       <td>1</td>
                       <td>01/01/2022</td>
                       <td>Traitement de la bouche entière</td>
-                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                      <td>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </td>
                       <td>Amalgames (2), Résine composite (1)</td>
                       <td>Pinces (2), Miroirs (3)</td>
                       <td>$200</td>
@@ -274,7 +283,11 @@
                       <td>2</td>
                       <td>15/06/2022</td>
                       <td>Traitement d'une dent spécifique</td>
-                      <td>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec rutrum blandit metus, et blandit risus fermentum ac.</td>
+                      <td>
+                        Vestibulum ante ipsum primis in faucibus orci luctus et
+                        ultrices posuere cubilia Curae; Donec rutrum blandit
+                        metus, et blandit risus fermentum ac.
+                      </td>
                       <td>Amalgames (1), Résine composite (2)</td>
                       <td>Spatules (3), Pinces (1)</td>
                       <td>$150</td>
@@ -285,7 +298,9 @@
                       <td>3</td>
                       <td>22/12/2022</td>
                       <td>Traitement de la bouche entière</td>
-                      <td>Maecenas eu nibh non sapien tincidunt blandit in a elit.</td>
+                      <td>
+                        Maecenas eu nibh non sapien tincidunt blandit in a elit.
+                      </td>
                       <td>Amalgames (3), Résine composite (2)</td>
                       <td>Miroirs (2), Pinces (2)</td>
                       <td>$250</td>
@@ -307,15 +322,26 @@
               <nav aria-label="Page navigation example">
                 <ul class="pagination">
                   <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    <a
+                      class="page-link"
+                      href="#"
+                      tabindex="-1"
+                      aria-disabled="true"
+                      >Previous</a
+                    >
                   </li>
                   <li class="page-item active">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-           </li>
-           </ul></nav>
-              
+                    <a
+                      class="page-link"
+                      href="#"
+                      tabindex="-1"
+                      aria-disabled="true"
+                      >Previous</a
+                    >
+                  </li>
+                </ul>
+              </nav>
             </div>
-            
           </div>
         </div>
       </tab>

@@ -23,6 +23,9 @@ import { MadalComponent } from './example/madal/madal.component';
 import { NewRdvComponent } from './calendar/new-rdv/new-rdv.component';
 import { NewTraitementComponent } from './patients/fiche-patient/new-traitement/new-traitement.component';
 import { ShcemaDentaireComponent } from './patients/fiche-patient/shcema-dentaire/shcema-dentaire.component';
+import { BilanTypesComponent } from './patients/fiche-patient/bilan-types/bilan-types.component';
+import { OrdonnaceComponent } from './fiche-patient/ordonnace/ordonnace.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,9 @@ import { ShcemaDentaireComponent } from './patients/fiche-patient/shcema-dentair
     MadalComponent,
     NewRdvComponent,
     NewTraitementComponent,
-    ShcemaDentaireComponent
+    ShcemaDentaireComponent,
+    BilanTypesComponent,
+    OrdonnaceComponent
   ],
   imports: [
     BrowserModule,
@@ -48,8 +53,8 @@ import { ShcemaDentaireComponent } from './patients/fiche-patient/shcema-dentair
     FullCalendarModule,
     TabsModule,
     NgbModule,
-    BsDropdownModule.forRoot()
-
+    BsDropdownModule.forRoot(),
+FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

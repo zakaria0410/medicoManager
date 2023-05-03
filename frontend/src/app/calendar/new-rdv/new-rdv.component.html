@@ -1,6 +1,9 @@
 <div class="container-fluid">
     <form class="row">
-        <div class="col-sm-3 mb-3">
+      <input type="text" id="medicament" class="form-control" [(ngModel)]="selectedMedicament"
+      [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter"
+      placeholder="Sélectionnez un médicament...">
+      <div class="col-sm-3 mb-3">
           <label for="nom" class="form-label">Nom</label>
           <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom" required>
         </div>
