@@ -26,6 +26,20 @@ import { ShcemaDentaireComponent } from './patients/fiche-patient/shcema-dentair
 import { BilanTypesComponent } from './patients/fiche-patient/bilan-types/bilan-types.component';
 import { OrdonnaceComponent } from './fiche-patient/ordonnace/ordonnace.component';
 import { FormsModule } from '@angular/forms';
+import { CertificatsComponent } from './fiche-patient/certificats/certificats.component';
+import { NewCertificatComponent } from './fiche-patient/certificats/new-certificat/new-certificat.component';
+import { NgxPrintModule } from 'ngx-print';
+import { PrintComponent } from './examples/print/print.component';
+import { EditionCertificatComponent } from './fiche-patient/certificats/edition-certificat/edition-certificat.component';
+import { ParametresComponent } from './parametres/parametres.component';
+import { ActesSoinsComponent } from './parametres/actes-soins/actes-soins.component';
+import { NewActeSoinComponent } from './parametres/actes-soins/new-acte-soin/new-acte-soin.component';
+import { MedicamentsComponent } from './parametres/medicaments/medicaments.component';
+import { NewMedicamentComponent } from './parametres/medicaments/new-medicament/new-medicament.component';
+import { BilansComponent } from './parametres/bilans/bilans.component';
+import { NewBilanComponent } from './parametres/bilans/new-bilan/new-bilan.component';
+import { ParametresVitauxComponent } from './parametres/parametres-vitaux/parametres-vitaux.component';
+import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +59,20 @@ import { FormsModule } from '@angular/forms';
     NewTraitementComponent,
     ShcemaDentaireComponent,
     BilanTypesComponent,
-    OrdonnaceComponent
+    OrdonnaceComponent,
+    CertificatsComponent,
+    NewCertificatComponent,
+    PrintComponent,
+    EditionCertificatComponent,
+    ParametresComponent,
+    ActesSoinsComponent,
+    NewActeSoinComponent,
+    MedicamentsComponent,
+    NewMedicamentComponent,
+    BilansComponent,
+    NewBilanComponent,
+    ParametresVitauxComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +81,8 @@ import { FormsModule } from '@angular/forms';
     TabsModule,
     NgbModule,
     BsDropdownModule.forRoot(),
-FormsModule
+FormsModule,
+NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

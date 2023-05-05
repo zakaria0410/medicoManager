@@ -120,7 +120,7 @@
             <p class="card-text">
               Regardez En tout Moment la situation de votre salle d'attente
             </p>
-            <a [routerLink]="['/', 'modal']" class="btn btn-light">Accéder</a>
+            <a [routerLink]="['/', 'print']" class="btn btn-light">Accéder</a>
           </div>
         </div>
       </div>
@@ -135,6 +135,22 @@
               Gérez les informations des patients et leur historique médical
             </p>
             <a [routerLink]="['/', 'historique-fiches-patient']" class="btn btn-light"
+              >Accéder</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div
+          class="card bg-primary text-light p-3 m-2 flex-fill d-flex flex-column justify-content-center align-items-center"
+        >
+          <i class="fas fa-sliders-h fa-5x mb-3"></i>
+          <div class="text-center">
+            <h5 class="card-title">Parametrage</h5>
+            <p class="card-text">
+              Gérez les informations des patients et leur historique médical
+            </p>
+            <a [routerLink]="['/', 'parametres']" class="btn btn-light"
               >Accéder</a
             >
           </div>

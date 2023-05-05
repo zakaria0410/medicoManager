@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-4">
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">Certificat médical</button>
+        <button type="button" class="list-group-item list-group-item-action">Arrêt de travail</button>
+        <button type="button" class="list-group-item list-group-item-action">Reprise de travail</button>
+      </div>
+    </div>
+    
+    <div class="col-md-8">
+      <form>
+        <div class="form-group">
+          <label for="date_debut">Date de début :</label>
+          <input type="date" class="form-control" id="date_debut" placeholder="Entrez la date de début du certificat">
+        </div>
+        <div class="form-group">
+          <label for="date_fin">Date de fin :</label>
+          <input type="date" class="form-control" id="date_fin" placeholder="Entrez la date de fin du certificat">
+        </div>
+        <div class="form-group">
+          <label for="diagnostic">Diagnostic :</label>
+          <textarea class="form-control" id="diagnostic" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="duree_arret">Durée de l'arrêt de travail :</label>
+          <input type="number" class="form-control" id="duree_arret" placeholder="Entrez la durée de l'arrêt de travail">
+        </div>
+        <button type="submit" class="btn btn-primary">Créer certificat</button>
+      </form>
+    </div>
+  </div>
+  

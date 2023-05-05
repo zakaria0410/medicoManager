@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-8"></div>
+ <div class="col-md-4">      <app-madal
+    [title]="'Nouveau Certificat'"
+    [component]="'certificat'"
+    [modalStyle]="{fullscreen:true}"
+    [icon]="'plus'"
+  ></app-madal></div>   </div>
+    <div class="card-deck m-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Certificat médical</h5>
+            <p class="card-text">Date de début : 01/05/2023</p>
+            <p class="card-text">Date de fin : 08/05/2023</p>
+            <div class="btn-group" role="group" aria-label="Options">
+              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
+              <button type="button" class="btn btn-primary"><i class="fas fa-pencil"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Certificat médical</h5>
+              <p class="card-text">Date de début : 01/05/2023</p>
+              <p class="card-text">Date de fin : 08/05/2023</p>
+              <div class="btn-group" role="group" aria-label="Options">
+                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                <app-madal
+                
+                [component]="'edition-certificat'"
+                [modalStyle]="{fullscreen:true}"
+                [icon]="'print'"
+              ></app-madal>   <button type="button" class="btn btn-primary"><i class="fas fa-pencil"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Certificat médical</h5>
+              <p class="card-text">Date de début : 01/05/2023</p>
+              <p class="card-text">Date de fin : 08/05/2023</p>
+              <div class="btn-group" role="group" aria-label="Options">
+                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
+                <button type="button" class="btn btn-primary"><i class="fas fa-pencil"></i></button>
+              </div>
+            </div>
+          </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Arrêt de travail</h5>
+            <p class="card-text">Date de début : 15/04/2023</p>
+            <p class="card-text">Date de fin : 25/04/2023</p>
+            <div class="btn-group" role="group" aria-label="Options">
+              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
+              <button type="button" class="btn btn-primary"><i class="fas fa-pencil"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Reprise de travail</h5>
+            <p class="card-text">Date de début : 10/03/2023</p>
+            <p class="card-text">Date de fin : 10/03/2023</p>
+            <div class="btn-group" role="group" aria-label="Options">
+              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
+              <button type="button" class="btn btn-primary"><i class="fas fa-pencil"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+  

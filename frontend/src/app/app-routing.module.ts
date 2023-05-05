@@ -12,15 +12,32 @@ import { FichePatientComponent } from './patients/fiche-patient/fiche-patient.co
 import { TableCalendarComponent } from './calendar/table-calendar/table-calendar.component';
 import { HistoriqueConsultationComponent } from './patients/historique-consultation/historique-consultation.component';
 import { MadalComponent } from './example/madal/madal.component';
-
+import { PrintComponent } from './examples/print/print.component';
+import { ParametresComponent } from './parametres/parametres.component';
+import { ActesSoinsComponent } from './parametres/actes-soins/actes-soins.component';
+import { MedicamentsComponent } from './parametres/medicaments/medicaments.component';
+import { BilansComponent } from './parametres/bilans/bilans.component';
+import { ParametresVitauxComponent } from './parametres/parametres-vitaux/parametres-vitaux.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'patients', children:[{path:'',component:ListPatientsComponent},{path:'new',component:NewPatientComponent}] },
-  {path:'agenda',component:RdvComponent},
-  {path:'factures',component:TableCalendarComponent},
-  {path:'historique-fiches-patient',component:MadalComponent},
-  {path:'fiche-patient',component:FichePatientComponent}
+  {
+    path: 'patients',
+    children: [
+      { path: '', component: ListPatientsComponent },
+      { path: 'new', component: NewPatientComponent },
+    ],
+  },
+  { path: 'agenda', component: RdvComponent },
+  { path: 'factures', component: TableCalendarComponent },
+  { path: 'historique-fiches-patient', component: MadalComponent },
+  { path: 'fiche-patient', component: FichePatientComponent },
+  { path: 'print', component: PrintComponent },
+  {path:'parametres',component:ParametresComponent},
+  {path:'actes-soins',component:ActesSoinsComponent},
+  {path:'medicaments',component:MedicamentsComponent},
+  {path:'bilans',component:BilansComponent},
+  {path:'parametres-vitaux',component:ParametresVitauxComponent}
 ];
 
 @NgModule({

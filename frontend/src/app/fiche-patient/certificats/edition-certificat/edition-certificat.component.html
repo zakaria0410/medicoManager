@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-md-6">
+    <h5 class="text-primary">Personaliser ce certificat</h5>
+    <form class="p-2 shadow-sm">
+      <div class="form-group">
+        <label for="nom-patient">Nom du patient:</label>
+        <input type="text" class="form-control" id="nom-patient" placeholder="Entrez le nom du patient" required>
+      </div>
+      <div class="form-group">
+        <label for="date-debut">Date de début:</label>
+        <input type="date" class="form-control" id="date-debut" placeholder="Entrez la date de début" required>
+      </div>
+      <div class="form-group">
+        <label for="date-fin">Date de fin:</label>
+        <input type="date" class="form-control" id="date-fin" placeholder="Entrez la date de fin" required>
+      </div>
+      <div class="form-group">
+        <label for="raison">Raison du certificat:</label>
+        <textarea class="form-control" id="raison" rows="3" placeholder="Entrez la raison du certificat" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Générer le certificat</button>
+    </form>
+    
+  </div>
+  <div class="row col-md-6 border border-primary p-2">
+    <div class="col-md-12 text-end">
+      <button
+      class="btn btn-secondary"
+      
+        printSectionId="printable"
+        [useExistingCss]="true"
+        printTitle="MyTitle"
+        ngxPrint
+      >
+        <i class="fas fa-print"></i>
+        <br>Imprimer
+      </button>
+    </div>
+    <div class="col-md-12">
+      <div id="printable">
+        <div class="container">
+          <div class="row"></div>
+          <div class="row">
+            <div class="col-12 text-center mb-4">
+              <h1>Certificat médical</h1>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Nom du médecin :</strong> [nom du médecin]</p>
+              <p><strong>Adresse :</strong> [adresse du médecin]</p>
+              <p><strong>Téléphone :</strong> [téléphone du médecin]</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+              <p><strong>Nom du patient :</strong> [nom du patient]</p>
+              <p><strong>Date de l'examen :</strong> [date de l'examen]</p>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-12">
+              <p>
+                Ce certificat atteste que [nom du patient] a été examiné(e) le
+                [date de l'examen] et souffre de [diagnostic]. Par conséquent,
+                il/elle doit prendre un congé de [durée du congé].
+              </p>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <p>Fait le [date de la signature]</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+              <p>Signature :</p>
+              <img src="[url de la signature]" alt="Signature du médecin" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
