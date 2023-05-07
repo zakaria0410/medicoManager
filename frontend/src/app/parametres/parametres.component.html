@@ -48,10 +48,31 @@
             <i class="fas fa-file fa-5x text-primary"></i>
             <h5 class="card-title mt-3 text-muted">Certificats Médicaux</h5>
             <p class="card-text">Gérez les différents types de certificats médicaux disponibles.</p>
-            <a href="#" class="btn btn-sm btn-secondary">Accéder</a>
+            <a [routerLink]="['/', 'certificat-medical-settings']" class="btn btn-sm btn-secondary">Accéder</a>
           </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm border-primary">
+          <div class="card-body">
+            <i class="fas fa-sitemap fa-5x text-primary"></i>
+            <h5 class="card-title mt-3 text-muted">Bilans Type</h5>
+            <p class="card-text">Regrouper un ensemble de bilan dans un bilan type pour les affecter tous à la fois pour un patient </p>
+            <a [routerLink]="['/', 'bilan-type']" class="btn btn-sm btn-secondary">Accéder</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm border-primary">
+          <div class="card-body">
+            <i class="fas fa-money-bill fa-5x text-primary"></i>
+            <h5 class="card-title mt-3 text-muted">Famille Dépense</h5>
+            <p class="card-text">Regrouper un ensemble de bilan dans un bilan type pour les affecter tous à la fois pour un patient </p>
+            <a [routerLink]="['/', 'depenses-categories']" class="btn btn-sm btn-secondary">Accéder</a>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
   

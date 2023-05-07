@@ -18,6 +18,11 @@ import { ActesSoinsComponent } from './parametres/actes-soins/actes-soins.compon
 import { MedicamentsComponent } from './parametres/medicaments/medicaments.component';
 import { BilansComponent } from './parametres/bilans/bilans.component';
 import { ParametresVitauxComponent } from './parametres/parametres-vitaux/parametres-vitaux.component';
+import { BilanTypeComponent } from './parametres/bilan-type/bilan-type.component';
+import { CerificatsMedicauxSettingComponent } from './parametres/cerificats-medicaux-setting/cerificats-medicaux-setting.component';
+import { DepensesSettingsComponent } from './parametres/depenses-settings/depenses-settings.component';
+import { FacturationComponent } from './facturation/facturation.component';
+import { CategorieDepenseComponent } from './parametres/categorie-depense/categorie-depense.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,7 +42,12 @@ const routes: Routes = [
   {path:'actes-soins',component:ActesSoinsComponent},
   {path:'medicaments',component:MedicamentsComponent},
   {path:'bilans',component:BilansComponent},
-  {path:'parametres-vitaux',component:ParametresVitauxComponent}
+  {path:'parametres-vitaux',component:ParametresVitauxComponent},
+  {path:'bilan-type',component:BilanTypeComponent},
+  {path:'certificat-medical-settings',component:CerificatsMedicauxSettingComponent},
+  {path:'depense-settings',component:DepensesSettingsComponent},
+  {path:'facturation',component:FacturationComponent},
+  {path:'depenses-categories',component:CategorieDepenseComponent}
 ];
 
 @NgModule({

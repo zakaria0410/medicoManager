@@ -1,0 +1,44 @@
+<div class="container-fluid bg-white">
+   <div class="d-flex justify-content-between">
+    <h1>Configuration des catégories de dépense</h1>
+    <app-madal
+    [title]="'Nouvelle Catégorie Dépense'"
+[component]="'categ-depense'"
+[modalStyle]="{ size: 'lg' }"
+[icon]="'plus'"
+></app-madal>
+   </div> 
+ 
+    <hr>
+    <h2>Liste des catégories de dépense</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Catégorie</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Matériel médical</td>
+          <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+        </tr>
+        <tr>
+          <td>Fournitures de bureau</td>
+          <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+        </tr>
+        <tr>
+          <td>Loyer</td>
+          <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+        </tr>
+        <tr>
+          <td>Assurances</td>
+          <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+        </tr>
+        <tr>
+          <td>Autre</td>
+          <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

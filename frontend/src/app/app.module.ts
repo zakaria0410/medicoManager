@@ -40,6 +40,15 @@ import { BilansComponent } from './parametres/bilans/bilans.component';
 import { NewBilanComponent } from './parametres/bilans/new-bilan/new-bilan.component';
 import { ParametresVitauxComponent } from './parametres/parametres-vitaux/parametres-vitaux.component';
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
+import { BilanTypeComponent } from './parametres/bilan-type/bilan-type.component';
+import { NewBilanTypeComponent } from './parametres/bilan-type/new-bilan-type/new-bilan-type.component';
+import { CerificatsMedicauxSettingComponent } from './parametres/cerificats-medicaux-setting/cerificats-medicaux-setting.component';
+import { DepensesSettingsComponent } from './parametres/depenses-settings/depenses-settings.component';
+import { DepensesComponent } from './facturation/depenses/depenses.component';
+import { FacturationComponent } from './facturation/facturation.component';
+import { NewDepenseComponent } from './facturation/depenses/new-depense/new-depense.component';
+import { CategorieDepenseComponent } from './parametres/categorie-depense/categorie-depense.component';
+import { NewCategorieDepenseComponent } from './parametres/categorie-depense/new-categorie-depense/new-categorie-depense.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +81,16 @@ import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
     BilansComponent,
     NewBilanComponent,
     ParametresVitauxComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    BilanTypeComponent,
+    NewBilanTypeComponent,
+    CerificatsMedicauxSettingComponent,
+    DepensesSettingsComponent,
+    DepensesComponent,
+    FacturationComponent,
+    NewDepenseComponent,
+    CategorieDepenseComponent,
+    NewCategorieDepenseComponent
   ],
   imports: [
     BrowserModule,

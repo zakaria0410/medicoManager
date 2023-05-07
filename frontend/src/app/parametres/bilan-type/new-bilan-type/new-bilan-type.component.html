@@ -1,0 +1,38 @@
+<div class="container">
+ 
+    <form>
+        <div class="form-group">
+          <label for="nom">Nom :</label>
+          <input type="text" class="form-control" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description :</label>
+          <textarea class="form-control" id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="bilans-affectes">Bilans affectés :</label>
+          <input type="text" class="form-control" id="search-bilan" placeholder="Rechercher un bilan...">
+          <div class="checkbox-list" id="bilans-affectes">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="bilan1" id="bilan1" name="bilans-affectes[]">
+              <label class="form-check-label" for="bilan1">
+                Bilan 1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="bilan2" id="bilan2" name="bilans-affectes[]">
+              <label class="form-check-label" for="bilan2">
+                Bilan 2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="bilan3" id="bilan3" name="bilans-affectes[]">
+              <label class="form-check-label" for="bilan3">
+                Bilan 3
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+      
+  </div>

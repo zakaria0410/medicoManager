@@ -1,0 +1,39 @@
+<form>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" class="form-control" id="date" />
+    </div>
+    <div class="form-group">
+      <label for="amount">Montant</label>
+      <input type="number" class="form-control" id="amount" />
+    </div>
+    <div class="form-group">
+      <label for="category">Catégorie</label>
+      <select class="form-control" id="category">
+        <option>Matériel médical</option>
+        <option>Fournitures de bureau</option>
+        <option>Loyer</option>
+        <option>Assurances</option>
+        <option>Autre</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="payment-type">Type de paiement</label>
+      <select class="form-control" id="payment-type">
+        <option>Chèque</option>
+        <option>Carte de crédit</option>
+        <option>Carte de débit</option>
+        <option>Virement bancaire</option>
+        <option>Autre</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="check-number">Numéro de chèque</label>
+      <input type="text" class="form-control" id="check-number" />
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </form>

@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between">
+            <h2>Historique des dépenses</h2>
+            <app-madal
+            [title]="'Nouvelle Dépense'"
+        [component]="'depense'"
+        [modalStyle]="{ size: 'lg' }"
+        [icon]="'plus'"
+        ></app-madal>
+        </div>
+   
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Montant</th>
+            <th>Catégorie</th>
+            <th>Type de paiement</th>
+            <th>Numéro de chèque</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01/05/2023</td>
+            <td>500</td>
+            <td>Matériel médical</td>
+            <td>Chèque</td>
+            <td>1234</td>
+            <td>Achat de matériel pour le cabinet</td>
+          </tr>
+          <tr>
+            <td>02/05/2023</td>
+            <td>100</td>
+            <td>Fournitures de bureau</td>
+            <td>Carte de crédit</td>
+            <td>-</td>
+            <td>Achat de papeterie et de stylos</td>
+          </tr>
+          <tr>
+            <td>03/05/2023</td>
+            <td>1000</td>
+            <td>Loyer</td>
+            <td>Virement bancaire</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
