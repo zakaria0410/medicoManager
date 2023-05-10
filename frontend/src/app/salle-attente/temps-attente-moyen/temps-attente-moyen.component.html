@@ -1,0 +1,17 @@
+
+  <div class="card p-2">
+    <div class="card-header">
+        <h5 class="card-title text-primary mb-2">Statistique Temps Attente</h5>
+    </div>
+   <div class="card-body">
+    <canvas baseChart
+    style="width: 100%;height: 250px;"
+    [labels]="doughnutChartLabels"
+    [datasets]="doughnutChartDatasets"
+    [options]="doughnutChartOptions"
+    [legend]="true"
+    [type]="'doughnut'">
+</canvas>
+   </div>
+  
+</div>

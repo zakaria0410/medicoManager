@@ -13,6 +13,7 @@ export class MadalComponent implements OnInit {
 	@Input() component
 	@Input() icon
 	@Input() modalStyle
+	@Input() classButton
 	constructor(private modalService: NgbModal) {}
 	ngOnInit(): void {
 		//throw new Error('Method not implemented.');

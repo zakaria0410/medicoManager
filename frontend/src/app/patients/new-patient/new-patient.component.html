@@ -1,125 +1,136 @@
-
-	<div class="container-fluid">
-		<div class="row">
-			<!-- Carte 1 -->
-			<div class="col-md-6">
-				<div class="card border-primary mt-3">
-					<div class="card-header bg-primary text-white">Informations du patient</div>
-					<div class="card-body">
-						<form class="row">
-							<div class="form-group col-md-6">
-								<label for="nom">Nom:</label>
-								<input type="text" class="form-control" id="nom">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="prenom">Prénom:</label>
-								<input type="text" class="form-control" id="prenom">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="photo">Photo:</label>
-								<input type="file" class="form-control-file" id="photo">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="civilite">Civilité:</label><br>
-								<div class="form-check-inline">
-									<label class="form-check-label">
-										<input type="radio" class="form-check-input" name="civilite" value="M">M.
-									</label>
-								</div>
-								<div class="form-check-inline">
-									<label class="form-check-label">
-										<input type="radio" class="form-check-input" name="civilite" value="Mme">Mme.
-									</label>
-								</div>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="cin">CIN:</label>
-								<input type="text" class="form-control" id="cin">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="sexe">Sexe:</label>
-								<select class="form-control" id="sexe">
-									<option>Masculin</option>
-									<option>Féminin</option>
-								</select>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="date_naissance">Date de naissance:</label>
-								<input type="date" class="form-control" id="date_naissance">
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-
-			<!-- Carte 2 -->
-			<div class="col-md-6">
-				<div class="card border-primary mt-3">
-					<div class="card-header bg-primary text-white">Situation familiale</div>
-					<div class="card-body">
-						<form class="row">
-							<div class="form-group col-md-6">
-								<label for="nb_enfants">Nombre d'enfants:</label>
-								<input type="number" class="form-control" id="nb_enfants">
-							</div>
-              <div class="form-group col-md-6">
-                <label for="profession">Profession:</label>
-                <input type="text" class="form-control" id="profession">
+<div class="container-fluid">
+  <div class="row">
+    <!-- Carte 1 -->
+    <div class="col-md-6">
+      <div class="card border-primary mt-3">
+        <div class="card-header bg-primary text-white">
+          Informations du patient
+        </div>
+        <div class="card-body">
+          <form class="row">
+            <div class="form-group col-md-6">
+              <label for="nom">Nom:</label>
+              <input type="text" class="form-control" id="nom" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="prenom">Prénom:</label>
+              <input type="text" class="form-control" id="prenom" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="photo">Photo:</label>
+              <input type="file" class="form-control-file" id="photo" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="civilite">Civilité:</label><br />
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="civilite"
+                    value="M"
+                  />M.
+                </label>
               </div>
-              <div class="form-group col-md-6">
-                <label for="type_assurance">Type d'assurance:</label>
-                <select class="form-control" id="type_assurance">
-                  <option>Aucune</option>
-                  <option>Assurance maladie</option>
-                  <option>Assurance vie</option>
-                  <option>Assurance habitation</option>
-                </select>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="civilite"
+                    value="Mme"
+                  />Mme.
+                </label>
               </div>
-              <div class="form-group col-md-6">
-                <label for="groupe_sanguin">Groupe sanguin:</label>
-                <select class="form-control" id="groupe_sanguin">
-                  <option>A+</option>
-                  <option>A-</option>
-                  <option>B+</option>
-                  <option>B-</option>
-                  <option>O+</option>
-                  <option>O-</option>
-                  <option>AB+</option>
-                  <option>AB-</option>
-                </select>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cin">CIN:</label>
+              <input type="text" class="form-control" id="cin" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="sexe">Sexe:</label>
+              <select class="form-control" id="sexe">
+                <option>Masculin</option>
+                <option>Féminin</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="date_naissance">Date de naissance:</label>
+              <input type="date" class="form-control" id="date_naissance" />
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  
-    <!-- Carte 3 -->
-    <div class="row">
-      <div class="col-md-12">
-		<div class="card border-primary mt-3">
-			<div class="card-header bg-primary text-white">Contact d'urgence</div>
-          <div class="card-body">
-            <form class="row">
-              <div class="form-group col-md-6">
-                <label for="adresse">Adresse:</label>
-                <textarea class="form-control" id="adresse" rows="3"></textarea>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="tel1">Téléphone 1:</label>
-                <input type="tel" class="form-control" id="tel1">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="tel2">Téléphone 2:</label>
-                <input type="tel" class="form-control" id="tel2">
-              </div>
-            </form>
-          </div>
+
+    <!-- Carte 2 -->
+    <div class="col-md-6">
+      <div class="card border-primary mt-3">
+        <div class="card-header bg-primary text-white">Situation familiale</div>
+        <div class="card-body">
+          <form class="row">
+            <div class="form-group col-md-6">
+              <label for="nb_enfants">Nombre d'enfants:</label>
+              <input type="number" class="form-control" id="nb_enfants" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="profession">Profession:</label>
+              <input type="text" class="form-control" id="profession" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="type_assurance">Type d'assurance:</label>
+              <select class="form-control" id="type_assurance">
+                <option>Aucune</option>
+                <option>Assurance maladie</option>
+                <option>Assurance vie</option>
+                <option>Assurance habitation</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="groupe_sanguin">Groupe sanguin:</label>
+              <select class="form-control" id="groupe_sanguin">
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+              </select>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Carte 3 -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card border-primary mt-3">
+        <div class="card-header bg-primary text-white">Contact d'urgence</div>
+        <div class="card-body">
+          <form class="row">
+            <div class="form-group col-md-6">
+              <label for="adresse">Adresse:</label>
+              <textarea class="form-control" id="adresse" rows="3"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="tel1">Téléphone 1:</label>
+              <input type="tel" class="form-control" id="tel1" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="tel2">Téléphone 2:</label>
+              <input type="tel" class="form-control" id="tel2" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

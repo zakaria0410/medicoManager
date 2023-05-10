@@ -1,0 +1,286 @@
+<div class="container bg-white">
+  <div class="row">
+    <h2 class="mb-3 text-primary">Paramètres Groupe</h2>
+
+    <div class="col-md-6">
+  
+      <form>
+        <div class="form-group">
+          <label for="groupName">Nom du groupe</label>
+          <input
+            type="text"
+            class="form-control"
+            id="groupName"
+            placeholder="Utilisateurs avancés"
+            disabled
+          />
+        </div>
+        <div class="form-group">
+          <label for="groupDesc">Description</label>
+          <textarea class="form-control" id="groupDesc" rows="3" disabled>
+Groupe avec des permissions pour utiliser les fonctionnalités avancées</textarea
+          >
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+         <div class="card-body">
+            <h3 class="card-title text-primary">Autorisations</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Fonctionnalité</th>
+                  <th scope="col">Autorisation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gérer les patients</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="patientAccess"
+                        id="patientAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="patientAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="patientAccess"
+                        id="patientAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="patientAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gérer les rendez-vous</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="appointmentAccess"
+                        id="appointmentAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="appointmentAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="appointmentAccess"
+                        id="appointmentAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="appointmentAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gérer les factures</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="billAccess"
+                        id="billAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="billAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="billAccess"
+                        id="billAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="billAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gérer les stocks de médicaments</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="medicineAccess"
+                        id="medicineAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="medicineAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="medicineAccess"
+                        id="medicineAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="medicineAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Consulter les statistiques</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="statsAccess"
+                        id="statsAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="statsAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="statsAccess"
+                        id="statsAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="statsAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gérer les comptes utilisateurs</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="userAccess"
+                        id="userAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="userAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="userAccess"
+                        id="userAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="userAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gérer les rapports médicaux</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="reportAccess"
+                        id="reportAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="reportAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="reportAccess"
+                        id="reportAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="reportAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gérer les fournisseurs</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="supplierAccess"
+                        id="supplierAccessOn"
+                        value="on"
+                        checked
+                      />
+                      <label class="form-check-label" for="supplierAccessOn"
+                        >Activé</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="supplierAccess"
+                        id="supplierAccessOff"
+                        value="off"
+                      />
+                      <label class="form-check-label" for="supplierAccessOff"
+                        >Désactivé</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+         </div>
+         
+        </div>
+  
+    </div>
+  </div>
+</div>

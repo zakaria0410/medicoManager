@@ -23,6 +23,11 @@ import { CerificatsMedicauxSettingComponent } from './parametres/cerificats-medi
 import { DepensesSettingsComponent } from './parametres/depenses-settings/depenses-settings.component';
 import { FacturationComponent } from './facturation/facturation.component';
 import { CategorieDepenseComponent } from './parametres/categorie-depense/categorie-depense.component';
+import { FactureClientComponent } from './facturation/facture-client/facture-client.component';
+import { SalleAttenteComponent } from './salle-attente/salle-attente.component';
+import { SecuriteComponent } from './securite/securite.component';
+import { GroupsComponent } from './securite/groups/groups.component';
+import { GroupSettingsComponent } from './securite/groups/group-settings/group-settings.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +52,12 @@ const routes: Routes = [
   {path:'certificat-medical-settings',component:CerificatsMedicauxSettingComponent},
   {path:'depense-settings',component:DepensesSettingsComponent},
   {path:'facturation',component:FacturationComponent},
-  {path:'depenses-categories',component:CategorieDepenseComponent}
+  {path:'depenses-categories',component:CategorieDepenseComponent},
+  {path:'facture-client',component:FactureClientComponent},
+  {path:'salle-attente',component:SalleAttenteComponent},
+  {path:'securite',component:SecuriteComponent},
+  {path:'user-group',component:GroupsComponent},
+  {path:'group-settings',component:GroupSettingsComponent}
 ];
 
 @NgModule({

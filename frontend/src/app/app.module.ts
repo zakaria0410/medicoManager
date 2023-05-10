@@ -49,6 +49,13 @@ import { FacturationComponent } from './facturation/facturation.component';
 import { NewDepenseComponent } from './facturation/depenses/new-depense/new-depense.component';
 import { CategorieDepenseComponent } from './parametres/categorie-depense/categorie-depense.component';
 import { NewCategorieDepenseComponent } from './parametres/categorie-depense/new-categorie-depense/new-categorie-depense.component';
+import { FactureClientComponent } from './facturation/facture-client/facture-client.component';
+import { SalleAttenteComponent } from './salle-attente/salle-attente.component';
+import { TempsAttenteMoyenComponent } from './salle-attente/temps-attente-moyen/temps-attente-moyen.component';
+import { NgChartsModule } from 'ng2-charts';
+import { GroupsComponent } from './securite/groups/groups.component';
+import { SecuriteComponent } from './securite/securite.component';
+import { GroupSettingsComponent } from './securite/groups/group-settings/group-settings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +97,13 @@ import { NewCategorieDepenseComponent } from './parametres/categorie-depense/new
     FacturationComponent,
     NewDepenseComponent,
     CategorieDepenseComponent,
-    NewCategorieDepenseComponent
+    NewCategorieDepenseComponent,
+    FactureClientComponent,
+    SalleAttenteComponent,
+    TempsAttenteMoyenComponent,
+    GroupsComponent,
+    SecuriteComponent,
+    GroupSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +113,8 @@ import { NewCategorieDepenseComponent } from './parametres/categorie-depense/new
     NgbModule,
     BsDropdownModule.forRoot(),
 FormsModule,
-NgxPrintModule
+NgxPrintModule,
+NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

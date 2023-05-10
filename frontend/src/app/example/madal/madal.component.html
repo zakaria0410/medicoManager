@@ -1,28 +1,45 @@
 <ng-template #content let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title text-primary" id="modal-basic-title">{{title}}</h4>
-		<button type="button" class="btn-close bg-secondary" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<div class="modal-body">
-	
-<app-new-patient *ngIf="component=='patient'"></app-new-patient>
-<app-new-rdv *ngIf="component=='rdv'"></app-new-rdv>
-<app-new-traitement *ngIf="component=='traitement'"></app-new-traitement>
-<app-bilan-types *ngIf="component=='bilan-type'"></app-bilan-types>
-<app-new-certificat *ngIf="component=='certificat'"></app-new-certificat>
-<app-edition-certificat *ngIf="component=='edition-certificat'"></app-edition-certificat>
-<app-new-acte-soin *ngIf="component=='acte-soin'"></app-new-acte-soin>
-<app-new-medicament *ngIf="component=='medicament'"></app-new-medicament>
-<app-new-bilan *ngIf="component=='bilan'"></app-new-bilan>
-<app-new-bilan-type *ngIf="component=='bilan-type-param'"></app-new-bilan-type>
-<app-new-categorie-depense *ngIf="component=='categ-depense'"></app-new-categorie-depense>
-</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-secondary text-white btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-	</div>
+  <div class="modal-header">
+    <h4 class="modal-title text-primary" id="modal-basic-title">{{ title }}</h4>
+    <button
+      type="button"
+      class="btn-close text-primary"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-new-patient *ngIf="component == 'patient'"></app-new-patient>
+    <app-new-rdv *ngIf="component == 'rdv'"></app-new-rdv>
+    <app-new-traitement *ngIf="component == 'traitement'"></app-new-traitement>
+    <app-bilan-types *ngIf="component == 'bilan-type'"></app-bilan-types>
+    <app-new-certificat *ngIf="component == 'certificat'"></app-new-certificat>
+    <app-edition-certificat
+      *ngIf="component == 'edition-certificat'"
+    ></app-edition-certificat>
+    <app-new-acte-soin *ngIf="component == 'acte-soin'"></app-new-acte-soin>
+    <app-new-medicament *ngIf="component == 'medicament'"></app-new-medicament>
+    <app-new-bilan *ngIf="component == 'bilan'"></app-new-bilan>
+    <app-new-bilan-type
+      *ngIf="component == 'bilan-type-param'"
+    ></app-new-bilan-type>
+    <app-new-categorie-depense
+      *ngIf="component == 'categ-depense'"
+    ></app-new-categorie-depense>
+	<app-new-depense *ngIf="component == 'new-depense'"></app-new-depense>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-primary text-white btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
 </ng-template>
 
-<button class="btn btn-lg btn-secondary" (click)="open(content)">
-  <i [ngClass]="'fas fa-'+icon"></i>
-  <span *ngIf="title!=null"></span>{{title}}</button>
-
+	<button class="shadow-sm" [ngClass]="classButton==null?'btn btn-lg btn-primary':classButton" (click)="open(content)">
+  <i [ngClass]="'mr-2 fas fa-' + icon"></i>
+  <span *ngIf="title != null">{{ title }}</span>
+</button>

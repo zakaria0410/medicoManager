@@ -1,0 +1,79 @@
+<div class="container rounded border border-gray">
+ 
+    <div class="row">
+        <div class="col-md-12 mb-4 bg-white p-3">
+          <form class="d-flex justify-content-center">
+            <div class="form-group">
+              <label for="search" class="sr-only">Recherche de patient</label>
+              <input type="text" class="form-control" id="search" placeholder="Recherche de patient">
+            </div>
+            <button type="submit" class="btn btn-primary ml-2"><i class="fas fa-search mr-2"></i>Rechercher</button>
+          </form>
+        </div>
+      </div>
+      <h1 class="my-4 text-primary">Situation paiement pour John Doe</h1>
+    <div class="row">
+      <div class="col-md-3">
+        <form class="card p-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Nouveau Paiement</h5>
+                <div class="form-group">
+                    <label for="montant">Montant</label>
+                    <input type="number" class="form-control" id="montant" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary mt-3">Ajouter paiement</button>
+            </div>
+
+        </form>
+      </div>
+      <div class="col-md-9">
+  
+  <div class="table-responsive bg-white p-2">
+    <h4 class="my-4 text-primary">Historique Paiement pour John Doe</h4>
+    <table class="table table-hover table-striped p-2">
+        
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Montant payé</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2023-05-08</td>
+            <td class="text-success">50€</td>
+            <td class="text-danger">20€</td>
+          </tr>
+          <tr>
+            <td>2023-05-01</td>
+            <td class="text-success">75€</td>
+            <td class="text-success">75€</td>
+          </tr>
+          <tr>
+            <td>2023-04-24</td>
+            <td class="text-success">100€</td>
+            <td class="text-danger">50€</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="text-right">Total payé :</td>
+            <td class="text-success">145€</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="text-right">Total restant :</td>
+            <td class="text-danger">80€</td>
+          </tr>
+        </tfoot>
+      </table>
+  </div>
+        
+      </div>
+    </div>
+  </div>
+  
