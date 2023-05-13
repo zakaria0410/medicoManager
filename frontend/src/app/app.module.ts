@@ -25,7 +25,7 @@ import { NewTraitementComponent } from './patients/fiche-patient/new-traitement/
 import { ShcemaDentaireComponent } from './patients/fiche-patient/shcema-dentaire/shcema-dentaire.component';
 import { BilanTypesComponent } from './patients/fiche-patient/bilan-types/bilan-types.component';
 import { OrdonnaceComponent } from './fiche-patient/ordonnace/ordonnace.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CertificatsComponent } from './fiche-patient/certificats/certificats.component';
 import { NewCertificatComponent } from './fiche-patient/certificats/new-certificat/new-certificat.component';
 import { NgxPrintModule } from 'ngx-print';
@@ -56,6 +56,15 @@ import { NgChartsModule } from 'ng2-charts';
 import { GroupsComponent } from './securite/groups/groups.component';
 import { SecuriteComponent } from './securite/securite.component';
 import { GroupSettingsComponent } from './securite/groups/group-settings/group-settings.component';
+import { FormComponent } from './utils/form/form.component';
+import { InputTextComponent } from './utils/form/input-text/input-text.component';
+import { InputNumberComponent } from './utils/form/input-number/input-number.component';
+import { SelectStaticComponent } from './utils/form/select-static/select-static.component';
+import { SelectApiComponent } from './utils/form/select-api/select-api.component';
+import { InputAutocompleteComponent } from './utils/form/input-autocomplete/input-autocomplete.component';
+import { InputAutocompleteStaticComponent } from './utils/form/input-autocomplete-static/input-autocomplete-static.component';
+import { TextAreaComponent } from './utils/form/text-area/text-area.component';
+import { InputDateComponent } from './utils/form/input-date/input-date.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,11 +112,21 @@ import { GroupSettingsComponent } from './securite/groups/group-settings/group-s
     TempsAttenteMoyenComponent,
     GroupsComponent,
     SecuriteComponent,
-    GroupSettingsComponent
+    GroupSettingsComponent,
+    FormComponent,
+    InputTextComponent,
+    InputNumberComponent,
+    SelectStaticComponent,
+    SelectApiComponent,
+    InputAutocompleteComponent,
+    InputAutocompleteStaticComponent,
+    TextAreaComponent,
+    InputDateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FullCalendarModule,
     TabsModule,
     NgbModule,

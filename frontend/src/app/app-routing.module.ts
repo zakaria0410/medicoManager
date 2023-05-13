@@ -28,6 +28,7 @@ import { SalleAttenteComponent } from './salle-attente/salle-attente.component';
 import { SecuriteComponent } from './securite/securite.component';
 import { GroupsComponent } from './securite/groups/groups.component';
 import { GroupSettingsComponent } from './securite/groups/group-settings/group-settings.component';
+import { FormComponent } from './utils/form/form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -57,7 +58,8 @@ const routes: Routes = [
   {path:'salle-attente',component:SalleAttenteComponent},
   {path:'securite',component:SecuriteComponent},
   {path:'user-group',component:GroupsComponent},
-  {path:'group-settings',component:GroupSettingsComponent}
+  {path:'group-settings',component:GroupSettingsComponent},
+  {path:'form',component:FormComponent}
 ];
 
 @NgModule({

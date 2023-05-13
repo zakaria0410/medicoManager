@@ -1,0 +1,15 @@
+<div class="form-group">
+  <label>{{ label }}</label>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="selectedValue"
+    [placeholder]="placeholder"
+    (input)="filterValues($event)"
+  />
+  <ul *ngIf="filteredValues && filteredValues.length > 0" class="autocomplete-list">
+    <li *ngFor="let value of filteredValues" (click)="selectValue(value)">
+      {{ value }}
+    </li>
+  </ul>
+</div>
