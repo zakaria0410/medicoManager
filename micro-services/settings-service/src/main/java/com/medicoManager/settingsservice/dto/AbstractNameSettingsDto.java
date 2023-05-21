@@ -1,6 +1,11 @@
 package com.medicoManager.settingsservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+
 public class AbstractNameSettingsDto extends BaseDTO {
+
 
     private String name;
 
@@ -11,6 +16,12 @@ public class AbstractNameSettingsDto extends BaseDTO {
     public void setName(String name) {
         this.name = name;
     }
+
+   /* public AbstractNameSettingsDto() {
+        super();
+    }
+*/
+
 // Getters and setters for name
 
     // Other properties and methods for all name settings DTOs

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -14,11 +14,17 @@ export class MadalComponent implements OnInit {
 	@Input() icon
 	@Input() modalStyle
 	@Input() classButton
+	@Input() urlExport
+	@Output() actionAcomplished=new EventEmitter
 	constructor(private modalService: NgbModal) {}
 	ngOnInit(): void {
 		//throw new Error('Method not implemented.');
 	}
-
+closeModal(content) {
+    if (content) {
+     content.close();
+    }
+  }
 	open(content) {
 		this.modalService.open(content,Object.assign( {ariaLabelledBy: 'modal-basic-title' },this.modalStyle)).result.then(
 			(result) => {

@@ -4,27 +4,34 @@ import java.time.LocalDate;
 
 public class MedicamentDto extends AbstractNameSettingsDto{
 
-
     private String description;
     private Double prix;
     private String dosage;
-    private String forme;
+    private String contreIndication;
+
+    private String fabricant;
     private LocalDate dateDePeremption;
 
     //constructeurs
-    public MedicamentDto() {}
 
-    public MedicamentDto(String description, Double prix, String dosage, String forme, LocalDate dateDePeremption) {
-
-        this.description = description;
-        this.prix = prix;
-        this.dosage = dosage;
-        this.forme = forme;
-        this.dateDePeremption = dateDePeremption;
-    }
 
     //getters and setters
 
+
+
+
+
+    public void setContreIndication(String contreIndication) {
+        this.contreIndication = contreIndication;
+    }
+
+    public String getFabricant() {
+        return fabricant;
+    }
+
+    public void setFabricant(String fabricant) {
+        this.fabricant = fabricant;
+    }
 
     public String getDescription() {
         return description;
@@ -50,13 +57,10 @@ public class MedicamentDto extends AbstractNameSettingsDto{
         this.dosage = dosage;
     }
 
-    public String getForme() {
-        return forme;
+    public String getContreIndication() {
+        return contreIndication;
     }
 
-    public void setForme(String forme) {
-        this.forme = forme;
-    }
 
     public LocalDate getDateDePeremption() {
         return dateDePeremption;

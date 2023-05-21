@@ -11,6 +11,16 @@ public  class BilanMapperService extends NameEntityMapperService<Bilan, BilanDto
 
 
     @Override
+    protected BilanDto instanciateDto() {
+         return new BilanDto();
+    }
+
+    @Override
+    protected Bilan instanciateEntity() {
+         return new Bilan();
+    }
+
+    @Override
     protected Class<BilanDto> getDtoClass() {
         return BilanDto.class;
     }

@@ -11,6 +11,16 @@ public  class BilanTextuelMapperService extends AbstractBilanMapperService<Bilan
 
 
     @Override
+    protected BilanTextuelDto instanciateDto() {
+        return new BilanTextuelDto();
+    }
+
+    @Override
+    protected BilanTextuel instanciateEntity() {
+        return new BilanTextuel();
+    }
+
+    @Override
     protected Class<BilanTextuelDto> getDtoClass() {
         return BilanTextuelDto.class;
     }

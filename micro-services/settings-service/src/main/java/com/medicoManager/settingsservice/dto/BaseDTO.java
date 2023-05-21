@@ -1,14 +1,8 @@
 package com.medicoManager.settingsservice.dto;
 
-public abstract class BaseDTO {
-    private Long id;
+public  class BaseDTO {
 
-    public BaseDTO() {
-    }
-
-    public BaseDTO(Long id) {
-        this.id = id;
-    }
+private Long id;
 
     public Long getId() {
         return id;
@@ -17,5 +11,10 @@ public abstract class BaseDTO {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public BaseDTO() {
+    }
+
+
 }
 

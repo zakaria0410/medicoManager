@@ -10,6 +10,17 @@ import java.lang.reflect.InvocationTargetException;
 
 public abstract class NameEntityMapperService<E extends AbstractNameSettings, D extends AbstractNameSettingsDto> extends BaseEntityMapperService<E,D> {
 
+    @Override
+    public E toEntity(D dto) {
+        E entity= super.toEntity(dto);
+        entity.setName(dto.getName());
+        return entity;
+    }
 
-
+    @Override
+    public D toDto(E e) {
+        D dto=super.toDto(e);
+        dto.setName(e.getName());
+        return dto;
+    }
 }

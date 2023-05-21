@@ -11,6 +11,16 @@ public  class OrdonanceTypeMapperService extends NameEntityMapperService<Ordonan
 
 
     @Override
+    protected OrdonanceTypeDto instanciateDto() {
+        return new OrdonanceTypeDto();
+    }
+
+    @Override
+    protected OrdonanceType instanciateEntity() {
+        return new OrdonanceType();
+    }
+
+    @Override
     protected Class<OrdonanceTypeDto> getDtoClass() {
         return OrdonanceTypeDto.class;
     }

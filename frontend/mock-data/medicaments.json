@@ -1,0 +1,191 @@
+[
+  {
+
+    "name": "Paracetamol",
+    "fabricant": "Johnson & Johnson",
+    "dosage": "500 mg",
+    "contreIndication": "Insuffisance hépatique"
+  },
+  {
+
+    "name": "Ibuprofen",
+    "fabricant": "Pfizer",
+    "dosage": "200 mg",
+    "contreIndication": "Ulcère gastroduodénal"
+  },
+  {
+
+    "name": "Amoxicillin",
+    "fabricant": "Novartis",
+    "dosage": "500 mg",
+    "contreIndication": "Allergie aux pénicillines"
+  },
+  {
+
+    "name": "Lisinopril",
+    "fabricant": "AstraZeneca",
+    "dosage": "10 mg",
+    "contreIndication": "Grossesse"
+  },
+  {
+
+    "name": "Simvastatin",
+    "fabricant": "Merck",
+    "dosage": "20 mg",
+    "contreIndication": "Hypersensibilité au simvastatin"
+  },
+  {
+
+    "name": "Levothyroxine",
+    "fabricant": "Abbott Laboratories",
+    "dosage": "50 mcg",
+    "contreIndication": "Hyperthyroïdie non traitée"
+  },
+  {
+
+    "name": "Metformin",
+    "fabricant": "Bristol-Myers Squibb",
+    "dosage": "500 mg",
+    "contreIndication": "Insuffisance rénale sévère"
+  },
+  {
+
+    "name": "Aspirin",
+    "fabricant": "Bayer",
+    "dosage": "81 mg",
+    "contreIndication": "Troubles de la coagulation"
+  },
+  {
+
+    "name": "Atorvastatin",
+    "fabricant": "Pfizer",
+    "dosage": "40 mg",
+    "contreIndication": "Maladie hépatique active"
+  },
+  {
+
+    "name": "Omeprazole",
+    "fabricant": "AstraZeneca",
+    "dosage": "20 mg",
+    "contreIndication": "Réaction allergique connue"
+  },
+  {
+
+    "name": "Metoprolol",
+    "fabricant": "Novartis",
+    "dosage": "50 mg",
+    "contreIndication": "Insuffisance cardiaque décompensée"
+  },
+  {
+
+    "name": "Losartan",
+    "fabricant": "Mylan",
+    "dosage": "50 mg",
+    "contreIndication": "Grossesse"
+  },
+  {
+
+    "name": "Prednisone",
+    "fabricant": "Pfizer",
+    "dosage": "5 mg",
+    "contreIndication": "Infection fongique systémique"
+  },
+  {
+
+    "name": "Metronidazole",
+    "fabricant": "Sanofi",
+    "dosage": "250 mg",
+    "contreIndication": "Alcoolisme"
+  },
+  {
+
+    "name": "Ciprofloxacin",
+    "fabricant": "Bayer",
+    "dosage": "500 mg",
+    "contreIndication": "Tendinite liée à la fluoroquinolone"
+  },
+  {
+
+    "name": "Ventolin",
+    "fabricant": "GlaxoSmithKline",
+    "dosage": "100 mcg",
+    "contreIndication": "Hypersensibilité au salbutamol"
+  },
+  {
+
+    "name": "Metoclopramide",
+    "fabricant": "Teva",
+    "dosage": "10 mg",
+    "contreIndication": "Tumeur de l'hypophyse"
+  },
+  {
+
+    "name": "Fluoxetine",
+    "fabricant": "Eli Lilly and Company",
+    "dosage": "20 mg",
+    "contreIndication": "Prise concomitante d'inhibiteurs de la MAO"
+  },
+  {
+
+    "name": "Diazepam",
+    "fabricant": "Roche",
+    "dosage": "5 mg",
+    "contreIndication": "Myasthénie"
+  },
+  {
+
+    "name": "Warfarin",
+    "fabricant": "Bristol-Myers Squibb",
+    "dosage": "2 mg",
+    "contreIndication": "Troubles de la coagulation sanguine"
+  },
+  {
+
+    "name": "Tramadol",
+    "fabricant": "Janssen Pharmaceuticals",
+    "dosage": "50 mg",
+    "contreIndication": "Dépression respiratoire sévère"
+  },
+  {
+
+    "name": "Amlodipine",
+    "fabricant": "Pfizer",
+    "dosage": "5 mg",
+    "contreIndication": "Choc cardiogénique"
+  },
+  {
+
+    "name": "Escitalopram",
+    "fabricant": "Forest Laboratories",
+    "dosage": "10 mg",
+    "contreIndication": "Prise concomitante d'inhibiteurs de la MAO"
+  },
+  {
+
+    "name": "Acetaminophen",
+    "fabricant": "Johnson & Johnson",
+    "dosage": "500 mg",
+    "contreIndication": "Insuffisance hépatique"
+  },
+  {
+
+    "name": "Cetirizine",
+    "fabricant": "Pfizer",
+    "dosage": "10 mg",
+    "contreIndication": "Insuffisance rénale sévère"
+  },
+  {
+
+    "name": "Albuterol",
+    "fabricant": "Pfizer",
+    "dosage": "2 mg",
+    "contreIndication": "Tachycardie"
+  },
+  {
+
+    "name": "Azithromycin",
+    "fabricant": "Pfizer",
+    "dosage": "500 mg",
+    "contreIndication": "Hypersensibilité à l'azithromycine"
+  }
+]

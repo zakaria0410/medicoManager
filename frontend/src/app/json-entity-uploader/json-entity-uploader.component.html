@@ -1,0 +1,16 @@
+<div class="row tewt-center">
+  <form (ngSubmit)="uploadFile()" enctype="multipart/form-data">
+    <input
+      type="file"
+      name="file"
+      (change)="onFileSelected($event)"
+      accept=".json"
+    />
+    <button class="btn btn-secondary " type="submit"><i class="fas fa-upload"></i>Upload</button>
+  </form>
+</div>
+
+<div *ngIf="uploadProgress !== undefined">
+  <p>Upload Progress: {{ uploadProgress }}%</p>
+  <progress max="100" [value]="uploadProgress"></progress>
+</div>

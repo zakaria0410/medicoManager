@@ -7,6 +7,7 @@ public class OrdonanceTypeDto extends AbstractNameSettingsDto{
     private List<MedicamentDto> medicaments;
 
 
+
     public List<MedicamentDto> getMedicaments() {
         return medicaments;
     }

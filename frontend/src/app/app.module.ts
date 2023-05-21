@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -65,6 +66,7 @@ import { InputAutocompleteComponent } from './utils/form/input-autocomplete/inpu
 import { InputAutocompleteStaticComponent } from './utils/form/input-autocomplete-static/input-autocomplete-static.component';
 import { TextAreaComponent } from './utils/form/text-area/text-area.component';
 import { InputDateComponent } from './utils/form/input-date/input-date.component';
+import { JsonEntityUploaderComponent } from './json-entity-uploader/json-entity-uploader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,7 +123,8 @@ import { InputDateComponent } from './utils/form/input-date/input-date.component
     InputAutocompleteComponent,
     InputAutocompleteStaticComponent,
     TextAreaComponent,
-    InputDateComponent
+    InputDateComponent,
+    JsonEntityUploaderComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +136,8 @@ import { InputDateComponent } from './utils/form/input-date/input-date.component
     BsDropdownModule.forRoot(),
 FormsModule,
 NgxPrintModule,
-NgChartsModule
+NgChartsModule,
+HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

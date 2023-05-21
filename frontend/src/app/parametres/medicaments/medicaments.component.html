@@ -1,73 +1,57 @@
-<div class="container-fluid bg-white">
+<div style="overflow-y: auto; max-height: 100vh;" class="container-fluid bg-white">
     <div class="d-flex justify-content-between p-3 text-primary">
         <h2 >Gestion des médicaments</h2> 
-           <app-madal
-        [title]="'Nouveau Medicament'"
+     <div class="d-flex justify-content-between">
+      <app-madal
+      [title]="'Nouveau Medicament'"
 [component]="'medicament'"
 [modalStyle]="{ size: 'lg' }"
 [icon]="'plus'"
+[classButton]="'btn btn-success'"
 ></app-madal>
+
+
+
+<app-madal
+class="ml-2"
+[title]="'Import Medicament'"
+[component]="'json-importer'"
+[modalStyle]="{ size: 'lg' }"
+[icon]="'sync'"
+[classButton]="'btn btn-success'"
+[urlExport]="'api/medicament'"
+></app-madal>
+     </div>     
     </div>
 
   <div class="row">
   
-    <div class="col-md-12 table-responsive">
+    <div  class="col-md-12 table-responsive">
       <table class="table">
         <thead>
           <tr>
-            <th>Nom</th>
+            <th>Nom<br/>  <input   [(ngModel)]="inputValue" (input)="inputValueSubject.next(inputValue)"></th>
             <th>Description</th>
             <th>Dosage</th>
             <th>Contre-indication</th>
-            <th>Prix</th>
+          
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Amoxicilline</td>
-            <td>Antibiotique</td>
-            <td>500mg</td>
-            <td>Allergie aux pénicillines</td>
-            <td>3.00€</td>
+          <tr *ngFor="let medicament of medicaments">
+            <td>{{ medicament.name }}</td>
+            <td>{{ medicament. description }}</td>
+            <td>{{ medicament.dosage }}</td>
+            <td>{{ medicament.contreIndication}}</td>
+  
             <td>
               <button type="button" class="btn btn-sm btn-danger">
                 Supprimer
               </button>
             </td>
           </tr>
-          <tr>
-            <td>Clindamycine</td>
-            <td>Antibiotique</td>
-            <td>300mg</td>
-            <td>Antécédent de colite associée aux antibiotiques</td>
-            <td>5.00€</td>
-            <td>
-              <button type="button" class="btn btn-sm btn-danger">
-                Supprimer
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Lidocaine</td>
-            <td>Anesthésique local</td>
-            <td>2%</td>
-            <td>Allergie aux anesthésiques locaux de type amide</td>
-            <td>4.50€</td>
-            <td>
-              <button type="button" class="btn btn-sm btn-danger">
-                Supprimer
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Paracétamol</td>
-            <td>Antipyrétique, antalgique</td>
-            <td>500mg</td>
-            <td>Aucune</td>
-            <td>2.50€</td>
-            <td><button type="button"></button></td>
-          </tr>
+  
         </tbody>
       </table>
     </div>

@@ -13,17 +13,34 @@ public class Medicament extends AbstractNameSettings {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "prix", nullable = false)
+    @Column(name = "prix")
     private Double prix;
 
     @Column(name = "dosage")
     private String dosage;
 
-    @Column(name = "forme")
-    private String forme;
+    @Column(name = "contre_indication")
+    private String contreIndication;
 
+    private String fabricant;
     @Column(name = "date_de_peremption")
     private LocalDate dateDePeremption;
+
+    public String getContreIndication() {
+        return contreIndication;
+    }
+
+    public void setContreIndication(String contre_indication) {
+        this.contreIndication = contre_indication;
+    }
+
+    public String getFabricant() {
+        return fabricant;
+    }
+
+    public void setFabricant(String fabricant) {
+        this.fabricant = fabricant;
+    }
 
     public String getDescription() {
         return description;
@@ -49,13 +66,7 @@ public class Medicament extends AbstractNameSettings {
         this.dosage = dosage;
     }
 
-    public String getForme() {
-        return forme;
-    }
 
-    public void setForme(String forme) {
-        this.forme = forme;
-    }
 
     public LocalDate getDateDePeremption() {
         return dateDePeremption;

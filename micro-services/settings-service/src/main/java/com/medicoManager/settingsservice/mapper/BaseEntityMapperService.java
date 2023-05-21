@@ -2,41 +2,33 @@ package com.medicoManager.settingsservice.mapper;
 
 import com.medicoManager.settingsservice.dto.BaseDTO;
 import com.medicoManager.settingsservice.model.BaseEntity;
-import org.springframework.beans.BeanUtils;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public abstract class BaseEntityMapperService<E extends BaseEntity, D extends BaseDTO> {
+
+
     public E toEntity(D dto) {
-        E entity = null;
-        try {
-            entity = getEntityClass().getDeclaredConstructor().newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException("Failed to create entity instance", e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
-        BeanUtils.copyProperties(dto, entity);
+        E entity = instanciateEntity();
+        entity.setId(dto.getId());
         return entity;
     }
+    protected abstract D instanciateDto();
+    protected abstract E instanciateEntity();
 
-    public D toDto(E entity) {
-        D dto = null;
-        try {
-            dto = getDtoClass().getDeclaredConstructor().newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException("Failed to create DTO instance", e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
-        BeanUtils.copyProperties(entity, dto);
-        return dto;
-    }
+
     protected abstract Class<D> getDtoClass();
+
     protected abstract Class<E> getEntityClass();
 
+
+    public D toDto(E e) {
+        D dto=instanciateDto();
+        dto.setId(e.getId());
+        return dto;
+    }
 }

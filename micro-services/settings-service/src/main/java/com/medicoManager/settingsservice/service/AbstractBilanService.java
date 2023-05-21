@@ -5,6 +5,6 @@ import com.medicoManager.settingsservice.model.Bilan;
 import org.springframework.stereotype.Service;
 
 
-public class AbstractBilanService<E extends Bilan,D extends BilanDto> extends AbstractNameSettingsService<E, D> {
+public abstract class AbstractBilanService<E extends Bilan,D extends BilanDto> extends AbstractNameSettingsService<E, D> {
 }
 

@@ -16,8 +16,12 @@ public abstract class AbstractNameSettingsController<T extends AbstractNameSetti
     private AbstractNameSettingsService<T,D> service;
 
     @GetMapping("/name/{name}")
-    public List<D> getAllByName(@PathVariable String name) {
+    public List<D> getAllByName(@PathVariable(required = false) String name) {
         return service.getAllByName(name);
+    }
+    @GetMapping("/name/")
+    public List<D> getAllByName() {
+        return service.getAll();
     }
 
 

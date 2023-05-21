@@ -18,7 +18,8 @@ public abstract class AbstractNameSettingsService<T extends AbstractNameSettings
     private NameEntityMapperService<T, D> nameEntityMapperService;
 
     public List<D> getAllByName(String name) {
-        return repository.findByName(name).stream().map(entity -> nameEntityMapperService.toDto(entity)).collect(Collectors.toList());
+        if(name.isBlank())return repository.findAll().stream().map(entity->nameEntityMapperService.toDto(entity)).collect(Collectors.toList());
+    else    return repository.findAll().stream().filter(entity->entity.getName().toLowerCase().contains(name.toLowerCase())).map(entity -> nameEntityMapperService.toDto(entity)).collect(Collectors.toList());
     }
 
 

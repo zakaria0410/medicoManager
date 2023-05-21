@@ -27,6 +27,11 @@
       *ngIf="component == 'categ-depense'"
     ></app-new-categorie-depense>
 	<app-new-depense *ngIf="component == 'new-depense'"></app-new-depense>
+<div       *ngIf="component == 'json-importer'">
+  <app-json-entity-uploader (actionAcomplished)="modal.dismiss('')" [urlExport]="urlExport"></app-json-entity-uploader>
+</div>
+
+
   </div>
   <div class="modal-footer">
     <button
