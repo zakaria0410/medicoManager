@@ -14,7 +14,7 @@ public  class MedicamentMapperService extends NameEntityMapperService<Medicament
         m.setContreIndication(dto.getContreIndication());
         m.setDosage(dto.getDosage());
         m.setPrix(dto.getPrix());
-        m.setDescription(dto.getDescription());
+      //  m.setDescription(dto.getDescription());
         m.setFabricant(dto.getFabricant());
         return m;
     }
@@ -26,7 +26,7 @@ public  class MedicamentMapperService extends NameEntityMapperService<Medicament
         m.setContreIndication(entity.getContreIndication());
         m.setDosage(entity.getDosage());
         m.setPrix(entity.getPrix());
-        m.setDescription(entity.getDescription());
+       // m.setDescription(entity.getDescription());
         m.setFabricant(entity.getFabricant());
         return m;
     }

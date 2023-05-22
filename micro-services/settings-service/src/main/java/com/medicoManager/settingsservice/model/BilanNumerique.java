@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 public class BilanNumerique extends Bilan {
     private double valeur_min;
     private double valeur_max;
-
+private String uniteMesure;
     public double getValeur_min() {
         return valeur_min;
     }
@@ -19,6 +19,14 @@ public class BilanNumerique extends Bilan {
 
     public double getValeur_max() {
         return valeur_max;
+    }
+
+    public String getUniteMesure() {
+        return uniteMesure;
+    }
+
+    public void setUniteMesure(String uniteMesure) {
+        this.uniteMesure = uniteMesure;
     }
 
     public void setValeur_max(double valeur_max) {

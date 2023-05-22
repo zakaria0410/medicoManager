@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-public class AbstractBilanController<E extends  Bilan,D extends BilanDto> extends AbstractNameSettingsController<E, D> {
+public class AbstractBilanController<E extends  Bilan> extends AbstractNameSettingsController<E, BilanDto> {
+
 }
 
 

@@ -1,191 +1,205 @@
 [
   {
-
-    "name": "Paracetamol",
-    "fabricant": "Johnson & Johnson",
+    "name": "Doliprane",
+    "description": "Antalgique et antipyrétique",
     "dosage": "500 mg",
-    "contreIndication": "Insuffisance hépatique"
+    "contreIndication": "Allergie au paracétamol",
+    "fabricant": "Sanofi"
   },
   {
-
-    "name": "Ibuprofen",
-    "fabricant": "Pfizer",
+    "name": "Efferalgan",
+    "description": "Antalgique et antipyrétique",
+    "dosage": "1 g",
+    "contreIndication": "Allergie au paracétamol",
+    "fabricant": "Bristol-Myers Squibb"
+  },
+  {
+    "name": "Advil",
+    "description": "Anti-inflammatoire non stéroïdien",
     "dosage": "200 mg",
-    "contreIndication": "Ulcère gastroduodénal"
+    "contreIndication": "Grossesse, ulcère gastroduodénal",
+    "fabricant": "Pfizer"
   },
   {
-
-    "name": "Amoxicillin",
-    "fabricant": "Novartis",
-    "dosage": "500 mg",
-    "contreIndication": "Allergie aux pénicillines"
+    "name": "Nurofen",
+    "description": "Anti-inflammatoire non stéroïdien",
+    "dosage": "400 mg",
+    "contreIndication": "Grossesse, ulcère gastroduodénal",
+    "fabricant": "Reckitt Benckiser"
   },
   {
-
-    "name": "Lisinopril",
-    "fabricant": "AstraZeneca",
-    "dosage": "10 mg",
-    "contreIndication": "Grossesse"
+    "name": "Aspégic",
+    "description": "Antiagrégant plaquettaire",
+    "dosage": "100 mg",
+    "contreIndication": "Grossesse, ulcère gastroduodénal",
+    "fabricant": "Sanofi"
   },
   {
-
-    "name": "Simvastatin",
-    "fabricant": "Merck",
-    "dosage": "20 mg",
-    "contreIndication": "Hypersensibilité au simvastatin"
+    "name": "Toplexil",
+    "description": "Antitussif",
+    "dosage": "5 mg/5 ml",
+    "contreIndication": "Grossesse, allaitement",
+    "fabricant": "Sanofi"
   },
   {
-
-    "name": "Levothyroxine",
-    "fabricant": "Abbott Laboratories",
-    "dosage": "50 mcg",
-    "contreIndication": "Hyperthyroïdie non traitée"
+    "name": "Smecta",
+    "description": "Antidiarrhéique",
+    "dosage": "3 g",
+    "contreIndication": "Obstruction intestinale",
+    "fabricant": "Ipsen Pharma"
   },
   {
-
-    "name": "Metformin",
-    "fabricant": "Bristol-Myers Squibb",
-    "dosage": "500 mg",
-    "contreIndication": "Insuffisance rénale sévère"
+    "name": "Dafalgan",
+    "description": "Antalgique et antipyrétique",
+    "dosage": "1 g",
+    "contreIndication": "Allergie au paracétamol",
+    "fabricant": "UPSAMEDICA"
   },
   {
-
-    "name": "Aspirin",
-    "fabricant": "Bayer",
-    "dosage": "81 mg",
-    "contreIndication": "Troubles de la coagulation"
-  },
-  {
-
-    "name": "Atorvastatin",
-    "fabricant": "Pfizer",
-    "dosage": "40 mg",
-    "contreIndication": "Maladie hépatique active"
-  },
-  {
-
-    "name": "Omeprazole",
-    "fabricant": "AstraZeneca",
-    "dosage": "20 mg",
-    "contreIndication": "Réaction allergique connue"
-  },
-  {
-
-    "name": "Metoprolol",
-    "fabricant": "Novartis",
-    "dosage": "50 mg",
-    "contreIndication": "Insuffisance cardiaque décompensée"
-  },
-  {
-
-    "name": "Losartan",
-    "fabricant": "Mylan",
-    "dosage": "50 mg",
-    "contreIndication": "Grossesse"
-  },
-  {
-
-    "name": "Prednisone",
-    "fabricant": "Pfizer",
-    "dosage": "5 mg",
-    "contreIndication": "Infection fongique systémique"
-  },
-  {
-
-    "name": "Metronidazole",
-    "fabricant": "Sanofi",
-    "dosage": "250 mg",
-    "contreIndication": "Alcoolisme"
-  },
-  {
-
-    "name": "Ciprofloxacin",
-    "fabricant": "Bayer",
-    "dosage": "500 mg",
-    "contreIndication": "Tendinite liée à la fluoroquinolone"
-  },
-  {
-
-    "name": "Ventolin",
-    "fabricant": "GlaxoSmithKline",
-    "dosage": "100 mcg",
-    "contreIndication": "Hypersensibilité au salbutamol"
-  },
-  {
-
-    "name": "Metoclopramide",
-    "fabricant": "Teva",
-    "dosage": "10 mg",
-    "contreIndication": "Tumeur de l'hypophyse"
-  },
-  {
-
-    "name": "Fluoxetine",
-    "fabricant": "Eli Lilly and Company",
-    "dosage": "20 mg",
-    "contreIndication": "Prise concomitante d'inhibiteurs de la MAO"
-  },
-  {
-
-    "name": "Diazepam",
-    "fabricant": "Roche",
-    "dosage": "5 mg",
-    "contreIndication": "Myasthénie"
-  },
-  {
-
-    "name": "Warfarin",
-    "fabricant": "Bristol-Myers Squibb",
+    "name": "Imodium",
+    "description": "Antidiarrhéique",
     "dosage": "2 mg",
-    "contreIndication": "Troubles de la coagulation sanguine"
+    "contreIndication": "Colite ulcéreuse",
+    "fabricant": "Johnson & Johnson"
   },
   {
-
-    "name": "Tramadol",
-    "fabricant": "Janssen Pharmaceuticals",
-    "dosage": "50 mg",
-    "contreIndication": "Dépression respiratoire sévère"
+    "name": "Orofluco",
+    "description": "Antifongique",
+    "dosage": "150 mg",
+    "contreIndication": "Grossesse, allaitement",
+    "fabricant": "Pierre Fabre Médicament"
   },
   {
-
-    "name": "Amlodipine",
-    "fabricant": "Pfizer",
+    "name": "Gaviscon",
+    "description": "Anti-reflux gastro-œsophagien",
+    "dosage": "500 mg",
+    "contreIndication": "Insuffisance rénale",
+    "fabricant": "Reckitt Benckiser"
+  },
+  {
+    "name": "Strepsils",
+    "description": "Antiseptique local",
+    "dosage": "1,2 mg",
+    "contreIndication": "Allergie aux anesthésiques locaux",
+    "fabricant": "Reckitt Benckiser"
+  },
+  {
+    "name": "Hextril",
+    "description": "Antiseptique buccal",
+    "dosage": "0,1 %",
+    "contreIndication": "Hypersensibilité aux ammoniums quaternaires",
+    "fabricant": "Pierre Fabre Santé"
+  },
+  {
+    "name": "Daktarin",
+    "description": "Antifongique",
+    "dosage": "2 %",
+    "contreIndication": "Hypersensibilité au miconazole",
+    "fabricant": "Johnson & Johnson"
+  },
+  {
+    "name": "Euphytose",
+    "description": "Anxiolytique d'origine végétale",
+    "dosage": "N/A",
+    "contreIndication": "Grossesse, allaitement",
+    "fabricant": "Cooper"
+  },
+  {
+    "name": "Spasfon",
+    "description": "Antispasmodique",
+    "dosage": "80 mg",
+    "contreIndication": "Allergie à la phloroglucinol",
+    "fabricant": "Abbott France"
+  },
+  {
+    "name": "Smectalia",
+    "description": "Antidiarrhéique",
+    "dosage": "3 g",
+    "contreIndication": "Obstruction intestinale",
+    "fabricant": "Ipsen Pharma"
+  },
+  {
+    "name": "Maalox",
+    "description": "Anti-reflux gastro-œsophagien",
+    "dosage": "N/A",
+    "contreIndication": "Insuffisance rénale",
+    "fabricant": "Sanofi"
+  },
+  {
+    "name": "Microlax",
+    "description": "Laxatif",
+    "dosage": "5 ml",
+    "contreIndication": "N/A",
+    "fabricant": "Johnson & Johnson"
+  },
+  {
+    "name": "Orocal",
+    "description": "Supplément en calcium",
+    "dosage": "500 mg",
+    "contreIndication": "Hypercalcémie",
+    "fabricant": "Gifrer Barbezat"
+  },
+  {
+    "name": "Dulcolax",
+    "description": "Laxatif",
     "dosage": "5 mg",
-    "contreIndication": "Choc cardiogénique"
+    "contreIndication": "Obstruction intestinale",
+    "fabricant": "Boehringer Ingelheim"
   },
   {
-
-    "name": "Escitalopram",
-    "fabricant": "Forest Laboratories",
-    "dosage": "10 mg",
-    "contreIndication": "Prise concomitante d'inhibiteurs de la MAO"
+    "name": "Fervex",
+    "description": "Antipyrétique et décongestionnant",
+    "dosage": "N/A",
+    "contreIndication": "Grossesse, allaitement",
+    "fabricant": "UPSA SAS"
   },
   {
-
-    "name": "Acetaminophen",
-    "fabricant": "Johnson & Johnson",
-    "dosage": "500 mg",
-    "contreIndication": "Insuffisance hépatique"
+    "name": "Rhinospray",
+    "description": "Décongestionnant nasal",
+    "dosage": "1 mg",
+    "contreIndication": "Grossesse, allaitement",
+    "fabricant": "Johnson & Johnson"
   },
   {
-
-    "name": "Cetirizine",
-    "fabricant": "Pfizer",
-    "dosage": "10 mg",
-    "contreIndication": "Insuffisance rénale sévère"
+    "name": "Prontalgine",
+    "description": "Antalgique et antipyrétique",
+    "dosage": "N/A",
+    "contreIndication": "Allergie à la codéine",
+    "fabricant": "Sanofi"
   },
   {
-
-    "name": "Albuterol",
-    "fabricant": "Pfizer",
-    "dosage": "2 mg",
-    "contreIndication": "Tachycardie"
+    "name": "Novalgic",
+    "description": "Antalgique",
+    "dosage": "N/A",
+    "contreIndication": "Allergie à la dextropropoxyphène",
+    "fabricant": "Pierre Fabre Médicament"
   },
   {
-
-    "name": "Azithromycin",
-    "fabricant": "Pfizer",
-    "dosage": "500 mg",
-    "contreIndication": "Hypersensibilité à l'azithromycine"
+    "name": "Nasodren",
+    "description": "Décongestionnant nasal",
+    "dosage": "1 mg",
+    "contreIndication": "Hypersensibilité à la substance active",
+    "fabricant": "Laboratoires Urgo"
+  },
+  {
+    "name": "Humex",
+    "description": "Antitussif",
+    "dosage": "N/A",
+    "contreIndication": "Grossesse, allaitement",
+    "fabricant": "UPSA SAS"
+  },
+  {
+    "name": "Flector",
+    "description": "Anti-inflammatoire non stéroïdien",
+    "dosage": "1,3 %",
+    "contreIndication": "N/A",
+    "fabricant": "Laboratoires IBSA"
+  },
+  {
+    "name": "Cicatryl",
+    "description": "Antiseptique",
+    "dosage": "N/A",
+    "contreIndication": "Hypersensibilité à la substance active",
+    "fabricant": "Pierre Fabre Santé"
   }
 ]

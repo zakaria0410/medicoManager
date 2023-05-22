@@ -10,6 +10,14 @@ import javax.persistence.InheritanceType;
 @DiscriminatorColumn(name = "type_bilan")
 public class Bilan extends AbstractNameSettings {
 
+    private String codification;
 
+    public String getCodification() {
+        return codification;
+    }
+
+    public void setCodification(String codification) {
+        this.codification = codification;
+    }
 }
 

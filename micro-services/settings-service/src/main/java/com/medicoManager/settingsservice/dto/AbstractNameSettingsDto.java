@@ -6,6 +6,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class AbstractNameSettingsDto extends BaseDTO {
 
+private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     private String name;
 

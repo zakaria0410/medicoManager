@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/bilan/numerique")
-public class BilanNumeriqueController extends AbstractBilanController<BilanNumerique, BilanNumeriqueDto> {
+public class BilanNumeriqueController extends AbstractBilanController<BilanNumerique> {
 
 }
 

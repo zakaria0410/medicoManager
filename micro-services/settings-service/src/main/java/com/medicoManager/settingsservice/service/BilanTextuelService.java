@@ -12,10 +12,10 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class BilanTextuelService extends AbstractBilanService<BilanTextuel, BilanTextuelDto> {
+public class BilanTextuelService extends AbstractBilanService<BilanTextuel> {
     @Override
-    protected Class<BilanTextuelDto> getDtoClass() {
-        return BilanTextuelDto.class;
+    protected Class<BilanDto> getDtoClass() {
+        return BilanDto.class;
     }
 
     @Override
@@ -24,9 +24,9 @@ public class BilanTextuelService extends AbstractBilanService<BilanTextuel, Bila
     }
 
     @Override
-    public List<BilanTextuelDto> mapJsonToDto(MultipartFile file) {
+    public List<BilanDto> mapJsonToDto(MultipartFile file) {
      try {
-            return new ObjectMapper().readValue(file.getInputStream(), new TypeReference<List<BilanTextuelDto>>() {});
+            return new ObjectMapper().readValue(file.getInputStream(), new TypeReference<List<BilanDto>>() {});
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

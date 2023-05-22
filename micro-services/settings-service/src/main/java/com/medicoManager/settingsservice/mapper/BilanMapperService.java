@@ -11,6 +11,20 @@ public  class BilanMapperService extends NameEntityMapperService<Bilan, BilanDto
 
 
     @Override
+    public Bilan toEntity(BilanDto dto) {
+        Bilan entity= super.toEntity(dto);
+        entity.setCodification(dto.getCodification());
+return entity;
+    }
+
+    @Override
+    public BilanDto toDto(Bilan bilan) {
+        BilanDto bilanDto= super.toDto(bilan);
+        bilanDto.setCodification(bilan.getCodification());
+        return bilanDto;
+    }
+
+    @Override
     protected BilanDto instanciateDto() {
          return new BilanDto();
     }

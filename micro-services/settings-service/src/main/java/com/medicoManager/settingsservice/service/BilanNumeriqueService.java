@@ -2,6 +2,7 @@ package com.medicoManager.settingsservice.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.medicoManager.settingsservice.dto.BilanDto;
 import com.medicoManager.settingsservice.dto.BilanNumeriqueDto;
 import com.medicoManager.settingsservice.dto.BilanTextuelDto;
 import com.medicoManager.settingsservice.model.BilanNumerique;
@@ -13,22 +14,21 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class BilanNumeriqueService extends AbstractBilanService<BilanNumerique, BilanNumeriqueDto> {
+public class BilanNumeriqueService extends AbstractBilanService<BilanNumerique> {
+
     @Override
-    protected Class<BilanNumeriqueDto> getDtoClass() {
-        return BilanNumeriqueDto.class;
+    protected Class<BilanDto> getDtoClass() {
+        return BilanDto.class;
     }
-    @Override
-    public List<BilanNumeriqueDto> mapJsonToDto(MultipartFile file) {
-        try {
-            return new ObjectMapper().readValue(file.getInputStream(), new TypeReference<List<BilanNumeriqueDto>>() {});
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
     @Override
     protected Class<BilanNumerique> getEntityClass() {
         return BilanNumerique.class;
+    }
+
+    @Override
+    public List<BilanDto> mapJsonToDto(MultipartFile file) {
+        return null;
     }
 }
 

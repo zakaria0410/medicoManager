@@ -14,6 +14,7 @@ public abstract class NameEntityMapperService<E extends AbstractNameSettings, D 
     public E toEntity(D dto) {
         E entity= super.toEntity(dto);
         entity.setName(dto.getName());
+        entity.setDescription(dto.getDescription());
         return entity;
     }
 
@@ -21,6 +22,7 @@ public abstract class NameEntityMapperService<E extends AbstractNameSettings, D 
     public D toDto(E e) {
         D dto=super.toDto(e);
         dto.setName(e.getName());
+        dto.setDescription(e.getDescription());
         return dto;
     }
 }
