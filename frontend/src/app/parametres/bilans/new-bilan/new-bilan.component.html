@@ -2,25 +2,43 @@
 
     <div class="row mt-3">
       <div class="col-md-12">
-        <form>
-          <div class="form-group">
-            <label for="nomBilan">Nom du bilan</label>
-            <input type="text" class="form-control" id="nomBilan" placeholder="Nom du bilan">
+      
+
+        <form [formGroup]="bilanForm" (ngSubmit)="onSubmit()" class="p-4">
+          <div class="form-group mb-3">
+            <label for="nomBilan">Nom du bilan:</label>
+            <input type="text" class="form-control" id="nomBilan" formControlName="name" required>
           </div>
-          <div class="form-group">
-            <label for="uniteMesure">Unité de mesure</label>
-            <input type="text" class="form-control" id="uniteMesure" placeholder="Unité de mesure">
+          <div class="form-group mb-3">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" formControlName="description" required></textarea>
           </div>
-          <div class="form-group">
-            <label for="valeurMin">Valeur minimale</label>
-            <input type="number" class="form-control" id="valeurMin" placeholder="Valeur minimale">
+        
+          <div class="form-group mb-3">
+            <label for="codification">Codification:</label>
+            <input type="text" class="form-control" id="codification" formControlName="codification" required>
+          </div>    
+          <div class="form-group mb-3">
+            <label class="mr-3">Numérique:</label>
+            <input type="checkbox" formControlName="numerique">
           </div>
-          <div class="form-group">
-            <label for="valeurMax">Valeur maximale</label>
-            <input type="number" class="form-control" id="valeurMax" placeholder="Valeur maximale">
+        
+          <div *ngIf="bilanForm.get('numerique').value" class="form-group mb-3">
+            <label for="valeurMin">Valeur minimale:</label>
+            <input type="number" class="form-control" id="valeurMin" formControlName="valeur_min">
+        
+            <label for="valeurMax">Valeur maximale:</label>
+            <input type="number" class="form-control" id="valeurMax" formControlName="valeur_max">
+        
+            <label for="uniteMesure">Unité de mesure:</label>
+            <input type="text" class="form-control" id="uniteMesure" formControlName="uniteMesure">
           </div>
-     
+        
+    
+        
+          <button type="submit" class="btn btn-primary">Créer</button>
         </form>
+        
       </div>
     </div>
   </div>

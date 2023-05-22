@@ -1,13 +1,27 @@
-<div class="container-fluid">
+<div style="max-height: calc(100vh - 66px); overflow-y: auto;"  class="container-fluid">
   <div class="row">
     <div class="col-md-12 d-flex justify-content-between">
-      <h3 class="text-center text-primary">
-         Base de données des valeurs de paramétrage - Bilans
+      <h3 class="p-sticky text-center text-primary">
+        Base de données des valeurs de paramétrage - Bilans
       </h3>
-      <app-madal
-      [component]="'bilan'"
-      [title]="'Nouveau Bilan'"
-      [icon]="'plus'"></app-madal>
+      <div>
+        <app-madal
+          class="ml-2"
+          [title]="'Import Bilan'"
+          [component]="'json-importer'"
+          [modalStyle]="{ size: 'lg' }"
+          [icon]="'sync'"
+          [classButton]="'btn btn-success'"
+          [urlExport]="'api/bilan'"
+          (actionAcomplished)="  fetchBilans()"
+        ></app-madal>
+        <app-madal
+          [component]="'bilan'"
+          [title]="'Nouveau Bilan'"
+          [icon]="'plus'"
+          (actionAcomplished)="  fetchBilans()"
+        ></app-madal>
+      </div>
     </div>
   </div>
   <div class="row mt-3 bg-white">
@@ -16,86 +30,41 @@
         <table class="table table-striped">
           <thead>
             <tr>
+              <th scope="col">Code</th>
               <th scope="col">Nom du bilan</th>
+              <th scope="col">Description</th>
+              <th scope="col">type</th>
               <th scope="col">Unité de mesure</th>
               <th scope="col">Valeur minimale</th>
               <th scope="col">Valeur maximale</th>
-              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Pression artérielle</td>
-              <td>mmHg</td>
-              <td>90</td>
-              <td>140</td>
+            <tr *ngFor="let bilan of bilans">
+              <td>{{ bilan.codification }}</td>
+              <td>{{ bilan.name }}</td>
+              <td>{{ bilan.description }}</td>
+              <td><span *ngIf="bilan.numerique == true">Numérique</span>
+                <span *ngIf="bilan.numerique==false">Textuel</span></td>
+              <td>{{ bilan.uniteMesure }}</td>
+
+              <td><span *ngIf="bilan.numerique == true">{{bilan.valeur_min}}</span></td>
+              <td><span *ngIf="bilan.numerique == true">{{bilan.valeur_max}}</span></td>
               <td>
                 <app-madal
-                [component]="'bilan'"
-             [classButton]="'btn btn-primary btn-sm btn-icon btn-rounded-circle'"
-                [icon]="'edit'"></app-madal>
+                  [component]="'bilan'"
+                  [classButton]="
+                  
+                    'btn btn-primary btn-sm btn-icon btn-rounded-circle'
+                  "
+                  [icon]="'edit'"
+                  [object]="bilan" ></app-madal>
                 <a href="#" class="btn btn-outline-danger btn-sm mx-1">
                   <i class="fas fa-trash"></i>
                 </a>
               </td>
             </tr>
-            <tr>
-              <td>Fréquence cardiaque</td>
-              <td>bpm</td>
-              <td>60</td>
-              <td>100</td>
-              <td>
-             <app-madal
-                [component]="'bilan'"
-             [classButton]="'btn btn-primary btn-sm btn-icon btn-rounded-circle'"
-                [icon]="'edit'"></app-madal>
-                <a href="#" class="btn btn-outline-danger btn-sm mx-1">
-                  <i class="fas fa-trash"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Taux de cholestérol</td>
-              <td>mg/dL</td>
-              <td>120</td>
-              <td>200</td>
-              <td>
-             <app-madal
-                [component]="'bilan'"
-             [classButton]="'btn btn-primary btn-sm btn-icon btn-rounded-circle'"
-                [icon]="'edit'"></app-madal>
-                <a href="#" class="btn btn-outline-danger btn-sm mx-1">
-                  <i class="fas fa-trash"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Taux de glucose</td>
-              <td>mg/dL</td>
-              <td>70</td>
-              <td>110</td>
-              <td>
-             <app-madal
-                [component]="'bilan'"
-             [classButton]="'btn btn-primary btn-sm btn-icon btn-rounded-circle'"
-                [icon]="'edit'"></app-madal>
-                <a href="#" class="btn btn-outline-danger btn-sm mx-1">
-                  <i class="fas fa-trash"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Indice de masse corporelle</td>
-              <td>kg/m²</td>
-              <td>18.5</td>
-              <td>25</td>
-              <td>
-             <app-madal
-                [component]="'bilan'"
-             [classButton]="'btn btn-primary btn-sm btn-icon btn-rounded-circle'"
-                [icon]="'edit'"></app-madal>
-              </td>
-            </tr>
+      
           </tbody>
         </table>
       </div>

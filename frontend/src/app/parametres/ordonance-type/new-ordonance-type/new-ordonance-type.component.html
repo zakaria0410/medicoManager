@@ -1,0 +1,73 @@
+<form class="row" (ngSubmit)="submitForm()">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nom"
+        [(ngModel)]="ordonanceType.name"
+        name="nom"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea
+        class="form-control"
+        id="description"
+        [(ngModel)]="ordonanceType.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group mb-2">
+      <label for="medicament">Médicaments associés:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="medicament"
+        [(ngModel)]="selectedMedicament"
+        name="medicament"
+        (input)="searchMedicaments(selectedMedicament)"
+      />
+      <ul style="max-height: 100px;overflow-y: auto;" class="list-group mb-3">
+        <li
+          class="list-group-item"
+          *ngFor="let medicament of filteredMedicaments"
+        >
+          <a (click)="selectMedicament(medicament)">{{ medicament.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <h5>Médicaments sélectionnés:</h5>
+      <ul class="list-group">
+        <li
+          class="list-group-item d-flex justify-content-between"
+          *ngFor="let medicament of ordonanceType.medicaments; let i = index"
+        >
+          <div class="mb-2">
+            <b class="col-md-12">{{ medicament.name }}</b>
+            <p>{{ medicament.contreIndication }}</p>
+          </div>
+          
+          <button
+            type="button"
+            class="btn btn-sm btn-white text-danger float-right"
+            (click)="removeMedicament(i)"
+          >
+            <i class="fas fa-trash"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-12 text-center mt-3">
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </div>
+</form>

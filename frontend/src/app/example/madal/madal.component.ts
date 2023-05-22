@@ -15,6 +15,7 @@ export class MadalComponent implements OnInit {
 	@Input() modalStyle
 	@Input() classButton
 	@Input() urlExport
+	@Input() object
 	@Output() actionAcomplished=new EventEmitter
 	constructor(private modalService: NgbModal) {}
 	ngOnInit(): void {

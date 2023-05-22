@@ -67,6 +67,8 @@ import { InputAutocompleteStaticComponent } from './utils/form/input-autocomplet
 import { TextAreaComponent } from './utils/form/text-area/text-area.component';
 import { InputDateComponent } from './utils/form/input-date/input-date.component';
 import { JsonEntityUploaderComponent } from './json-entity-uploader/json-entity-uploader.component';
+import { OrdonanceTypeComponent } from './parametres/ordonance-type/ordonance-type.component';
+import { NewOrdonanceTypeComponent } from './parametres/ordonance-type/new-ordonance-type/new-ordonance-type.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -124,7 +126,9 @@ import { JsonEntityUploaderComponent } from './json-entity-uploader/json-entity-
     InputAutocompleteStaticComponent,
     TextAreaComponent,
     InputDateComponent,
-    JsonEntityUploaderComponent
+    JsonEntityUploaderComponent,
+    OrdonanceTypeComponent,
+    NewOrdonanceTypeComponent
   ],
   imports: [
     BrowserModule,

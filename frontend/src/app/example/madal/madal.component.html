@@ -18,33 +18,34 @@
       *ngIf="component == 'edition-certificat'"
     ></app-edition-certificat>
     <app-new-acte-soin *ngIf="component == 'acte-soin'"></app-new-acte-soin>
-    <app-new-medicament *ngIf="component == 'medicament'"></app-new-medicament>
-    <app-new-bilan *ngIf="component == 'bilan'"></app-new-bilan>
+    <app-new-medicament [medicament]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'medicament'"></app-new-medicament>
+    <app-new-bilan [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'bilan'"></app-new-bilan>
     <app-new-bilan-type
       *ngIf="component == 'bilan-type-param'"
     ></app-new-bilan-type>
     <app-new-categorie-depense
       *ngIf="component == 'categ-depense'"
     ></app-new-categorie-depense>
-	<app-new-depense *ngIf="component == 'new-depense'"></app-new-depense>
-<div       *ngIf="component == 'json-importer'">
-  <app-json-entity-uploader (actionAcomplished)="modal.dismiss('')" [urlExport]="urlExport"></app-json-entity-uploader>
-</div>
-
-
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-primary text-white btn-outline-dark"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
+    <app-new-depense *ngIf="component == 'new-depense'"></app-new-depense>
+    <app-new-ordonance-type
+    (actionAcomplished)="modal.dismiss('');actionAcomplished.emit(true)"
+    [object]="object"
+      *ngIf="component == 'new-ordonance-type'"
+    ></app-new-ordonance-type>
+    <div *ngIf="component == 'json-importer'">
+      <app-json-entity-uploader
+      (actionAcomplished)="modal.dismiss('');actionAcomplished.emit(true)"
+        [urlExport]="urlExport"
+      ></app-json-entity-uploader>
+    </div>
   </div>
 </ng-template>
 
-	<button class="shadow-sm" [ngClass]="classButton==null?'btn btn-lg btn-primary':classButton" (click)="open(content)">
+<button
+  class="shadow-sm"
+  [ngClass]="classButton == null ? 'btn btn-lg btn-primary' : classButton"
+  (click)="open(content)"
+>
   <i [ngClass]="'mr-2 fas fa-' + icon"></i>
   <span *ngIf="title != null">{{ title }}</span>
 </button>

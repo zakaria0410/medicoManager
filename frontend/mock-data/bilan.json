@@ -1,0 +1,108 @@
+[
+  {
+    "id": null,
+    "name": "Bilan sanguin complet",
+    "numerique": false,
+    "description": "Analyse complète des différents paramètres sanguins.",
+    "codification": "BSC"
+  },
+  {
+    "id": null,
+    "name": "Bilan lipidique",
+    "numerique": true,
+    "valeur_min": 100,
+    "valeur_max": 200,
+    "uniteMesure": "mg/dL",
+    "description": "Évaluation des niveaux de lipides dans le sang.",
+    "codification": "BL"
+  },
+  {
+    "id": null,
+    "name": "Bilan hépatique",
+    "numerique": false,
+    "description": "Évaluation de la fonction hépatique et des enzymes hépatiques.",
+    "codification": "BH"
+  },
+  {
+    "id": null,
+    "name": "Bilan rénal",
+    "numerique": true,
+    "valeur_min": 0.5,
+    "valeur_max": 1.2,
+    "uniteMesure": "mg/dL",
+    "description": "Mesure des taux de créatinine et d'autres indicateurs de la fonction rénale.",
+    "codification": "BR"
+  },
+  {
+    "id": null,
+    "name": "Bilan hormonal",
+    "numerique": false,
+    "description": "Évaluation des niveaux hormonaux dans le corps.",
+    "codification": "BHO"
+  },
+  {
+    "id": null,
+    "name": "Bilan thyroïdien",
+    "numerique": true,
+    "valeur_min": 0.4,
+    "valeur_max": 4.0,
+    "uniteMesure": "µIU/mL",
+    "description": "Évaluation des hormones thyroïdiennes et de la fonction thyroïdienne.",
+    "codification": "BT"
+  },
+  {
+    "id": null,
+    "name": "Bilan allergique",
+    "numerique": false,
+    "description": "Dépistage des allergies à certaines substances ou allergènes.",
+    "codification": "BA"
+  },
+  {
+    "id": null,
+    "name": "Bilan infectieux",
+    "numerique": false,
+    "description": "Recherche d'infections bactériennes, virales ou fongiques dans le corps.",
+    "codification": "BI"
+  }
+,
+      {
+        "id": null,
+        "name": "Bilan de la fonction pulmonaire",
+        "numerique": false,
+        "description": "Évaluation de la capacité pulmonaire et des échanges gazeux.",
+        "codification": "BFP"
+      },
+      {
+        "id": null,
+        "name": "Bilan ophtalmologique",
+        "numerique": false,
+        "description": "Évaluation de la vision et de la santé oculaire.",
+        "codification": "BO"
+      },
+      {
+        "id": null,
+        "name": "Bilan ostéo-articulaire",
+        "numerique": false,
+        "description": "Évaluation de la santé des os, des articulations et du système musculo-squelettique.",
+        "codification": "BOA"
+      },
+      {
+        "id": null,
+        "name": "Bilan neurologique",
+        "numerique": false,
+        "description": "Évaluation du système nerveux central et périphérique.",
+        "codification": "BN"
+      },
+      {
+        "id": null,
+        "name": "Bilan de la fonction rénale avancée",
+        "numerique": true,
+        "valeur_min": 0.5,
+        "valeur_max": 1.2,
+        "uniteMesure": "mg/dL",
+        "description": "Évaluation détaillée des fonctions rénales et des indicateurs de filtration glomérulaire.",
+        "codification": "BFRA"
+      }
+    ]
+
+  

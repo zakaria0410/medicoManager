@@ -1,0 +1,54 @@
+<div class="row mb-3">
+  <div class="col-md-6">
+    <h2 class="text-primary">Les Préscriptions Types</h2>
+  </div>
+  <div class="col-md-6 d-flex justify-content-end">
+    <app-madal
+      [title]="'Nouveau Ordonance type'"
+      [component]="'new-ordonance-type'"
+      [modalStyle]="{ fullscreen: true }"
+      [icon]="'plus'"
+      [classButton]="'btn btn-success'"
+      (actionAcomplished)="fetchOrdonanceTypes()"
+    ></app-madal>
+    <button class="ml-2 btn btn-secondary">
+      <i class="fas fa-sync"></i> Importer
+    </button>
+  </div>
+</div>
+<div class="table-responsive bg-white p-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Medicament</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ordonanceType of ordonanceTypes">
+        <td>{{ ordonanceType.name }}</td>
+        <td>{{ ordonanceType.description }}</td>
+        <td>
+          <a *ngFor="let medicament of ordonanceType.medicaments,let i=index">
+            {{ medicament.name }}
+            <span *ngIf="i<ordonanceType.medicaments.length-1">,</span></a>
+        </td>
+        <td>
+          <button (click)="delete(ordonanceType.id)" class="btn btn-danger">
+            <i class="fas fa-trash"> </i>
+          </button>
+          <app-madal
+          [component]="'new-ordonance-type'"
+          [modalStyle]="{ fullscreen: true }"
+          [icon]="'edit'"
+          [object]="ordonanceType"
+          [classButton]="'btn btn-primary'"
+          (actionAcomplished)="fetchOrdonanceTypes()"
+        ></app-madal>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
