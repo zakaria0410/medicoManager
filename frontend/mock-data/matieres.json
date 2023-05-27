@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Composite dentaire",
+    "prix_achat": 80,
+    "unite_mesure": "gramme",
+    "description": "Matériau de restauration dentaire utilisé pour les obturations"
+  },
+  {
+    "name": "Amalgame dentaire",
+    "prix_achat": 50,
+    "unite_mesure": "gramme",
+    "description": "Alliage d'argent utilisé pour les obturations dentaires"
+  },
+  {
+    "name": "Ciment dentaire",
+    "prix_achat": 120,
+    "unite_mesure": "gramme",
+    "description": "Matériau utilisé pour la fixation de prothèses dentaires et d'implants"
+  },
+  {
+    "name": "Gel de blanchiment dentaire",
+    "prix_achat": 150,
+    "unite_mesure": "seringue",
+    "description": "Produit utilisé pour le blanchiment des dents"
+  },
+  {
+    "name": "Matériau d'empreinte",
+    "prix_achat": 200,
+    "unite_mesure": "gramme",
+    "description": "Substance utilisée pour prendre l'empreinte des dents en vue de la fabrication de prothèses"
+  },
+  {
+    "name": "Bridge en céramique",
+    "prix_achat": 1000,
+    "unite_mesure": "pièce",
+    "description": "Prothèse dentaire fixe utilisée pour remplacer une ou plusieurs dents manquantes"
+  },
+  {
+    "name": "Colle orthodontique",
+    "prix_achat": 80,
+    "unite_mesure": "tube",
+    "description": "Adhésif utilisé pour fixer les brackets orthodontiques sur les dents"
+  },
+  {
+    "name": "Matériaux de comblement osseux",
+    "prix_achat": 500,
+    "unite_mesure": "gramme",
+    "description": "Substances utilisées pour combler les défauts osseux lors d'une chirurgie dentaire"
+  },
+  {
+    "name": "Inlay/onlay en céramique",
+    "prix_achat": 600,
+    "unite_mesure": "pièce",
+    "description": "Restauration prothétique utilisée pour réparer une dent abîmée"
+  },
+  {
+    "name": "Matériaux de greffe gingivale",
+    "prix_achat": 400,
+    "unite_mesure": "gramme",
+    "description": "Substances utilisées pour les greffes de tissu gingival"
+  }
+]

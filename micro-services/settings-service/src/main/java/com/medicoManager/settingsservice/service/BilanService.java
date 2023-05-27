@@ -11,11 +11,13 @@ import com.medicoManager.settingsservice.model.BilanNumerique;
 import com.medicoManager.settingsservice.model.BilanTextuel;
 import com.medicoManager.settingsservice.model.Medicament;
 import com.medicoManager.settingsservice.repository.BilanRepository;
+import com.medicoManager.settingsservice.repository.GenericSearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,6 +48,26 @@ public class BilanService extends AbstractNameSettingsService<Bilan, BilanDto> {
             throw new RuntimeException(e);
         }
     }
+@Autowired
+private GenericSearchRepository genericSearchRepository;
+    @Autowired
+    private BilanRepository repository;
+    @Override
+    public List<BilanDto> search(HashMap<String, Object> mapSearch) {
+        List<Bilan> entities=repository.findAll();
+        for (String s:mapSearch.keySet()){
+            if(mapSearch.get(s)!=null ){
+
+                List<Bilan> searchs=genericSearchRepository.executeDynamicQueryForString(Bilan.class,s,mapSearch.get(s)).stream().collect(Collectors.toList());
+                entities=entities.stream().filter(d -> searchs.contains(d)).collect(Collectors.toList());;
+            }
+        }
+    return entities.stream().map(bilan->{
+            BilanDto bilanDto=new BilanDto();
+            if(bilan instanceof BilanTextuel) return bilanTextuelService.getById(bilan.getId());
+            else if(bilan instanceof BilanNumerique) return bilanNumeriqueService.getById(bilan.getId());
+            else return null;
+    }).filter(bilanDto -> bilanDto!=null).collect(Collectors.toList());}
 
     @Override
     public BilanDto create(BilanDto dto) {

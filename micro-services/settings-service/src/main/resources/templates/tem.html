@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Page générée avec Thymeleaf</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">AAA</div>
+            <div class="card-body">BBBB</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">BBBBBBBBBBBB</div>
+            <div class="card-body">
+                <div th:utext="${templateText}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

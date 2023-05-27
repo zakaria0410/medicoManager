@@ -12,12 +12,12 @@ public  class BilanTextuelMapperService extends AbstractBilanMapperService<Bilan
 
 
     @Override
-    protected BilanTextuelDto instanciateDto() {
+    public BilanTextuelDto instanciateDto() {
         return new BilanTextuelDto();
     }
 
     @Override
-    protected BilanTextuel instanciateEntity() {
+    public BilanTextuel instanciateEntity() {
         return new BilanTextuel();
     }
     @Override
@@ -39,12 +39,12 @@ public  class BilanTextuelMapperService extends AbstractBilanMapperService<Bilan
         return bilanDto;
     }
     @Override
-    protected Class<BilanDto> getDtoClass() {
+    public Class<BilanDto> getDtoClass() {
         return BilanDto.class;
     }
 
     @Override
-    protected Class<BilanTextuel> getEntityClass() {
+    public Class<BilanTextuel> getEntityClass() {
         return BilanTextuel.class;
     }
 }

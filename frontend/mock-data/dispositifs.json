@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Son sondeur",
+    "prix_achat": 200,
+    "prix_location": 50,
+    "unite_mesure": "pièce",
+    "description": "Instrument utilisé pour évaluer l'état des dents et des gencives"
+  },
+  {
+    "name": "Air syringe",
+    "prix_achat": 300,
+    "prix_location": 70,
+    "unite_mesure": "pièce",
+    "description": "Dispositif utilisé pour envoyer de l'air ou de l'eau pour le nettoyage des dents"
+  },
+  {
+    "name": "Modèle en plâtre",
+    "prix_achat": 150,
+    "prix_location": 40,
+    "unite_mesure": "pièce",
+    "description": "Réplique en plâtre des dents et des tissus buccaux utilisée pour la fabrication de prothèses"
+  },
+  {
+    "name": "Bistouri",
+    "prix_achat": 250,
+    "prix_location": 60,
+    "unite_mesure": "pièce",
+    "description": "Instrument tranchant utilisé pour effectuer des incisions chirurgicales"
+  },
+  {
+    "name": "Caméra intra-orale",
+    "prix_achat": 800,
+    "prix_location": 120,
+    "unite_mesure": "pièce",
+    "description": "Caméra miniature utilisée pour capturer des images détaillées de la bouche et des dents"
+  },
+  {
+    "name": "Cire dentaire",
+    "prix_achat": 100,
+    "prix_location": 30,
+    "unite_mesure": "paquet",
+    "description": "Matériau utilisé pour la modélisation et le moulage des prothèses dentaires"
+  },
+  {
+    "name": "Forceps",
+    "prix_achat": 400,
+    "prix_location": 80,
+    "unite_mesure": "pièce",
+    "description": "Pince chirurgicale utilisée pour l'extraction des dents"
+  },
+  {
+    "name": "Appareil de radiographie",
+    "prix_achat": 10000,
+    "prix_location": 1500,
+    "unite_mesure": "pièce",
+    "description": "Équipement utilisé pour la prise d'images radiographiques dentaires"
+  }
+]

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Certificat médical</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            margin-left:25px;
+
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            color: black;
+            width:100%;
+
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            align-text:end;
+            font-weight:600;
+            margin-right:0px;
+
+        }
+
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #039be5;
+
+        }
+
+        .content {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        ul {
+            color: #616161;
+        }
+            .medcin-info{
+            text-align: start;
+            font-weight: 600;      }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <table class="header">
+   <tr>
+       <td class="medcin-info">
+           <div >
+               <p>Nom du médecin : <span th:text="${certificat.doctorName}"></span></p>
+               <p>Téléphone : <span th:text="${certificat.doctorPhone}"></span></p>
+               <p>Email : <span th:text="${certificat.doctorEmail}"></span></p>
+           </div>
+       </td>
+<td style="width: 50px;"></td>
+       <td  class="contact-info">
+           <div>
+               <p>Nom du patient : <span th:text="${certificat.patientName}"></span></p>
+               <p>Date de naissance : <span th:text="${certificat.patientBirthDate}"></span></p>
+               <p>Adresse : <span th:text="${certificat.patientAddress}"></span></p>
+           </div>
+       </td>
+   </tr>
+
+    </table>
+    <div class="title">
+        Certificat médical
+    </div>
+    <div class="content">
+        <p>Je soussigné(e), <span th:text="${certificat.doctorName}"></span>, certifie que <span
+                th:text="${certificat.patientName}"></span>, né(e) le <span
+                th:text="${certificat.patientBirthDate}"></span>, a été examiné(e) du <span
+                th:text="${certificat.startDate}"></span> au <span th:text="${certificat.endDate}"></span> et son état
+            de santé est le suivant :</p>
+        <p><span th:text="${certificat.healthCondition}"></span></p>
+        <p>En conséquence, il est recommandé que <span th:text="${certificat.patientName}"></span> bénéficie d'un repos
+            complet pendant <span th:text="${certificat.recommendedDuration}"></span> afin de favoriser une guérison
+            optimale.</p>
+    </div>
+</div>
+</body>
+</html>

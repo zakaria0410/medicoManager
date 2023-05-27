@@ -1,38 +1,73 @@
-<div class="container">
- 
-    <form>
-        <div class="form-group">
-          <label for="nom">Nom :</label>
-          <input type="text" class="form-control" id="nom" name="nom" required>
-        </div>
-        <div class="form-group">
-          <label for="description">Description :</label>
-          <textarea class="form-control" id="description" name="description" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="bilans-affectes">Bilans affectés :</label>
-          <input type="text" class="form-control" id="search-bilan" placeholder="Rechercher un bilan...">
-          <div class="checkbox-list" id="bilans-affectes">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="bilan1" id="bilan1" name="bilans-affectes[]">
-              <label class="form-check-label" for="bilan1">
-                Bilan 1
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="bilan2" id="bilan2" name="bilans-affectes[]">
-              <label class="form-check-label" for="bilan2">
-                Bilan 2
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="bilan3" id="bilan3" name="bilans-affectes[]">
-              <label class="form-check-label" for="bilan3">
-                Bilan 3
-              </label>
-            </div>
-          </div>
-        </div>
-      </form>
-      
+<form class="row" (ngSubmit)="submitForm()">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nom"
+        [(ngModel)]="bilanType.name"
+        name="nom"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea
+        class="form-control"
+        id="description"
+        [(ngModel)]="bilanType.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
   </div>
+  <div class="col-md-6">
+    <div class="form-group mb-2">
+      <label for="medicament">Bilans associés:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="medicament"
+        [(ngModel)]="selectedBilan"
+        name="medicament"
+        (input)="searchMedicaments(selectedBilan)"
+      />
+      <ul style="max-height: 100px;overflow-y: auto;" class="list-group mb-3">
+        <li
+          class="list-group-item"
+          *ngFor="let medicament of filteredBilans"
+        >
+          <a (click)="selectMedicament(medicament)">{{ medicament.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <h5>Bilans sélectionnés:</h5>
+      <ul class="list-group">
+        <li
+          class="list-group-item d-flex justify-content-between"
+          *ngFor="let medicament of bilanType.bilans; let i = index"
+        >
+          <div class="mb-2">
+            <b class="col-md-12">{{ medicament.name }}</b>
+            <p>{{ medicament.contreIndication }}</p>
+          </div>
+          
+          <button
+            type="button"
+            class="btn btn-sm btn-white text-danger float-right"
+            (click)="removeMedicament(i)"
+          >
+            <i class="fas fa-trash"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-12 text-center mt-3">
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </div>
+</form>

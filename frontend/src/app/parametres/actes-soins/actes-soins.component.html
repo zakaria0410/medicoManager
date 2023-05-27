@@ -1,114 +1,82 @@
-<div class="container-fluid bg-white">
-    <div class="d-flex justify-content-between p-2">
-        <h1 class="text-start mb-4 text-primary">Gestion des Actes et Soins</h1>
-        <app-madal
-        [title]="'Nouvel Acte'"
+<div  class="container">
+    <div class="d-flex align-items-center  justify-content-between p-2">
+      <div class="">
+        <h3 class="text-start text-primary p-sticky">Actes et Soins</h3>
+        <p class="text-muted">Paramétrer l'ensemble de vos Actes</p>
+      </div>
+   
+<div>
+  <app-madal
+  [title]="'Nouvel Acte'"
 [component]="'acte-soin'"
 [modalStyle]="{ fullscreen: true }"
 [icon]="'plus'"
-></app-madal>   </div>
- 
-  <div class="row">
-<div class="col-md-12 text-end">
- 
+[classButton]="'btn btn-sm btn-primary'"      
+></app-madal>
+
+<app-madal
+class="ml-2"
+[title]="'Import Acte'"
+[component]="'json-importer'"
+[modalStyle]="{ size: 'lg' }"
+[icon]="'sync'"
+[classButton]="'btn btn-sm btn-success'"
+[urlExport]="'api/acte'"
+></app-madal>
+</div>       
+
+
 </div>
+ 
+  <div style="overflow-y: auto; max-height: calc(100vh - 200px);"  class="shadow-sm shadow-primary bg-white row">
+
     <div class="col-md-12">
-      <table class="table table-striped">
+   
+      <table class="table table-striped table-home">
         <thead>
           <tr>
-            <th>Nom</th>
-            <th>Libellé</th>
-            <th>Description</th>
-            <th>Prix Unitaire</th>
-            <th>Actions</th>
+            <th class="text-center text-primary">Codification<br/><input class="form-control"  (input)="inputValueSubject.next(inputValue)" [(ngModel)]="acte.codification"></th>
+            <th class="text-center text-primary">Nom<br/>  <input class="form-control" (input)="inputValueSubject.next(inputValue)"  [(ngModel)]="acte.name"></th>
+            <th class="text-center text-primary">Description<br/><input class="form-control" (input)="inputValueSubject.next(inputValue)"  [(ngModel)]="acte.description"></th>
+            <th class="text-center text-primary">Prix Unitaire<br/><input class="form-control" type="number" (input)="inputValueSubject.next(inputValue)"  [(ngModel)]="acte.prix_unitaire"></th>
+            <th class="text-center text-primary">dispositifs</th>
+            <th class="text-center text-primary">Matières</th>
+            <th class="text-center text-primary">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>001</td>
-            <td>Détartrage simple</td>
-            <td>
-              Elimination du tartre et des plaques dentaires à l'aide d'un
-              instrument spécifique
+          <tr *ngFor="let acte of actes">
+            <td class="text-center">{{acte.codification}}</td>
+            <td class="text-center">{{acte.name}}</td>
+            <td class="text-center">
+           {{acte.description}}
             </td>
-            <td>40 €</td>
-            <td>
+            <td class="text-center">{{acte.prix_unitaire}}</td>
+            <td class="text-center">
+              <span *ngFor="let dispo of acte.dispositifsMedicaux" class="badge bg-primary mr-1 border-rounded">
+                {{dispo.name}}
+              </span>
+            </td>
+            <td class="text-center">
+              <span *ngFor="let dispo of acte.matieres" class="badge bg-primary mr-1 border-rounded">
+                {{dispo.name}}
+              </span>
+            </td>
+            <td class="d-flex justify-content-center">
                 <app-madal
-              
+                (actionAcomplished)="callApi('')"
+                [object]="acte"   
+                [classButton]="'btn btn-sm text-primary border-primary'"           
                 [component]="'acte-soin'"
                 [modalStyle]="{ fullscreen: true }"
                 [icon]="'edit'"
               ></app-madal>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fas fa-trash"></i> Supprimer
+              <button (click)="delete(acte.id)" class="ml-2 btn btn-sm btn-outline-danger">
+                <i class="fas fa-trash"></i> 
               </button>
             </td>
           </tr>
-          <tr>
-            <td>002</td>
-            <td>Détartrage complet</td>
-            <td>
-              Elimination du tartre et des plaques dentaires à l'aide d'un
-              instrument spécifique et d'un polissage des dents
-            </td>
-            <td>80 €</td>
-            <td>
-              <button class="btn btn-sm btn-outline-primary mr-2">
-                <i class="fas fa-edit"></i> Modifier
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fas fa-trash"></i> Supprimer
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>003</td>
-            <td>Consultation de contrôle</td>
-            <td>
-              Examen de la bouche et des dents pour détecter d'éventuels
-              problèmes bucco-dentaires
-            </td>
-            <td>30 €</td>
-            <td>
-              <button class="btn btn-sm btn-outline-primary mr-2">
-                <i class="fas fa-edit"></i> Modifier
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fas fa-trash"></i> Supprimer
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>004</td>
-            <td>Blanchiment des dents</td>
-            <td>
-              Procédure de blanchiment des dents pour enlever les taches et les
-              colorations
-            </td>
-            <td>200 €</td>
-            <td>
-              <button class="btn btn-sm btn-outline-primary mr-2">
-                <i class="fas fa-edit"></i> Modifier
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fas fa-trash"></i> Supprimer
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>005</td>
-            <td>Extraction dentaire</td>
-            <td>Procédure d'extraction d'une dent ou d'une partie de dent</td>
-            <td>150 €</td>
-            <td>
-              <button class="btn btn-sm btn-outline-primary mr- mr-2">
-                <i class="fas fa-edit"></i> Modifier
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fas fa-trash"></i> Supprimer
-              </button>
-            </td>
-          </tr>
+      
         </tbody>
       </table>
     </div>

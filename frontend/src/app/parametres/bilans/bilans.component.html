@@ -1,8 +1,8 @@
-<div style="max-height: calc(100vh - 66px); overflow-y: auto;"  class="container-fluid">
+<div   class="container">
   <div class="row">
     <div class="col-md-12 d-flex justify-content-between">
       <h3 class="p-sticky text-center text-primary">
-        Base de données des valeurs de paramétrage - Bilans
+        Paramétrage - Bilans
       </h3>
       <div>
         <app-madal
@@ -11,7 +11,7 @@
           [component]="'json-importer'"
           [modalStyle]="{ size: 'lg' }"
           [icon]="'sync'"
-          [classButton]="'btn btn-success'"
+          [classButton]="'btn mr-2 btn-sm btn-success'"
           [urlExport]="'api/bilan'"
           (actionAcomplished)="  fetchBilans()"
         ></app-madal>
@@ -19,24 +19,60 @@
           [component]="'bilan'"
           [title]="'Nouveau Bilan'"
           [icon]="'plus'"
+          [classButton]="'btn btn-sm btn-primary'"
           (actionAcomplished)="  fetchBilans()"
         ></app-madal>
       </div>
     </div>
   </div>
-  <div class="row mt-3 bg-white">
+  <div style="max-height: calc(100vh - 150px); overflow-y: auto;" class="shadow-sm row mt-3 bg-white">
     <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table table-striped">
+
+        <table class="table table-home table-striped">
           <thead>
             <tr>
-              <th scope="col">Code</th>
-              <th scope="col">Nom du bilan</th>
-              <th scope="col">Description</th>
-              <th scope="col">type</th>
-              <th scope="col">Unité de mesure</th>
+              <th scope="col">Code<br />
+                <input
+                  *ngIf="isSearch == true"
+                  [(ngModel)]="bilan.codification"
+                  (input)="inputValueSubject.next('')"
+                /></th>
+              <th scope="col">Nom du bilan<br />
+                <input
+                  *ngIf="isSearch == true"
+                  [(ngModel)]="bilan.name"
+                  (input)="inputValueSubject.next('bilan')"
+                /></th>
+              <th scope="col">Description<br />
+                <input
+                  *ngIf="isSearch == true"
+                  [(ngModel)]="bilan.description"
+                  (input)="inputValueSubject.next('')"
+                /></th>
+              <th scope="col">type<br />
+            </th>
+              <th class="text-nowrap" scope="col">Unité de mesure <br />
+                <input
+                  *ngIf="isSearch == true"
+                  [(ngModel)]="bilan.uniteMesure"
+                  (input)="inputValueSubject.next('')"
+                /></th>
               <th scope="col">Valeur minimale</th>
               <th scope="col">Valeur maximale</th>
+              <th>
+                <button (click)="initiateBilan()" class="btn btn-sm border-primary btn-icon text-primary">
+                  <i
+            
+                  *ngIf="isSearch == false"
+                  class="fas fa-search"
+                ></i>
+                <i
+              
+                  *ngIf="isSearch == true"
+                  class="fas fa-times"
+                ></i>
+                </button>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -67,7 +103,7 @@
       
           </tbody>
         </table>
-      </div>
+      
     </div>
   </div>
 </div>

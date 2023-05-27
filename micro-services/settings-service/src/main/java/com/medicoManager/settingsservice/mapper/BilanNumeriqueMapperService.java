@@ -9,22 +9,22 @@ public class BilanNumeriqueMapperService extends AbstractBilanMapperService<Bila
 
 
     @Override
-    protected BilanDto instanciateDto() {
+    public BilanDto instanciateDto() {
         return new BilanDto();
     }
 
     @Override
-    protected BilanNumerique instanciateEntity() {
+    public BilanNumerique instanciateEntity() {
         return new BilanNumerique();
     }
 
     @Override
-    protected Class<BilanDto> getDtoClass() {
+    public Class<BilanDto> getDtoClass() {
         return BilanDto.class;
     }
 
     @Override
-    protected Class<BilanNumerique> getEntityClass() {
+    public Class<BilanNumerique> getEntityClass() {
         return BilanNumerique.class;
     }
 

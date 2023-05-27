@@ -1,0 +1,32 @@
+<div class="container-fluid">
+
+    <div class="row mt-3">
+      <div class="col-md-12">
+      
+
+        <form [formGroup]="bilanForm" (ngSubmit)="onSubmit()" class="p-4">
+          <div class="form-group mb-3">
+            <label for="nomBilan">Nom de la Matière:</label>
+            <input type="text" class="form-control" id="nomBilan" formControlName="name" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" formControlName="description" required></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label for="ui">Unite Mesure:</label>
+            <input type="text" class="form-control" id="ui" formControlName="unite_mesure">
+          </div>
+         
+        
+       
+        
+    
+        
+          <button type="submit" class="btn btn-primary">Créer</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  

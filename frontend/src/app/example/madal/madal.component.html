@@ -17,10 +17,15 @@
     <app-edition-certificat
       *ngIf="component == 'edition-certificat'"
     ></app-edition-certificat>
-    <app-new-acte-soin *ngIf="component == 'acte-soin'"></app-new-acte-soin>
+    <app-new-acte-soin [object]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'acte-soin'"></app-new-acte-soin>
     <app-new-medicament [medicament]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'medicament'"></app-new-medicament>
+  <app-new-dispositif-medical [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'dispositif-medical'"></app-new-dispositif-medical>
     <app-new-bilan [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'bilan'"></app-new-bilan>
+    <app-new-matiere-premiere [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'matiere-premiere'"></app-new-matiere-premiere>
+
     <app-new-bilan-type
+    [object]="object"
+    (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)"
       *ngIf="component == 'bilan-type-param'"
     ></app-new-bilan-type>
     <app-new-categorie-depense

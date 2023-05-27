@@ -1,51 +1,48 @@
-<div class="container bg-white p-3">
+<div class="container  p-3">
 <div class="d-flex justify-content-between">
-    <h1>Liste des bilans types</h1>
+    <h2 class="text-primary">Paramétrage -Bilans types</h2>
     <app-madal
     [title]="'Nouveau Bilan Type'"
 [component]="'bilan-type-param'"
 [modalStyle]="{ size: 'lg' }"
 [icon]="'plus'"
+[classButton]="'btn btn-sm btn-primary'"
+(actionAcomplished)="fetchOrdonanceTypes()"
 ></app-madal>
 </div>
- 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Nom</th>
-          <th scope="col">Description</th>
-          <th scope="col">Bilans affectés</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Bilan type 1</td>
-          <td>Description du bilan type 1</td>
-          <td>Bilan de santé complet, Bilan sanguin</td>
-          <td>
-            <a href="#" class="btn btn-primary rounded-circle"><i class="fas fa-edit"></i></a>
-            <a href="#" class="btn btn-danger rounded-circle"><i class="fas fa-trash"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Bilan type 2</td>
-          <td>Description du bilan type 2</td>
-          <td>Bilan de la vue, Bilan auditif, Bilan dentaire</td>
-          <td>
-            <a href="#" class="btn btn-primary rounded-circle"><i class="fas fa-edit"></i></a>
-            <a href="#" class="btn btn-danger rounded-circle"><i class="fas fa-trash"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Bilan type 3</td>
-          <td>Description du bilan type 3</td>
-          <td>Bilan cardiaque, Bilan pulmonaire</td>
-          <td>
-            <a href="#" class="btn btn-primary rounded-circle"><i class="fas fa-edit"></i></a>
-            <a href="#" class="btn btn-danger rounded-circle"><i class="fas fa-trash"></i></a>
-          </td>
-        </tr>
+ <div class="bg-white shadow-sm row">
+  <table class="table table-home">
+    <thead class="text-primary">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Bilans affectés</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bilanType of bilanTypes">
+        <td>{{bilanType.name}}</td>
+        <td>{{bilanType.description}}</td>
+        <td>
+          <span *ngFor="let bilan of bilanType.bilans">
+            {{bilan.name}}
+          </span>
+        </td>
+        <td>
+          <app-madal
+          [component]="'bilan-type-param'"
+          [modalStyle]="{ fullscreen: true }"
+          [icon]="'edit'"
+          [object]="bilanType"
+          [classButton]="'btn btn-icon btn-primary'"
+          (actionAcomplished)="fetchOrdonanceTypes()"
+        ></app-madal>
+            <a (click)="delete(bilanType.id)" class="btn btn-icon btn-danger ml-2"><i class="fas fa-trash"></i></a>
+        </td>
+      </tr>
       </tbody>
-    </table>
+  </table>
+ </div>
+
   </div>

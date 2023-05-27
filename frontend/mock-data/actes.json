@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Détartrage",
+    "prix_unitaire": 200,
+    "description": "Élimination du tartre et des dépôts dentaires",
+    "dispositifs": ["Sonde ultrasonique", "Scalpel"],
+    "matieress": ["Pâte prophylactique", "Anesthésique local"],
+    "codification": "DTA001"
+  },
+  {
+    "name": "Extraction dentaire",
+    "prix_unitaire": 500,
+    "description": "Retrait d'une dent de la bouche",
+    "dispositifs": ["Pince d'extraction", "Aspiration"],
+    "matieress": ["Anesthésique local", "Gants stériles"],
+    "codification": "EXT002"
+  },
+  {
+    "name": "Obturation composite",
+    "prix_unitaire": 350,
+    "description": "Restauration d'une dent cariée avec un composite",
+    "dispositifs": ["Compositeur", "Lampe de polymérisation"],
+    "matieress": ["Composite", "Cale d'occlusion"],
+    "codification": "OBC003"
+  },
+  {
+    "name": "Traitement de canal",
+    "prix_unitaire": 800,
+    "description": "Élimination de la pulpe infectée dans le canal radiculaire",
+    "dispositifs": ["Lime endodontique", "Obturation canalaire"],
+    "matieress": ["Anesthésique local", "Cône de gutta-percha"],
+    "codification": "TCA004"
+  },
+  {
+    "name": "Dévitalisation dentaire",
+    "prix_unitaire": 600,
+    "description": "Élimination de la pulpe dentaire pour traiter une infection",
+    "dispositifs": ["Lime endodontique", "Seringue d'irrigation"],
+    "matieress": ["Anesthésique local", "Ciment provisoire"],
+    "codification": "DEV005"
+  },
+  {
+    "name": "Pose d'implant dentaire",
+    "prix_unitaire": 3000,
+    "description": "Installation d'une racine artificielle pour une prothèse dentaire",
+    "dispositifs": ["Implant dentaire", "Foret chirurgical"],
+    "matieress": ["Anesthésique local", "Vis de cicatrisation"],
+    "codification": "IMD006"
+  },
+  {
+    "name": "Blanchiment dentaire",
+    "prix_unitaire": 1000,
+    "description": "Éclaircissement des dents pour un sourire plus éclatant",
+    "dispositifs": ["Gouttière de blanchiment", "Lampe LED"],
+    "matieress": ["Gel de blanchiment", "Gouttes oculaires"],
+    "codification": "BLD007"
+  },
+  {
+    "name": "Scellement des sillons",
+    "prix_unitaire": 300,
+    "description": "Application d'un matériau protecteur sur les sillons des dents",
+    "dispositifs": ["Son sondeur", "Air syringe"],
+    "matieress": ["Résine de scellement", "Applicateur"],
+    "codification": "SCS008"
+  }
+]

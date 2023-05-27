@@ -1,6 +1,7 @@
 package com.medicoManager.settingsservice.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,6 +51,12 @@ public abstract class BaseEntityController<T extends BaseEntity,D extends BaseDT
             List<D> items = service.mapJsonToDto(file);
          //   service.saveAll(items);
             return new ResponseEntity<>(service.saveAll(items), HttpStatus.CREATED);
+
+    }
+    @PostMapping(value = "/search")
+    public ResponseEntity<List<D>> search(@RequestBody HashMap<String,Object> id) {
+
+        return new ResponseEntity<>(service.search(id), HttpStatus.CREATED);
 
     }
     @PostMapping(value = "/save-all")

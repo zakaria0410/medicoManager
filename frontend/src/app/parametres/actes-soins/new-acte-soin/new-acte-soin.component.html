@@ -1,139 +1,235 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col-md-6">  <form>
-        <div class="form-group">
-          <label for="nomActe">Nom de l'acte</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nomActe"
-            placeholder="Nom de l'acte"
-            value="Détartrage"
-          />
-        </div>
-        <div class="form-group">
-          <label for="libelleActe">Libellé de l'acte</label>
-          <input
-            type="text"
-            class="form-control"
-            id="libelleActe"
-            placeholder="Libellé de l'acte"
-            value="Élimination du tartre et des dépôts dentaires"
-          />
-        </div>
-        <div class="form-group">
-          <label for="descriptionActe">Description de l'acte</label>
-          <textarea class="form-control" id="descriptionActe" rows="3">
-    Le détartage est un acte dentaire qui consiste à éliminer le tartre et les dépôts dentaires présents sur les dents et les gencives.</textarea
-          >
-        </div>
-        <div class="form-group">
-          <label for="prixUnitaire">Prix unitaire</label>
-          <input
-            type="text"
-            class="form-control"
-            id="prixUnitaire"
-            placeholder="Prix unitaire"
-            value="50"
-          />
-        </div>
-      </form></div>
     <div class="col-md-6">
-        <div class="row">
-            <div class="col-md-12">
-                <app-shcema-dentaire></app-shcema-dentaire>
+      <div class="form-group">
+        <label for="nomActe">Nom de l'acte</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nomActe"
+          placeholder="Nom de l'acte"
+          value="Détartrage"
+          [(ngModel)]="acte.name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="libelleActe">Libellé de l'acte</label>
+        <input
+          type="text"
+          class="form-control"
+          id="libelleActe"
+          placeholder="Libellé de l'acte"
+          [(ngModel)]="acte.codification"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descriptionActe">Description de l'acte</label>
+        <textarea
+          class="form-control"
+          id="descriptionActe"
+          [(ngModel)]="acte.description"
+          rows="3"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="prixUnitaire">Prix unitaire</label>
+        <input
+          type="text"
+          class="form-control"
+          id="prixUnitaire"
+          placeholder="Prix unitaire"
+          [(ngModel)]="acte.prix_unitaire"
+          value="50"
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <app-shcema-dentaire></app-shcema-dentaire>
+        </div>
+        <div class="col-md-12">
+          <div class="card text-center">
+            <div class="card-body">
+              <b class="text-secondary"
+                >Ce traîtement peut être effectué au niveau de toutes les
+                dents</b
+              >
             </div>
-            <div class="col-md-12">
-                <div class="card text-center">
-                    <div class="card-body">
-                            <b class="text-secondary">Ce traîtement peut être effectué au niveau de toutes les dents</b>
-                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+     
+          <div class="row">
+            <h4 class="text-primary">Dispositifs médicaux</h4>
+            <div class="border-primary  p-2 col-md-12 mb-2">
+              <div class="form-group mb-2">
+         
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      placeholder="rechercher dispositif"
+                      class="col-md-12 form-control"
+                      id="medicament"
+                      [(ngModel)]="selectedDispositif"
+                      name="medicament"
+                      (input)="searchDispositif(selectedDispositif)"
+                    />
+                    <ul
+                      style="max-height: 100px; overflow-y: auto; z-index: 3003"
+                      class="list-group shadow-sm border"
+                    >
+                      <li
+                        class="list-group-item"
+                        *ngFor="let disposoitif of dispositifs"
+                      >
+                        <a (click)="addDispositif(disposoitif)">{{
+                          disposoitif.name
+                        }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-5">
+                  
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="col-md-12">
+              <ul style="z-index: 2000" class="list-group">
+                <li *ngIf="acte.dispositifsMedicaux.length==0"
+                class="list-group-item mt-2 border-rounded d-flex justify-content-between"
+          
+              >
+                <div class="mb-2 text-center">
+                  <h5 class="col-md-12 text-danger">
+                    Aucun dispositif Affecté
+                  </h5>
+              
+                </div>
+
+            
+              </li>
+                <li
+                  class="list-group-item mt-2 border-rounded d-flex justify-content-between"
+                  *ngFor="
+                    let dispositif of acte.dispositifsMedicaux;
+                    let i = index
+                  "
+                >
+                  <div class="mb-2">
+                    <h5 class="col-md-12 text-primary">
+                      {{ dispositif.name }}
+                    </h5>
+                    <p>{{ dispositif.description }}</p>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-white text-danger float-right"
+                    (click)="removeDispositif(dispositif)"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h4 class="mt-3">Dispositifs médicaux</h4>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Désignation</th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Modifier quantité</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Sonde ultrasonique</td>
-            <td><input type="text" class="form-control" value="1" /></td>
-            <td>
-              <button type="button" class="btn btn-primary">Modifier</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Jet dentaire</td>
-            <td><input type="text" class="form-control" value="1" /></td>
-            <td>
-              <button type="button" class="btn btn-primary">Modifier</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Miroir buccal</td>
-            <td><input type="text" class="form-control" value="1" /></td>
-            <td>
-              <button type="button" class="btn btn-primary">Modifier</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col">
-      <h4 class="mt-3">Matières consommées</h4>
-      <table class="table table-bordered">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Matière consommée</th>
-              <th scope="col">Quantité utilisée</th>
-              <th scope="col">Quantité restante</th>
-              <th scope="col">Modifier quantité utilisée</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bicarbonate de sodium</td>
-              <td>10g</td>
-              <td>90g</td>
-              <td>
-                <div class="input-group">
-                  <input type="number" class="form-control" min="0" value="10">
-                  <div class="input-group-append">
-                    <span class="input-group-text">g</span>
+        <div class="col-md-6">
+     
+          <div class="row">
+            <h4 class="text-primary">Matières Consommées</h4>
+            <div class="border-primary  p-2 col-md-12 mb-2">
+              <div class="form-group mb-2">
+         
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      placeholder="rechercher Matière"
+                      class="col-md-12 form-control"
+                      id="medicament"
+                      [(ngModel)]="selectedMatiere"
+                      name="matiere"
+                      (input)="searchMatiere(selectedMatiere)"
+                    />
+                    <ul
+                      style="max-height: 100px; overflow-y: auto; z-index: 3003"
+                      class="list-group shadow-sm border"
+                    >
+                      <li
+                        class="list-group-item"
+                        *ngFor="let disposoitif of matieres"
+                      >
+                        <a (click)="addMatiere(disposoitif)">{{
+                          disposoitif.name
+                        }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-5">
+             
                   </div>
                 </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Gel de fluorure de sodium</td>
-              <td>5ml</td>
-              <td>45ml</td>
-              <td>
-                <div class="input-group">
-                  <input type="number" class="form-control" min="0" value="5">
-                  <div class="input-group-append">
-                    <span class="input-group-text">ml</span>
-                  </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <ul style="z-index: 2000" class="list-group">
+                <li *ngIf="acte.matieres.length==0"
+                class="list-group-item mt-2 border-rounded d-flex justify-content-between"
+          
+              >
+                <div class="mb-2 text-center">
+                  <h5 class="col-md-12 text-danger">
+                    Aucune Matière Affectée
+                  </h5>
+              
                 </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
+
+            
+              </li>
+                <li
+                  class="list-group-item mt-2 border-rounded d-flex justify-content-between"
+                  *ngFor="
+                    let dispositif of acte.matieres;
+                    let i = index
+                  "
+                >
+                  <div class="mb-2">
+                    <h5 class="col-md-12 text-primary">
+                      {{ dispositif.name }}
+                    </h5>
+                    <p>{{ dispositif.description }}</p>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-white text-danger float-right"
+                    (click)="removeMatiere(dispositif)"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-
+  <div class="row text-center">
+    <button (click)="saveActe()" class="btn btn-primary">
+      Enregistrer Acte
+    </button>
+  </div>
 </div>

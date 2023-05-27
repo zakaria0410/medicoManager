@@ -32,12 +32,12 @@ public  class MedicamentMapperService extends NameEntityMapperService<Medicament
     }
 
     @Override
-    protected MedicamentDto instanciateDto() {
+    public MedicamentDto instanciateDto() {
         return new MedicamentDto();
     }
 
     @Override
-    protected Medicament instanciateEntity() {
+    public Medicament instanciateEntity() {
         return new Medicament();
     }
 

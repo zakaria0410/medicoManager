@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "description": "Matériau de restauration dentaire utilisé pour les obturations",
+    "name": "Composite dentaire",
+    "prix_achat": 120.0,
+    "unite_mesure": "gramme"
+  },
+  {
+    "id": 2,
+    "description": "Alliage d'argent utilisé pour les obturations dentaires",
+    "name": "Amalgame dentaire",
+    "prix_achat": 70.0,
+    "unite_mesure": "gramme"
+  },
+  {
+    "id": 3,
+    "description": "Matériau utilisé pour la fixation de prothèses dentaires et d'implants",
+    "name": "Ciment dentaire",
+    "prix_achat": 150.0,
+    "unite_mesure": "gramme"
+  },
+  {
+    "id": 4,
+    "description": "Produit utilisé pour le blanchiment des dents",
+    "name": "Gel de blanchiment dentaire",
+    "prix_achat": 180.0,
+    "unite_mesure": "seringue"
+  },
+  {
+    "id": 5,
+    "description": "Substance utilisée pour prendre l'empreinte des dents en vue de la fabrication de prothèses",
+    "name": "Matériau d'empreinte",
+    "prix_achat": 250.0,
+    "unite_mesure": "gramme"
+  },
+  {
+    "id": 6,
+    "description": "Prothèse dentaire fixe utilisée pour remplacer une ou plusieurs dents manquantes",
+    "name": "Bridge en céramique",
+    "prix_achat": 12000.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 7,
+    "description": "Adhésif utilisé pour fixer les brackets orthodontiques sur les dents",
+    "name": "Colle orthodontique",
+    "prix_achat": 100.0,
+    "unite_mesure": "tube"
+  },
+  {
+    "id": 8,
+    "description": "Substances utilisées pour combler les défauts osseux lors d'une chirurgie dentaire",
+    "name": "Matériaux de comblement osseux",
+    "prix_achat": 800.0,
+    "unite_mesure": "gramme"
+  },
+  {
+    "id": 9,
+    "description": "Restauration prothétique utilisée pour réparer une dent abîmée",
+    "name": "Inlay/onlay en céramique",
+    "prix_achat": 1500.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 10,
+    "description": "Substances utilisées pour les greffes de tissu gingival",
+    "name": "Matériaux de greffe gingivale",
+    "prix_achat": 1200.0,
+    "unite_mesure": "gramme"
+  },
+  {
+    "id": 11,
+    "description": "Pâte prophylactique utilisée pour le nettoyage des dents",
+    "name": "Pâte prophylactique",
+    "prix_achat": 50.0,
+    "unite_mesure": "tube"
+  },
+  {
+    "id": 12,
+    "description": "Anesthésique local utilisé pour engourdir la zone avant une procédure dentaire",
+    "name": "Anesthésique local",
+    "prix_achat": 30.0,
+    "unite_mesure": "ampoule"
+  },
+  {
+    "id": 13,
+    "description": "Gants stériles utilisés pour assurer l'hygiène lors des procédures dentaires",
+    "name": "Gants stériles",
+    "prix_achat": 15.0,
+    "unite_mesure": "paire"
+  },
+  {
+    "id": 14,
+    "description": "Matériau de restauration dentaire utilisé pour les obturations",
+    "name": "Composite",
+    "prix_achat": 80.0,
+    "unite_mesure": "gramme"
+  },
+  {
+    "id": 15,
+    "description": "Outil utilisé pour ajuster l'occlusion des dents",
+    "name": "Cale d'occlusion",
+    "prix_achat": 10.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 16,
+    "description": "Cône en gutta-percha utilisé pour obturer les canaux radiculaires",
+    "name": "Cône de gutta-percha",
+    "prix_achat": 5.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 17,
+    "description": "Ciment provisoire utilisé pour les restaurations temporaires",
+    "name": "Ciment provisoire",
+    "prix_achat": 50.0,
+    "unite_mesure": "tube"
+  },
+  {
+    "id": 18,
+    "description": "Vis de cicatrisation utilisée après la pose d'implants dentaires",
+    "name": "Vis de cicatrisation",
+    "prix_achat": 25.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 19,
+    "description": "Gel de blanchiment utilisé pour le blanchiment des dents",
+    "name": "Gel de blanchiment",
+    "prix_achat": 200.0,
+    "unite_mesure": "seringue"
+  },
+  {
+    "id": 20,
+    "description": "Gouttes oculaires utilisées pour lubrifier les yeux pendant les procédures dentaires",
+    "name": "Gouttes oculaires",
+    "prix_achat": 40.0,
+    "unite_mesure": "flacon"
+  },
+  {
+    "id": 21,
+    "description": "Résine de scellement utilisée pour fixer les brackets orthodontiques sur les dents",
+    "name": "Résine de scellement",
+    "prix_achat": 60.0,
+    "unite_mesure": "tube"
+  },
+  {
+    "id": 22,
+    "description": "Applicateur utilisé pour l'application précise de matériaux dentaires",
+    "name": "Applicateur",
+    "prix_achat": 8.0,
+    "unite_mesure": "pièce"
+  }
+]

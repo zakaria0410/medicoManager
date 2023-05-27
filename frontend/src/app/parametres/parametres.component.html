@@ -1,89 +1,131 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-tooth fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Actes et Soins</h5>
-            <p class="card-text">Gérez les actes et soins dentaires proposés dans votre cabinet.</p>
-            <a [routerLink]="['/', 'actes-soins']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-file-medical-alt fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Bilans</h5>
-            <p class="card-text">Gérez les bilans médicaux effectués dans votre cabinet.</p>
-            <a [routerLink]="['/', 'bilans']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-pills fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Médicaments</h5>
-            <p class="card-text">Gérez les médicaments disponibles dans votre cabinet.</p>
-            <a [routerLink]="['/', 'medicaments']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-pills fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Ordonance-type</h5>
-            <p class="card-text">Gérez les médicaments disponibles dans votre cabinet.</p>
-            <a [routerLink]="['/', 'ordonance-type']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
+<div style="max-height: calc(100vh - 80px); overflow-y: auto;" class="container-fluid">
+  <!--  Ordonnance -->
+  <div class="row">
+    <h2 class="text-primary fw-bold"> Ordonnance</h2>
+    <p>Gérez les différentes fonctionnalités liées aux ordonnances dans votre cabinet.</p>
+       <div class="col-md-3">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-prescription-bottle-alt fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Ordonnance</h5>
+          <p class="card-text">Gérez les ordonnances dans votre cabinet.</p>
+          <a [routerLink]="['/', 'ordonance-type']" class="btn btn-sm btn-secondary">Accéder</a>
         </div>
       </div>
     </div>
-    <div class="row mt-3">
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-heartbeat fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Paramètres Vitaux</h5>
-            <p class="card-text">Gérez les paramètres vitaux de vos patients.</p>
-            <a [routerLink]="['/', 'parametres-vitaux']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
+    <div class="col-md-3">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-pills fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Médicament</h5>
+          <p class="card-text">Gérez les médicaments disponibles dans votre cabinet.</p>
+          <a [routerLink]="['/', 'medicaments']" class="btn btn-sm btn-secondary">Accéder</a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-file fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Certificats Médicaux</h5>
-            <p class="card-text">Gérez les différents types de certificats médicaux disponibles.</p>
-            <a [routerLink]="['/', 'certificat-medical-settings']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-sitemap fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Bilans Type</h5>
-            <p class="card-text">Regrouper un ensemble de bilan dans un bilan type pour les affecter tous à la fois pour un patient </p>
-            <a [routerLink]="['/', 'bilan-type']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-primary">
-          <div class="card-body">
-            <i class="fas fa-money-bill fa-5x text-primary"></i>
-            <h5 class="card-title mt-3 text-muted">Famille Dépense</h5>
-            <p class="card-text">Regrouper un ensemble de bilan dans un bilan type pour les affecter tous à la fois pour un patient </p>
-            <a [routerLink]="['/', 'depenses-categories']" class="btn btn-sm btn-secondary">Accéder</a>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
-  
+
+  <!--  Bilan et Analyse -->
+  <div class="row mt-3">
+    <h2 class="text-primary fw-bold"> Bilan et Analyse</h2>
+    <p>Gérez les différents aspects des bilans et analyses médicales dans votre cabinet.</p>
+       <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-file-medical-alt fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Bilan</h5>
+          <p class="card-text">Gérez les bilans médicaux effectués dans votre cabinet.</p>
+          <a [routerLink]="['/', 'bilans']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-file-medical-alt fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Bilan-type</h5>
+          <p class="card-text">Gérez les bilans types dans votre cabinet.</p>
+          <a [routerLink]="['/', 'bilan-type']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-heartbeat fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Paramètres Vitaux</h5>
+          <p class="card-text">Gérez les paramètres vitaux de vos patients.</p>
+          <a [routerLink]="['/', 'parametres-vitaux']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Actes -->
+  <div class="row mt-3">
+    <h2 class="text-primary fw-bold"> Actes</h2>
+  <p>Gérez les actes médicaux et les dispositifs associés dans votre cabinet.</p>
+   <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-file-signature fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Acte</h5>
+          <p class="card-text">Gérez les actes dans votre cabinet.</p>
+          <a [routerLink]="['/', 'actes-soins']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-syringe fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Dispositif Médical</h5>
+          <p class="card-text">Gérez les dispositifs médicaux disponibles dans votre cabinet.</p>
+          <a [routerLink]="['/', 'dispositif-medical']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-flask fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Matière Première</h5>
+          <p class="card-text">Gérez les matières premières dans votre cabinet.</p>
+          <a [routerLink]="['/', 'matiere-premiere']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Documentation -->
+  <div class="row mt-3">
+    <h2 class="text-primary fw-bold"> Documentation</h2>
+    <p>Gérez les différents types de documentation médicale dans votre cabinet.</p>
+       <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-file-alt fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Certificat Médical</h5>
+          <p class="card-text">Gérez les certificats médicaux disponibles dans votre cabinet.</p>
+          <a [routerLink]="['/', 'certificats-settings']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Facturation -->
+  <div class="row mt-3">
+    <h2 class="text-primary fw-bold"> Facturation</h2>
+  <p>Gérez la facturation et les dépenses dans votre cabinet.</p>
+   <div class="col-md-4">
+      <div class="card text-center shadow-sm border-primary">
+        <div class="card-body">
+          <i class="fas fa-money-bill fa-5x text-primary"></i>
+          <h5 class="card-title text-danger mt-3 text-muted">Dépense</h5>
+          <p class="card-text">Gérez les dépenses dans votre cabinet.</p>
+          <a [routerLink]="['/', 'depenses']" class="btn btn-sm btn-secondary">Accéder</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

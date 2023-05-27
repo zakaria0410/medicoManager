@@ -37,6 +37,7 @@ export class NewMedicamentComponent implements OnInit, OnChanges {
 
   initializeForm(): void {
     this.medicamentForm = this.formBuilder.group({
+      id:[null],
       name: ['', Validators.required],
       description: ['', Validators.required],
       dosage: [''],

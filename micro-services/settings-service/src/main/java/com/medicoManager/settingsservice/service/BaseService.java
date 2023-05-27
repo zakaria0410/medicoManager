@@ -4,14 +4,18 @@ import com.medicoManager.settingsservice.dto.BaseDTO;
 import com.medicoManager.settingsservice.mapper.BaseEntityMapperService;
 import com.medicoManager.settingsservice.model.BaseEntity;
 import com.medicoManager.settingsservice.repository.BaseRepository;
+import com.medicoManager.settingsservice.repository.GenericSearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 public abstract class BaseService<E extends BaseEntity, D extends BaseDTO> {
+    @Autowired
+    private GenericSearchRepository genericSearchRepository;
     protected abstract Class<D> getDtoClass();
 
     protected abstract Class<E> getEntityClass();
@@ -22,6 +26,21 @@ public abstract class BaseService<E extends BaseEntity, D extends BaseDTO> {
     private BaseRepository<E> repository;
     @Autowired
     private BaseEntityMapperService<E, D> entityMapperService;
+
+
+
+    public List<D> search(HashMap<String,Object> mapSearch){
+  List<E> entities=repository.findAll();
+     for (String s:mapSearch.keySet()){
+         if(mapSearch.get(s)!=null ){
+
+             List<E> searchs=genericSearchRepository.executeDynamicQueryForString(getEntityClass(),s,mapSearch.get(s)).stream().collect(Collectors.toList());
+entities=entities.stream().filter(d -> searchs.contains(d)).collect(Collectors.toList());;
+         }
+     }
+return entities.stream().map(e->entityMapperService.toDto(e)).collect(Collectors.toList());
+
+        }
 
     public List<D> saveAll(List<D> dtos) {
 

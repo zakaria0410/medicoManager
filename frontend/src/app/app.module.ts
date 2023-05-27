@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { HomeComponent } from './home/home.component';
 import { ExampleComponent } from './calendar/example/example.component';
@@ -14,11 +14,11 @@ import { NewPatientComponent } from './patients/new-patient/new-patient.componen
 import { RdvComponent } from './calendar/rdv/rdv.component';
 import { GenerationFactureComponent } from './facturation/generation-facture/generation-facture.component';
 import { TabviewComponent } from './example/tabview/tabview.component';
-import {TabsModule} from 'ngx-bootstrap/tabs';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FichePatientComponent } from './patients/fiche-patient/fiche-patient.component';
 import { TableCalendarComponent } from './calendar/table-calendar/table-calendar.component';
-import { HistoriqueConsultationComponent } from './patients/historique-consultation/historique-consultation.component'
+import { HistoriqueConsultationComponent } from './patients/historique-consultation/historique-consultation.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MadalComponent } from './example/madal/madal.component';
 import { NewRdvComponent } from './calendar/new-rdv/new-rdv.component';
@@ -69,6 +69,13 @@ import { InputDateComponent } from './utils/form/input-date/input-date.component
 import { JsonEntityUploaderComponent } from './json-entity-uploader/json-entity-uploader.component';
 import { OrdonanceTypeComponent } from './parametres/ordonance-type/ordonance-type.component';
 import { NewOrdonanceTypeComponent } from './parametres/ordonance-type/new-ordonance-type/new-ordonance-type.component';
+import { DispositifMedicalComponent } from './parametres/dispositif-medical/dispositif-medical.component';
+import { NewDispositifMedicalComponent } from './parametres/dispositif-medical/new-dispositif-medical/new-dispositif-medical.component';
+import { MatierePremiereComponent } from './parametres/matiere-premiere/matiere-premiere.component';
+import { NewMatierePremiereComponent } from './parametres/matiere-premiere/new-matiere-premiere/new-matiere-premiere.component';
+import { TagsExemplComponent } from './examples/tags-exempl/tags-exempl.component';
+import { ParametrageCertificatMedicalComponent } from './parametres/parametrage-certificat-medical/parametrage-certificat-medical.component';
+import { ViewCertificatTemplateComponent } from './parametres/certificats-medicaux-setting/view-certificat-template/view-certificat-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -128,7 +135,14 @@ import { NewOrdonanceTypeComponent } from './parametres/ordonance-type/new-ordon
     InputDateComponent,
     JsonEntityUploaderComponent,
     OrdonanceTypeComponent,
-    NewOrdonanceTypeComponent
+    NewOrdonanceTypeComponent,
+    DispositifMedicalComponent,
+    NewDispositifMedicalComponent,
+    MatierePremiereComponent,
+    NewMatierePremiereComponent,
+    TagsExemplComponent,
+    ParametrageCertificatMedicalComponent,
+    ViewCertificatTemplateComponent,
   ],
   imports: [
     BrowserModule,
@@ -138,12 +152,14 @@ import { NewOrdonanceTypeComponent } from './parametres/ordonance-type/new-ordon
     TabsModule,
     NgbModule,
     BsDropdownModule.forRoot(),
-FormsModule,
-NgxPrintModule,
-NgChartsModule,
-HttpClientModule
+    FormsModule,
+    NgxPrintModule,
+    NgChartsModule,
+    HttpClientModule,
+    NgbTypeaheadModule,
+    TypeaheadModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

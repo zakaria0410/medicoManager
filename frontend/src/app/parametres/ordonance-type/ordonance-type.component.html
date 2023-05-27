@@ -1,52 +1,94 @@
-<div class="row mb-3">
-  <div class="col-md-6">
-    <h2 class="text-primary">Les Préscriptions Types</h2>
-  </div>
-  <div class="col-md-6 d-flex justify-content-end">
-    <app-madal
-      [title]="'Nouveau Ordonance type'"
-      [component]="'new-ordonance-type'"
-      [modalStyle]="{ fullscreen: true }"
-      [icon]="'plus'"
-      [classButton]="'btn btn-success'"
-      (actionAcomplished)="fetchOrdonanceTypes()"
-    ></app-madal>
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <h2 class="text-primary">Paramétrage- Préscriptions Types</h2>
+    </div>
 
+    <div class="col-md-6 d-flex justify-content-end">
+      <app-madal
+        [title]="'Nouveau Ordonance type'"
+        [component]="'new-ordonance-type'"
+        [modalStyle]="{ size: 'lg' }"
+        [icon]="'plus'"
+        [classButton]="'btn btn-success'"
+        (actionAcomplished)="fetchOrdonanceTypes()"
+      ></app-madal>
+    </div>
+    <div class="col-md-12">
+      <p class="text-muted">
+        Ce Paramétrage Permet de saisir des ordonance modèle pour éviter de
+        saisir à chaque fois le même médicament
+      </p>
+    </div>
   </div>
-</div>
-<div class="table-responsive bg-white p-3">
-  <table class="table table-striped table-home">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Description</th>
-        <th>Medicament</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let ordonanceType of ordonanceTypes">
-        <td>{{ ordonanceType.name }}</td>
-        <td>{{ ordonanceType.description }}</td>
-        <td>
-          <a *ngFor="let medicament of ordonanceType.medicaments,let i=index">
-            {{ medicament.name }}
-            <span *ngIf="i<ordonanceType.medicaments.length-1">,</span></a>
-        </td>
-        <td>
-          <button (click)="delete(ordonanceType.id)" class="btn btn-danger">
-            <i class="fas fa-trash"> </i>
-          </button>
-          <app-madal
-          [component]="'new-ordonance-type'"
-          [modalStyle]="{ fullscreen: true }"
-          [icon]="'edit'"
-          [object]="ordonanceType"
-          [classButton]="'btn btn-primary'"
-          (actionAcomplished)="fetchOrdonanceTypes()"
-        ></app-madal>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive bg-white p-3">
+    <table class="table table-striped table-home">
+      <thead>
+        <tr class="text-primary">
+          <th class="text-center">
+            Nom <br /><input
+              (input)="inputValueSubject.next('')"
+              [(ngModel)]="ordonanceType.name"
+              *ngIf="isSearch == true"
+            />
+          </th>
+          <th class="text-center">
+            Description <br /><input
+              (input)="inputValueSubject.next('')"
+              [(ngModel)]="ordonanceType.description"
+              *ngIf="isSearch == true"
+            />
+          </th>
+          <th class="text-center">
+            Medicament <br /><input *ngIf="isSearch == true" />
+          </th>
+          <th class="text-end">
+            <button
+              (click)="isSearch = !isSearch"
+              class="btn btn-sm btn-secondary"
+            >
+              <i *ngIf="isSearch == false" class="fas fa-search"></i>
+              <i *ngIf="isSearch == true;"(click)="ordonanceType={name:null,description:null};inputValueSubject.next('')"  class="fas fa-times"></i>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ordonanceType of ordonanceTypes">
+          <td class="text-center">{{ ordonanceType.name }}</td>
+          <td class="text-center">{{ ordonanceType.description }}</td>
+          <td class="text-center">
+            <span
+              *ngFor="
+                let medicament of ordonanceType.medicaments;
+                let i = index
+              "
+              class="badge bg-primary"
+            >
+              {{ medicament.name }}
+              <span *ngIf="i < ordonanceType.medicaments.length - 1"
+                >,</span
+              ></span
+            >
+          </td>
+          <td class="text-end">
+            <button
+              (click)="delete(ordonanceType.id)"
+              class="btn mr-2 btn-danger"
+            >
+              <i class="fas fa-trash"> </i>
+            </button>
+            <app-madal
+              [component]="'new-ordonance-type'"
+              [modalStyle]="{ size: 'lg' }"
+              [icon]="'edit'"
+              [object]="ordonanceType"
+              [classButton]="'btn btn-primary'"
+              (actionAcomplished)="fetchOrdonanceTypes()"
+            ></app-madal>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

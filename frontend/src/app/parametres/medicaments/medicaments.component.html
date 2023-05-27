@@ -1,69 +1,116 @@
-<div  class="container-fluid bg-white p-3">
-    <div class="d-flex justify-content-between  text-primary">
-      <h1 class="p-sticky text-center text-primary">
-         Paramétrage - Médicaments
-      </h1>
-     <div class="d-flex justify-content-between">
+<div class="container p-3">
+  <div class="d-flex justify-content-between mb-2 text-primary">
+    <h3 class="p-sticky text-center text-primary">Paramétrage - Médicaments</h3>
+    <div class="d-flex justify-content-between">
       <app-madal
-      [title]="'Nouveau Medicament'"
-[component]="'medicament'"
-[modalStyle]="{ size: 'lg' }"
-[icon]="'plus'"
-[classButton]="'btn btn-success'"
-(actionAcomplished)="callApi('')"
-></app-madal>
+        [title]="'Nouveau Medicament'"
+        [component]="'medicament'"
+        [modalStyle]="{ size: 'lg' }"
+        [icon]="'plus'"
+        [classButton]="'btn btn-sm btn-primary'"
+        (actionAcomplished)="callApi('')"
+      ></app-madal>
 
-
-
-<app-madal
-class="ml-2"
-[title]="'Import Medicament'"
-[component]="'json-importer'"
-[modalStyle]="{ size: 'lg' }"
-[icon]="'sync'"
-[classButton]="'btn btn-success'"
-[urlExport]="'api/medicament'"
-></app-madal>
-     </div>     
+      <app-madal
+        class="ml-2"
+        [title]="'Import Medicament'"
+        [component]="'json-importer'"
+        [modalStyle]="{ size: 'lg' }"
+        [icon]="'sync'"
+        [classButton]="'btn btn-sm btn-success'"
+        [urlExport]="'api/medicament'"
+      ></app-madal>
     </div>
+  </div>
 
   <div class="row">
-  
-    <div style="overflow-y: auto; max-height: calc(100vh - 166px);"  class="col-md-12 table-responsive">
+    <div
+      style="overflow-y: auto; max-height: calc(100vh - 166px)"
+      class="bg-white col-md-12 table-responsive"
+    >
       <table class="table table-striped table-home">
-        <thead>
+        <thead class="shadow-sm text-primary">
           <tr>
-            <th>Nom<br/>  <input   [(ngModel)]="inputValue" (input)="inputValueSubject.next(inputValue)"></th>
-            <th>Description</th>
-            <th>Fabricant</th>
-            <th>Dosage</th>
-            <th>Contre-indication</th>
-          
-            <th>Action</th>
+            <th>
+              Nom<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="medicament.name"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Description<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="medicament.description"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Fabricant<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="medicament.fabricant"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Dosage<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="medicament.dosage"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Contre-indication<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="medicament.contreIndication"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+
+            <th class="text-end">
+           
+              <button     (click)="initiateMedicament()" class="btn btn-sm border-primary text-primary">
+                <i
+            
+                  *ngIf="isSearch == false"
+                  class="fas fa-search"
+                ></i>
+                <i
+              
+                  *ngIf="isSearch == true"
+                  class="fas fa-times"
+                ></i>
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let medicament of medicaments">
             <td>{{ medicament.name }}</td>
-            <td>{{ medicament. description }}</td>
-            <td>{{ medicament. fabricant }}</td>
+            <td>{{ medicament.description }}</td>
+            <td>{{ medicament.fabricant }}</td>
             <td>{{ medicament.dosage }}</td>
-            <td>{{ medicament.contreIndication}}</td>
-  
+            <td>{{ medicament.contreIndication }}</td>
+
             <td>
               <button type="button" class="btn btn-sm btn-danger">
-                Supprimer
+                <i class="fas fa-trash"></i>
               </button>
               <app-madal
-           [object]="medicament"
-        [component]="'medicament'"
-        [modalStyle]="{ size: 'lg' }"
-        [icon]="'edit'"
-        [classButton]="'btn btn-success'"
-        (actionAcomplished)="callApi('')"
-        ></app-madal> </td>
+                [object]="medicament"
+                [component]="'medicament'"
+                [modalStyle]="{ size: 'lg' }"
+                [icon]="'edit'"
+                [classButton]="'btn btn-sm ml-2 btn-icon btn-primary'"
+                (actionAcomplished)="callApi('')"
+              ></app-madal>
+            </td>
           </tr>
-  
         </tbody>
       </table>
     </div>

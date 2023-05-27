@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject, debounceTime } from 'rxjs';
 import { GenericClientService } from 'src/app/services/http/generic-client.service';
 
 @Component({
@@ -8,11 +9,19 @@ import { GenericClientService } from 'src/app/services/http/generic-client.servi
 })
 export class OrdonanceTypeComponent implements OnInit {
   ordonanceTypes: any[];
+isSearch=false
+ordonanceType={name:null,description:null}
+inputValueSubject = new Subject<string>();
 
   constructor(private clientHttp: GenericClientService) { }
 
   ngOnInit(): void {
     this.fetchOrdonanceTypes();
+    this.inputValueSubject
+    .pipe(debounceTime(300))
+    .subscribe((value) => this.clientHttp.post('ordonance-type/search',this.ordonanceType).subscribe(
+      data=>this.ordonanceTypes=data
+    ));
   }
 delete(id){
   this.clientHttp.delete(id,'ordonance-type').subscribe(

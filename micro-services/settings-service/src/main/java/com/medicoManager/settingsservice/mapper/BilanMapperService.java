@@ -25,12 +25,12 @@ return entity;
     }
 
     @Override
-    protected BilanDto instanciateDto() {
+    public BilanDto instanciateDto() {
          return new BilanDto();
     }
 
     @Override
-    protected Bilan instanciateEntity() {
+    public Bilan instanciateEntity() {
          return new Bilan();
     }
 

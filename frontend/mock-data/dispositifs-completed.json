@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "description": "Instrument utilisé pour évaluer l'état des dents et des gencives",
+    "name": "Son sondeur",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 2,
+    "description": "Dispositif utilisé pour envoyer de l'air ou de l'eau pour le nettoyage des dents",
+    "name": "Air syringe",
+    "prix_achat": 300.0,
+    "prix_location": 70.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 3,
+    "description": "Réplique en plâtre des dents et des tissus buccaux utilisée pour la fabrication de prothèses",
+    "name": "Modèle en plâtre",
+    "prix_achat": 150.0,
+    "prix_location": 40.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 4,
+    "description": "Instrument tranchant utilisé pour effectuer des incisions chirurgicales",
+    "name": "Bistouri",
+    "prix_achat": 250.0,
+    "prix_location": 60.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 5,
+    "description": "Caméra miniature utilisée pour capturer des images détaillées de la bouche et des dents",
+    "name": "Caméra intra-orale",
+    "prix_achat": 800.0,
+    "prix_location": 120.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 6,
+    "description": "Matériau utilisé pour la modélisation et le moulage des prothèses dentaires",
+    "name": "Cire dentaire",
+    "prix_achat": 100.0,
+    "prix_location": 30.0,
+    "unite_mesure": "paquet"
+  },
+  {
+    "id": 7,
+    "description": "Pince chirurgicale utilisée pour l'extraction des dents",
+    "name": "Forceps",
+    "prix_achat": 400.0,
+    "prix_location": 80.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 8,
+    "description": "Équipement utilisé pour la prise d'images radiographiques dentaires",
+    "name": "Appareil de radiographie",
+    "prix_achat": 10000.0,
+    "prix_location": 1500.0,
+    "unite_mesure": "pièce"
+  },
+  {
+    "id": 11,
+    "description": "Instrument utilisé pour des examens dentaires en utilisant des ultrasons",
+    "name": "Sonde ultrasonique",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 12,
+    "description": "Instrument chirurgical à lame fine utilisé pour les incisions précises",
+    "name": "Scalpel",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 13,
+    "description": "Pince chirurgicale utilisée pour l'extraction des dents",
+    "name": "Pince d'extraction",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 14,
+    "description": "Dispositif utilisé pour l'aspiration des fluides pendant les procédures dentaires",
+    "name": "Aspiration",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 15,
+    "description": "Instrument utilisé pour appliquer et modeler les composites dentaires",
+    "name": "Compositeur",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 16,
+    "description": "Lampe utilisée pour polymériser les matériaux dentaires",
+    "name": "Lampe de polymérisation",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 17,
+    "description": "Lime utilisée pour le traitement des canaux radiculaires",
+    "name": "Lime endodontique",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 18,
+    "description": "Matériau utilisé pour obturer les canaux radiculaires",
+    "name": "Obturation canalaire",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 19,
+    "description": "Seringue utilisée pour l'irrigation des canaux radiculaires",
+    "name": "Seringue d'irrigation",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 20,
+    "description": "Dispositif implanté dans la mâchoire pour remplacer une dent manquante",
+    "name": "Implant dentaire",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 21,
+    "description": "Foret utilisé lors des procédures chirurgicales dentaires",
+    "name": "Foret chirurgical",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 22,
+    "description": "Gouttière utilisée pour le blanchiment des dents",
+    "name": "Gouttière de blanchiment",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  },
+  {
+    "id": 23,
+    "description": "Lampe à LED utilisée en dentisterie",
+    "name": "Lampe LED",
+    "prix_achat": 0.0,
+    "prix_location": 0.0,
+    "unite_mesure": "pièces"
+  }
+]

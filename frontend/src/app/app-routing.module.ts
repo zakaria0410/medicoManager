@@ -30,6 +30,8 @@ import { GroupsComponent } from './securite/groups/groups.component';
 import { GroupSettingsComponent } from './securite/groups/group-settings/group-settings.component';
 import { FormComponent } from './utils/form/form.component';
 import { OrdonanceTypeComponent } from './parametres/ordonance-type/ordonance-type.component';
+import { DispositifMedicalComponent } from './parametres/dispositif-medical/dispositif-medical.component';
+import { MatierePremiereComponent } from './parametres/matiere-premiere/matiere-premiere.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -61,7 +63,10 @@ const routes: Routes = [
   {path:'user-group',component:GroupsComponent},
   {path:'group-settings',component:GroupSettingsComponent},
   {path:'form',component:FormComponent},
-  {path:'ordonance-type',component:OrdonanceTypeComponent}
+  {path:'ordonance-type',component:OrdonanceTypeComponent},
+  {path:'dispositif-medical',component:DispositifMedicalComponent},
+  {path:'matiere-premiere',component:MatierePremiereComponent},
+  {path:'certificats-settings',component:CerificatsMedicauxSettingComponent}
 ];
 
 @NgModule({

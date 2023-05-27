@@ -28,12 +28,12 @@ return ordonanceType;    }
     }
 
     @Override
-    protected OrdonanceTypeDto instanciateDto() {
+    public OrdonanceTypeDto instanciateDto() {
         return new OrdonanceTypeDto();
     }
 
     @Override
-    protected OrdonanceType instanciateEntity() {
+    public OrdonanceType instanciateEntity() {
         return new OrdonanceType();
     }
 

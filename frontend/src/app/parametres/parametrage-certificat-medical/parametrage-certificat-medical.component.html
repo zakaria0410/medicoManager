@@ -1,0 +1,53 @@
+<h2>Paramétrage des certificats médicaux</h2>
+
+<div *ngFor="let certificat of certificats">
+  <h3>{{ certificat.type }}</h3>
+  <label for="titre">Titre :</label>
+  <input type="text" id="titre" [(ngModel)]="certificat.titre" />
+
+  <label for="paragraphe">Paragraphe :</label>
+  <div class="">
+    <textarea
+      id="paragraphe"
+      [(ngModel)]="certificat.paragraphe"
+      (keyup)="onTextareaInput($event)"
+    ></textarea>
+  </div>
+  <div class="row">
+    <ul style="z-index: 4000" class="list-group" *ngIf="showAutocompleteList">
+      <li
+        class="list-group-item"
+        *ngFor="let variable of autocompleteList"
+        (click)="insertVariable(variable)"
+      >
+        {{ variable }}
+      </li>
+    </ul>
+  </div>
+
+  <button (click)="sauvegarderCertificat(certificat)">Enregistrer</button>
+</div>
+
+<div class="container">
+    <h2>Paramétrage du certificat médical</h2>
+  
+    <div class="form-group">
+      <label for="titre">Titre :</label>
+      <input type="text" class="form-control" id="titre" [(ngModel)]="certificats[0].titre">
+    </div>
+  
+    <div class="form-group">
+      <label for="paragraphe">Paragraphe :</label>
+      <textarea class="form-control" id="paragraphe" [(ngModel)]="certificats[0].paragraphe"       (keyup)="onTextareaInput($event)"></textarea>
+      <div class="suggestions" *ngIf="showAutocompleteList">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let suggestion of autocompleteList" (click)="insertVariable(suggestion)">
+            {{ suggestion }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <button class="btn btn-primary" (click)="sauvegarderCertificat(null)">Enregistrer</button>
+  </div>
+  

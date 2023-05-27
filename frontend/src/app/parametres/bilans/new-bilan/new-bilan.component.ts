@@ -13,6 +13,7 @@ export class NewBilanComponent implements OnInit,OnChanges {
 @Input() bilan: any;
 initializeForm(): void {
   this.bilanForm = this.formBuilder.group({
+    id:[null],
     name: ['', Validators.required],
     numerique: [false, Validators.required],
     valeur_min: [null],
