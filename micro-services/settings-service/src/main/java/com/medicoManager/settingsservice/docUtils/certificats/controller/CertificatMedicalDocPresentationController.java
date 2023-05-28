@@ -1,24 +1,18 @@
 package com.medicoManager.settingsservice.docUtils.certificats.controller;
 
-import com.lowagie.text.DocumentException;
 import com.medicoManager.settingsservice.docUtils.certificats.dto.CertificatMedicalDocPresentation;
+import com.medicoManager.settingsservice.dto.CertificatMedicalTypeDto;
+import com.medicoManager.settingsservice.service.CertificatMedicalTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
-import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.lang.reflect.Field;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,8 +21,9 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/certif")
 @CrossOrigin("*")
 public class CertificatMedicalDocPresentationController {
-@Autowired
-private  TemplateEngine templateEngine;
+    @Autowired
+    private TemplateEngine templateEngine;
+
     public static List<String> getFields() {
         List<String> attributes = new ArrayList<>();
 
@@ -36,19 +31,27 @@ private  TemplateEngine templateEngine;
         for (Field field : fields) {
             attributes.add(field.getName());
         }
-      return attributes;
+        return attributes;
     }
+
     @GetMapping("/fields")
-    public List<String> getAttributes(@PathVariable String name) {
-        ;
-        return getFields();
+    public List<String> getAttributes() {
+
+        return getFields().stream().collect(Collectors.toList());
     }
-    @PostMapping(value = "/generate-certificat", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<byte[]> generateCertificat(@RequestBody CertificatMedicalDocPresentation certificat) throws IOException, DocumentException {
+
+    @Autowired
+    private CertificatMedicalTypeService certificatMedicalTypeService;
+
+    @PostMapping(value = "/generate-certificat/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<byte[]> generateCertificat(@PathVariable Long id, @RequestBody CertificatMedicalDocPresentation certificat) throws Exception {
         // Création du contexte Thymeleaf
+        CertificatMedicalTypeDto certificatMedicalTypeDto = certificatMedicalTypeService.getById(id);
+        String paragraph = certificatMedicalTypeService.paragrapheFromOrdonanceType(certificatMedicalTypeDto);
         Context context = new Context();
         context.setVariable("certificat", certificat);
-
+        context.setVariable("title", certificatMedicalTypeDto.getTitle());
+        context.setVariable("paragraph", paragraph);
         // Configuration du moteur de template Thymeleaf
         String html = templateEngine.process("certificat.html", context);
         // Conversion du contenu HTML en tableau de bytes

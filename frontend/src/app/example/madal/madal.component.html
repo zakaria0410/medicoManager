@@ -22,6 +22,7 @@
   <app-new-dispositif-medical [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'dispositif-medical'"></app-new-dispositif-medical>
     <app-new-bilan [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'bilan'"></app-new-bilan>
     <app-new-matiere-premiere [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'matiere-premiere'"></app-new-matiere-premiere>
+    <app-add-new-certificat [certificatType]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'certificat-type'"></app-add-new-certificat>
 
     <app-new-bilan-type
     [object]="object"

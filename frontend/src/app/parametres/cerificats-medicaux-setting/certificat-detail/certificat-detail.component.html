@@ -1,0 +1,67 @@
+
+<div   style="
+max-height: calc(100vh - 210px);
+overflow-y: auto;
+" class="row bg-white p-2">
+  <div class="d-flex justify-content-between p-3">
+    <h3 class="text-primary">{{certificat.name}}</h3>
+<app-view-certificat-template [certificatData]="certifMock" [id]="certificat.id"></app-view-certificat-template>
+  </div>
+  <div class="col-sm-12">{{certifMock | json}}</div>
+<div class="col-sm-12">
+  <div  class="form-group p-1">
+    <label for="titre">Titre :</label>
+    <input
+    
+      type="text"
+      class="form-control" 
+   
+      [(ngModel)]="certificat.title"
+    />
+
+  </div>  
+</div>
+
+  <div class="col-sm-12 mb-1 p-1">
+    <div style="height: 120px" class="class p-1">
+      <div class="form-group">
+        <label for="paragraphe">Paragraphe :</label>
+        <textarea style="width: 90%;"
+        id="paragraphe"
+        (input)="onTextareaInput($event)"
+        class="form-control"
+          [(ngModel)]="certificat.paragraphe"
+          (keyup)="onTextareaInput($event)"
+        ></textarea>
+        <div
+        style="z-index: 4000"
+        class="suggestions"
+        *ngIf="showAutocompleteList"
+      >
+        <ul style="max-height: calc(100vh - 290px);width: 97%; overflow-y: auto" class="list-group">
+          <li style="cursor: pointer;"
+            class="list-group-item"
+            *ngFor="let suggestion of autocompleteList"
+            (click)="insertVariable(suggestion)"
+          >
+            {{ suggestion.displayName }}
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12">
+
+  </div>
+
+  <div class="col-sm-12 text-center mt-1">
+    <button
+      class="btn btn-primary"
+      (click)="sauvegarderCertificat(certificat)"
+    >
+      Enregistrer
+    </button>
+  </div>
+</div>

@@ -33,5 +33,13 @@ public abstract class AbstractNameSettingsService<T extends AbstractNameSettings
 
          }
     }
+    public D getUniqueByNameOrThrows(String name) throws Exception {
+        T entity=repository.findByName(name).orElse(null);
+        if(entity!=null)return nameEntityMapperService.toDto(entity);
+        else {
+        throw new Exception(getDtoClass().getName()+" Not Found");
+
+        }
+    }
 }
 

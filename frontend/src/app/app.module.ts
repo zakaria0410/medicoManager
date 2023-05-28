@@ -75,7 +75,9 @@ import { MatierePremiereComponent } from './parametres/matiere-premiere/matiere-
 import { NewMatierePremiereComponent } from './parametres/matiere-premiere/new-matiere-premiere/new-matiere-premiere.component';
 import { TagsExemplComponent } from './examples/tags-exempl/tags-exempl.component';
 import { ParametrageCertificatMedicalComponent } from './parametres/parametrage-certificat-medical/parametrage-certificat-medical.component';
-import { ViewCertificatTemplateComponent } from './parametres/certificats-medicaux-setting/view-certificat-template/view-certificat-template.component';
+import { ViewCertificatTemplateComponent } from './parametres/cerificats-medicaux-setting/view-certificat-template/view-certificat-template.component';
+import { AddNewCertificatComponent } from './parametres/cerificats-medicaux-setting/view-certificat-template/add-new-certificat/add-new-certificat.component';
+import { CertificatDetailComponent } from './parametres/cerificats-medicaux-setting/certificat-detail/certificat-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -143,6 +145,8 @@ import { ViewCertificatTemplateComponent } from './parametres/certificats-medica
     TagsExemplComponent,
     ParametrageCertificatMedicalComponent,
     ViewCertificatTemplateComponent,
+    AddNewCertificatComponent,
+    CertificatDetailComponent,
   ],
   imports: [
     BrowserModule,

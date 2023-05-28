@@ -61,7 +61,9 @@
             .medcin-info{
             text-align: start;
             font-weight: 600;      }
+.pre-line {
 
+}
 
 
     </style>
@@ -89,18 +91,10 @@
 
     </table>
     <div class="title">
-        Certificat médical
+       <b th:text="${title}"></b>
     </div>
-    <div class="content">
-        <p>Je soussigné(e), <span th:text="${certificat.doctorName}"></span>, certifie que <span
-                th:text="${certificat.patientName}"></span>, né(e) le <span
-                th:text="${certificat.patientBirthDate}"></span>, a été examiné(e) du <span
-                th:text="${certificat.startDate}"></span> au <span th:text="${certificat.endDate}"></span> et son état
-            de santé est le suivant :</p>
-        <p><span th:text="${certificat.healthCondition}"></span></p>
-        <p>En conséquence, il est recommandé que <span th:text="${certificat.patientName}"></span> bénéficie d'un repos
-            complet pendant <span th:text="${certificat.recommendedDuration}"></span> afin de favoriser une guérison
-            optimale.</p>
+    <div th:utext="${paragraph}">
+
     </div>
 </div>
 </body>

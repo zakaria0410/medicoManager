@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GenericClientService } from 'src/app/services/http/generic-client.service';
 const httpOptions = {
   headers: new HttpHeaders({
@@ -9,6 +9,7 @@ const httpOptions = {
   })
 };
 const httpOptionMultipart = {
+
   headers: new HttpHeaders({
     "Content-Type": "multipart/form-data"
 
@@ -20,19 +21,8 @@ const httpOptionMultipart = {
   styleUrls: ['./view-certificat-template.component.scss'],
 })
 export class ViewCertificatTemplateComponent implements OnInit {
-  certificatData = {
-    doctorName: 'Dr. Jean Dupont',
-    doctorPhone: '01 234 5678',
-    doctorEmail: 'jean.dupont@example.com',
-    patientName: 'Alice Martin',
-    patientBirthDate: '15/03/1985',
-    patientAddress: '456 Rue Secondaire, Ville',
-    startDate: '01/05/2023',
-    endDate: '15/05/2023',
-    healthCondition: 'En bonne santé',
-    recommendedDuration: '2 semaines',
-  };
-
+@Input()  certificatData
+  @Input() id
   constructor(private http: HttpClient) {}
   ngOnInit(): void {
     //  throw new Error('Method not implemented.');
@@ -47,7 +37,7 @@ export class ViewCertificatTemplateComponent implements OnInit {
     };
     this.http
       .post(
-        'http://localhost:8080/pdf/certif/generate-certificat',
+        'http://localhost:8080/api/certif/generate-certificat/'+this.id,
         this.certificatData,
         { ...httpOptions1, }
       )

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class CertificatMedicalDocPresentation {
+
     private String doctorName;
     private String doctorPhone;
     private String doctorEmail;
@@ -16,6 +17,9 @@ public class CertificatMedicalDocPresentation {
     private String recommendedDuration;
 
     // Constructeur, getters et setters
+
+    public CertificatMedicalDocPresentation() {
+    }
 
     public CertificatMedicalDocPresentation(String doctorName, String doctorPhone, String doctorEmail, String patientName, String patientBirthDate, String patientAddress, String startDate, String endDate, String healthCondition, String recommendedDuration) {
         this.doctorName = doctorName;
