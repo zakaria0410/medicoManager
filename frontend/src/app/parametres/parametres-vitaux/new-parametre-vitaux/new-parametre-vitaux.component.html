@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <form [formGroup]="parametreVitalForm" (ngSubmit)="onSubmit()" class="p-4">
+      <div class="form-group">
+        <label for="nomParametreVital">Nom du paramètre vital :</label>
+        <input type="text" class="form-control" id="nomParametreVital" formControlName="nom" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="description">Description :</label>
+        <textarea class="form-control" id="description" formControlName="description" required></textarea>
+      </div>
+    
+      <div class="form-group">
+        <label for="valeurMin">Valeur minimale :</label>
+        <input type="number" class="form-control" id="valeurMin" formControlName="valeurMin" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="valeurMax">Valeur maximale :</label>
+        <input type="number" class="form-control" id="valeurMax" formControlName="valeurMax" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="uniteMesure">Unité de mesure :</label>
+        <input type="text" class="form-control" id="uniteMesure" formControlName="uniteMesure" required>
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Créer</button>
+    </form>
+  </div>
+  

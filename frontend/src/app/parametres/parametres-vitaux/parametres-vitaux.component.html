@@ -1,93 +1,104 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 d-flex justify-content-between">
-      <h3 class="text-center">Paramètres vitaux</h3>
+<div class="container p-3">
+  <div class="d-flex justify-content-between mb-2 text-primary">
+    <h3 class="p-sticky text-center text-primary">Paramétrage - Paramètres Vitaux</h3>
+    <div class="d-flex justify-content-between">
       <app-madal
-      [component]="'bilan'"
-      [title]="'Nouveau Paramétre vital'"
-      [icon]="'plus'"></app-madal>
+        [title]="'Nouveau Paramètre Vital'"
+        [component]="'parametre-vital'"
+        [modalStyle]="{ size: 'lg' }"
+        [icon]="'plus'"
+        [classButton]="'btn btn-sm btn-primary'"
+        (actionAcomplished)="callApi('')"
+      ></app-madal>
+
+      <app-madal
+        class="ml-2"
+        [title]="'Import Paramètres Vitaux'"
+        [component]="'json-importer'"
+        [modalStyle]="{ size: 'lg' }"
+        [icon]="'sync'"
+        [classButton]="'btn btn-sm btn-success'"
+        [urlExport]="'api/parametres-vitaux'"
+      ></app-madal>
     </div>
   </div>
-  <div class="row mt-3">
-    <div class="col-md-12 bg-white">
-      <table class="table table-responsive">
-        <thead>
+
+  <div class="row">
+    <div
+      style="overflow-y: auto; max-height: calc(100vh - 166px)"
+      class="bg-white col-md-12 table-responsive"
+    >
+      <table class="table table-striped table-home">
+        <thead class="shadow-sm text-primary">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Unité de mesure</th>
-            <th scope="col">Valeur minimale</th>
-            <th scope="col">Valeur maximale</th>
-            <th scope="col"></th>
+            <th>
+              Nom<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="parametreVital.name"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Description<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="parametreVital.description"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Min.<br />
+    
+            </th>
+            <th>
+             Max.<br />
+    
+            </th>
+            <th>
+              Unité de mesure<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="parametreVital.uniteMesure"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th class="text-end">
+              <button
+                (click)="initiateParametreVital()"
+                class="btn btn-sm border-primary text-primary"
+              >
+                <i
+                  *ngIf="isSearch == false"
+                  class="fas fa-search"
+                ></i>
+                <i
+                  *ngIf="isSearch == true"
+                  class="fas fa-times"
+                ></i>
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Tension artérielle</td>
-            <td>mmHg</td>
-            <td>90</td>
-            <td>140</td>
+          <tr *ngFor="let parametreVital of parametresVitaux">
+            <td>{{ parametreVital.name }}</td>
+            <td>{{ parametreVital.description }}</td>
+            <td>{{ parametreVital.valeurMin }}</td>
+            <td>{{ parametreVital.valeurMax }}</td>
+            <td>{{ parametreVital.uniteMesure }}</td>
             <td>
-              <div class="btn-group" role="group" aria-label="Actions">
-                <button type="button" class="btn btn-outline-primary">
-                  <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button type="button" class="btn btn-outline-danger">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Fréquence cardiaque</td>
-            <td>bpm</td>
-            <td>60</td>
-            <td>100</td>
-            <td>
-              <div class="btn-group" role="group" aria-label="Actions">
-                <button type="button" class="btn btn-outline-primary">
-                  <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button type="button" class="btn btn-outline-danger">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Température corporelle</td>
-            <td>°C</td>
-            <td>36</td>
-            <td>38</td>
-            <td>
-              <div class="btn-group" role="group" aria-label="Actions">
-                <button type="button" class="btn btn-outline-primary">
-                  <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button type="button" class="btn btn-outline-danger">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Saturation en oxygène</td>
-            <td>%</td>
-            <td>95</td>
-            <td>100</td>
-            <td>
-              <div class="btn-group" role="group" aria-label="Actions">
-                <button type="button" class="btn btn-outline-primary">
-                  <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button type="button" class="btn btn-outline-danger">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>
+              <button type="button" class="btn btn-sm btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+              <app-madal
+                [object]="parametreVital"
+                [component]="'parametre-vital'"
+                [modalStyle]="{ size: 'lg' }"
+                [icon]="'edit'"
+                [classButton]="'btn btn-sm ml-2 btn-icon btn-primary'"
+                (actionAcomplished)="callApi('')"
+              ></app-madal>
             </td>
           </tr>
         </tbody>

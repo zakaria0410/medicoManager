@@ -1,73 +1,173 @@
-<div class="container-fluid bg-white">
-  <h1>Gestion des patients</h1>
-  <hr />
+<div class="container-fluid m-1 p-1">
+  <div class="d-flex justify-content-between mb-2 text-primary">
+    <h3 class="p-sticky text-center text-primary">Paramétrage - Patients</h3>
+    <div class="d-flex justify-content-between">
+      <button
+      (click)="initiatePatient()"
+      class="btn h-75 btn-sm  border-primary mr-2"
+ [ngClass]="isSearch?'bg-primary text-white':'bg-white text-primary'"   >
+      <i *ngIf="isSearch == false" class="fas fa-search"></i>    <span *ngIf="isSearch == false">Rechercher</span>
+      <i *ngIf="isSearch == true" class="fas fa-times"></i> <span *ngIf="isSearch == true">Effacer recherche</span>
+    </button>
+      <app-madal
+        [title]="'Nouveau Patient'"
+        [component]="'patient'"
+        [modalStyle]="{ fullscreen: true }"
+        [icon]="'plus'"
+        [classButton]="'btn btn-sm btn-primary'"
+        (actionAcomplished)="callApi('')"
+      ></app-madal>
+
+      <app-madal
+        class="ml-2"
+        [title]="'Import Patient'"
+        [component]="'json-importer'"
+        [modalStyle]="{ size: 'lg' }"
+        [icon]="'sync'"
+        [classButton]="'btn btn-sm btn-success'"
+        [urlExport]="'api/patient'"
+      ></app-madal>
+    </div>
+  </div>
 
   <div class="row">
-    <div class="col-md-12 table-responsive">
-      <div class="row mb-3">
-        <div class="row col-md-6">
-          <div class="col-md-8">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Rechercher un patient cin,nom,prenom"
-            />
-          </div>
-
-          <div class="col-md-4">
-            <button type="button" class="btn btn-primary float-right">
-              Rechercher
-            </button>
-          </div>
-        </div>
-        <div class="col-md-6 d-flex justify-content-end">
-          <app-madal
-            [title]="'Nouveau Patient'"
-            [component]="'patient'"
-            [modalStyle]="{fullscreen:true}"
-            [icon]="'plus'"
-          ></app-madal>
-        </div>
-      </div>
-
-      <table class="table table-bordered table-hover">
-        <thead>
+    <div
+      style="overflow-y: auto; max-height: calc(100vh - 166px)"
+      class="bg-white col-md-12 table-responsive"
+    >
+      <table class="table table-striped table-home">
+        <thead class="shadow-sm text-primary">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Prénom</th>
-            <th scope="col">Date de naissance</th>
-            <th scope="col">Email</th>
-            <th scope="col">Téléphone</th>
-            <th scope="col">Actions</th>
+            <th>
+              Nom<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.nom"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Prénom<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.prenom"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Adresse<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.adresse"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Téléphone 1<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.telephone1"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Téléphone 2<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.telephone2"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Email<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.email"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Civilite<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.civilite"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              CIN<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.cin"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              N° CNSS<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.nCnss"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              Mutuelle<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.mutuelle"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              N° Mutuelle<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.nMutuelle"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th>
+              N° Sécurité Sociale<br />
+              <input
+                *ngIf="isSearch == true"
+                [(ngModel)]="patient.numeroSecuriteSociale"
+                (input)="inputValueSubject.next(inputValue)"
+              />
+            </th>
+            <th class="text-end">
+          
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Dupont</td>
-            <td>Marie</td>
-            <td>15/04/1980</td>
-            <td>marie.dupont@gmail.com</td>
-            <td>06 12 34 56 78</td>
+          <tr *ngFor="let patient of patients">
+            <td>{{ patient.nom }}</td>
+            <td>{{ patient.prenom }}</td>
+            <td>{{ patient.adresse }}</td>
+            <td>{{ patient.telephone1 }}</td>
+            <td>{{ patient.telephone2 }}</td>
+            <td>{{ patient.email }}</td>
+            <td>{{ patient.civilite }}</td>
+            <td>{{ patient.cin }}</td>
+            <td>{{ patient.ncnss }}</td>
+            <td>{{ patient.mutuelle }}</td>
+            <td>{{ patient.nmutuelle }}</td>
+            <td>{{ patient.numeroSecuriteSociale }}</td>
+
             <td>
-              <button class="btn btn-sm btn-primary">Modifier</button>
-              <button class="btn btn-sm btn-danger">Supprimer</button>
+              <button type="button" class="btn btn-sm btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+              <app-madal
+                [object]="patient"
+                [component]="'patient'"
+                [modalStyle]="{ fullscreen: true }"
+                [icon]="'edit'"
+                [classButton]="'btn btn-sm ml-2 btn-icon btn-primary'"
+                (actionAcomplished)="callApi('')"
+              ></app-madal>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Smith</td>
-            <td>John</td>
-            <td>03/08/1975</td>
-            <td>john.smith@gmail.com</td>
-            <td>06 98 76 54 32</td>
-            <td>
-              <button class="btn btn-sm btn-primary">Modifier</button>
-              <button class="btn btn-sm btn-danger">Supprimer</button>
-            </td>
-          </tr>
-          <!-- Ajouter ici d'autres lignes pour les patients -->
         </tbody>
       </table>
     </div>

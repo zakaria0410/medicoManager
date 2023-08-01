@@ -1,4 +1,5 @@
-<div class="container-fluid">
+
+<div [formGroup]="patientForm" class="container-fluid">
   <div class="row">
     <!-- Carte 1 -->
     <div class="col-md-6">
@@ -7,19 +8,16 @@
           Informations du patient
         </div>
         <div class="card-body">
-          <form class="row">
+          <div  class="row">
             <div class="form-group col-md-6">
               <label for="nom">Nom:</label>
-              <input type="text" class="form-control" id="nom" />
+              <input type="text" class="form-control" id="nom" formControlName="nom" />
             </div>
             <div class="form-group col-md-6">
               <label for="prenom">Prénom:</label>
-              <input type="text" class="form-control" id="prenom" />
+              <input type="text" class="form-control" id="prenom" formControlName="prenom" />
             </div>
-            <div class="form-group col-md-6">
-              <label for="photo">Photo:</label>
-              <input type="file" class="form-control-file" id="photo" />
-            </div>
+           
             <div class="form-group col-md-6">
               <label for="civilite">Civilité:</label><br />
               <div class="form-check-inline">
@@ -27,8 +25,8 @@
                   <input
                     type="radio"
                     class="form-check-input"
-                    name="civilite"
-                    value="M"
+                    formControlName="civilite"
+                    value="Male"
                   />M.
                 </label>
               </div>
@@ -37,28 +35,28 @@
                   <input
                     type="radio"
                     class="form-check-input"
-                    name="civilite"
-                    value="Mme"
+                    formControlName="civilite"
+                    value="Female"
                   />Mme.
                 </label>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="cin">CIN:</label>
-              <input type="text" class="form-control" id="cin" />
+              <input type="text" class="form-control" id="cin" formControlName="cin" />
             </div>
             <div class="form-group col-md-6">
               <label for="sexe">Sexe:</label>
-              <select class="form-control" id="sexe">
-                <option>Masculin</option>
-                <option>Féminin</option>
+              <select class="form-control" id="sexe" formControlName="civilite">
+                <option>Male</option>
+                <option>Female</option>
               </select>
             </div>
             <div class="form-group col-md-6">
               <label for="date_naissance">Date de naissance:</label>
-              <input type="date" class="form-control" id="date_naissance" />
+              <input type="date" class="form-control" id="date_naissance" formControlName="dateNaissance" />
             </div>
-          </form>
+     </div>
         </div>
       </div>
     </div>
@@ -68,38 +66,31 @@
       <div class="card border-primary mt-3">
         <div class="card-header bg-primary text-white">Situation familiale</div>
         <div class="card-body">
-          <form class="row">
+          <div  class="row">
             <div class="form-group col-md-6">
               <label for="nb_enfants">Nombre d'enfants:</label>
-              <input type="number" class="form-control" id="nb_enfants" />
+              <input type="number" class="form-control" id="nb_enfants" formControlName="nombreEnfants" />
             </div>
             <div class="form-group col-md-6">
               <label for="profession">Profession:</label>
-              <input type="text" class="form-control" id="profession" />
+              <input type="text" class="form-control" id="profession" formControlName="profession" />
             </div>
             <div class="form-group col-md-6">
               <label for="type_assurance">Type d'assurance:</label>
-              <select class="form-control" id="type_assurance">
-                <option>Aucune</option>
-                <option>Assurance maladie</option>
-                <option>Assurance vie</option>
-                <option>Assurance habitation</option>
-              </select>
+              <input class="form-control" id="type_assurance" formControlName="mutuelle">
+            
             </div>
             <div class="form-group col-md-6">
-              <label for="groupe_sanguin">Groupe sanguin:</label>
-              <select class="form-control" id="groupe_sanguin">
-                <option>A+</option>
-                <option>A-</option>
-                <option>B+</option>
-                <option>B-</option>
-                <option>O+</option>
-                <option>O-</option>
-                <option>AB+</option>
-                <option>AB-</option>
-              </select>
+              <label for="type_assurance">N° d'assurance:</label>
+              <input class="form-control" id="type_assurance" formControlName="nmutuelle">
+            
             </div>
-          </form>
+            <div class="form-group col-md-6">
+              <label for="groupe_sanguin">N° CNSS:</label>
+              <input class="form-control" id="groupe_sanguin" formControlName="ncnss">
+                
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -111,26 +102,31 @@
       <div class="card border-primary mt-3">
         <div class="card-header bg-primary text-white">Contact d'urgence</div>
         <div class="card-body">
-          <form class="row">
+          <div  class="row">
             <div class="form-group col-md-6">
               <label for="adresse">Adresse:</label>
-              <textarea class="form-control" id="adresse" rows="3"></textarea>
+              <textarea class="form-control" id="adresse" rows="3" formControlName="adresse"></textarea>
             </div>
             <div class="form-group col-md-6">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" />
+              <input type="email" class="form-control" id="email" formControlName="email" />
             </div>
             <div class="form-group col-md-6">
               <label for="tel1">Téléphone 1:</label>
-              <input type="tel" class="form-control" id="tel1" />
+              <input type="tel" class="form-control" id="tel1" formControlName="telephone1" />
             </div>
             <div class="form-group col-md-6">
               <label for="tel2">Téléphone 2:</label>
-              <input type="tel" class="form-control" id="tel2" />
+              <input type="tel" class="form-control" id="tel2" formControlName="telephone2" />
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="container text-center">
+  <button (click)=" onSubmit()" class="btn btn-primary"><i class="fas fa-plus"></i>
+  Enregistrer Patient</button>
 </div>

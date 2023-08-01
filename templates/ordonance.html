@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ordonnance médicale</title>
+    <style>
+        /* Styles CSS facultatifs pour formater l'ordonnance */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .cabinet-info {
+            margin-bottom: 20px;
+        }
+
+        .doctor-info {
+            text-align: start;
+        }
+
+        .patient-info {
+            text-align: right;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        table {
+            margin: 0 auto; /* Centre le tableau horizontalement */
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="cabinet-info">
+        <tr>
+            <td class="doctor-info">
+                <p><strong>Nom :</strong> Docteur [Nom du Docteur]</p>
+                <p><strong>Spécialité :</strong> [Spécialité du Docteur]</p>
+                <p><strong>Numéro d'identification :</strong> [Numéro d'identification du Docteur]</p>
+            </td>
+            <td class="patient-info">
+                <p><strong>Nom :</strong> [Nom du Patient]</p>
+                <p><strong>Age :</strong> [Age du Patient]</p>
+                <p><strong>Adresse :</strong> [Adresse du Patient]</p>
+                <p><strong>Téléphone :</strong> [Numéro de téléphone du Patient]</p>
+            </td>
+        </tr>
+    </table>
+
+    <div style="text-align: center;" class="prescription">
+        <h3>Prescription</h3>
+        <table style="width: 100%;">
+            <tr>
+                <td><strong>Médicament 1 :</strong></td>
+                <td>1 comprimé par jour - Matin (après le petit-déjeuner)</td>
+                
+                <td>1 comprimé</td>
+              
+                <td>10 jours</td>
+            </tr>
+            <tr>
+                <td><strong>Médicament 2 :</strong></td>
+                <td>2 comprimés par jour - Matin et soir (avant les repas)</td>
+                
+                <td>2 comprimés</td>
+              
+                <td>5 jours</td>
+            </tr>
+            <tr>
+                <td><strong>Médicament 3 :</strong></td>
+                <td>1 capsule par jour - Soir (après le dîner)</td>
+                
+                <td>1 capsule</td>
+              
+                <td>15 jours</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

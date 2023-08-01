@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-main-menu',
@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-menu.component.scss']
 })
 export class MainMenuComponent implements OnInit {
-
+  isMenuOpen: boolean = false;
+@Output() showMenu=new EventEmitter
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    this.showMenu.emit(true)
+  }
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,36 @@
+<div
+  class="card card-primary"
+  style="
+    min-height: calc(66% - 20px);
+    max-height: calc(66% - 20px);
+    overflow-y: auto;
+  "
+>
+  <div class="card-body">
+    <h5 class="card-title text-primary">Statistiques Mensuelles</h5>
+    <div class="row">
+      <div class="col-md-6">
+        <canvas
+          id="chart1"
+          baseChart
+          [datasets]="chart1Data"
+          [labels]="chart1Labels"
+          [options]="chart1Options"
+          [legend]="chart1Legend"
+          [type]="'line'"
+        ></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas
+          id="chart2"
+          baseChart
+          [datasets]="chart2Data"
+          [labels]="chart2Labels"
+          [options]="chart2Options"
+          [legend]="chart2Legend"
+          [type]="'bar'"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+</div>

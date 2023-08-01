@@ -9,24 +9,64 @@
     ></button>
   </div>
   <div class="modal-body">
-    <app-new-patient *ngIf="component == 'patient'"></app-new-patient>
-    <app-new-rdv *ngIf="component == 'rdv'"></app-new-rdv>
+    <app-new-patient
+      [patient]="object"
+      (actionAccomplished)="
+        modal.dismiss('');
+        actionAcomplished.emit(true)
+      "
+      *ngIf="component == 'patient'"
+    ></app-new-patient>
+    <app-new-rdv      [rdv]="object"
+    [supplement_object]="{initiationPatient:true,sansRdv:false}"
+    (actionAccomplished)="
+      modal.dismiss('');
+      actionAcomplished.emit(true)
+    " *ngIf="component == 'rdv'"></app-new-rdv>
     <app-new-traitement *ngIf="component == 'traitement'"></app-new-traitement>
     <app-bilan-types *ngIf="component == 'bilan-type'"></app-bilan-types>
     <app-new-certificat *ngIf="component == 'certificat'"></app-new-certificat>
     <app-edition-certificat
       *ngIf="component == 'edition-certificat'"
     ></app-edition-certificat>
-    <app-new-acte-soin [object]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'acte-soin'"></app-new-acte-soin>
-    <app-new-medicament [medicament]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'medicament'"></app-new-medicament>
-  <app-new-dispositif-medical [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'dispositif-medical'"></app-new-dispositif-medical>
-    <app-new-bilan [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'bilan'"></app-new-bilan>
-    <app-new-matiere-premiere [bilan]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'matiere-premiere'"></app-new-matiere-premiere>
-    <app-add-new-certificat [certificatType]="object" (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)" *ngIf="component == 'certificat-type'"></app-add-new-certificat>
-
+    <app-new-acte-soin
+      [object]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      *ngIf="component == 'acte-soin'"
+    ></app-new-acte-soin>
+    <app-new-medicament
+      [medicament]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      *ngIf="component == 'medicament'"
+    ></app-new-medicament>
+    <app-new-dispositif-medical
+      [bilan]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      *ngIf="component == 'dispositif-medical'"
+    ></app-new-dispositif-medical>
+    <app-new-bilan
+      [bilan]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      *ngIf="component == 'bilan'"
+    ></app-new-bilan>
+    <app-new-matiere-premiere
+      [bilan]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      *ngIf="component == 'matiere-premiere'"
+    ></app-new-matiere-premiere>
+    <app-add-new-certificat
+      [certificatType]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      *ngIf="component == 'certificat-type'"
+    ></app-add-new-certificat>
+    <app-new-parametre-vitaux
+      [parametreVital]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      *ngIf="component == 'parametre-vital'"
+    ></app-new-parametre-vitaux>
     <app-new-bilan-type
-    [object]="object"
-    (actionAcomplished)="modal.dismiss('') ;actionAcomplished.emit(true)"
+      [object]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
       *ngIf="component == 'bilan-type-param'"
     ></app-new-bilan-type>
     <app-new-categorie-depense
@@ -34,13 +74,13 @@
     ></app-new-categorie-depense>
     <app-new-depense *ngIf="component == 'new-depense'"></app-new-depense>
     <app-new-ordonance-type
-    (actionAcomplished)="modal.dismiss('');actionAcomplished.emit(true)"
-    [object]="object"
+      (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
+      [object]="object"
       *ngIf="component == 'new-ordonance-type'"
     ></app-new-ordonance-type>
     <div *ngIf="component == 'json-importer'">
       <app-json-entity-uploader
-      (actionAcomplished)="modal.dismiss('');actionAcomplished.emit(true)"
+        (actionAcomplished)="modal.dismiss(''); actionAcomplished.emit(true)"
         [urlExport]="urlExport"
       ></app-json-entity-uploader>
     </div>

@@ -1,109 +1,86 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventApi, EventClickArg, EventInput } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { Subject, debounceTime } from 'rxjs';
+import { GenericClientService } from 'src/app/services/http/generic-client.service';
 @Component({
   selector: 'app-rdv',
   templateUrl: './rdv.component.html',
-  styleUrls: ['./rdv.component.scss']
+  styleUrls: ['./rdv.component.scss'],
+  providers:[]
 })
 export class RdvComponent implements OnInit {
-isList:boolean=false
-  eventGuid = 0;
-  TODAY_STR = new Date().toISOString().replace(/T.*$/, '');
- INITIAL_EVENTS: EventInput[] = [
-   {
-     id: this.createEventId(),
-     title: 'All-day event',
-     start: this.TODAY_STR
-   },
-   {
-     id: this.createEventId(),
-     title: 'Timed event',
-     start: this.TODAY_STR + 'T00:00:00',
-     end: this.TODAY_STR + 'T03:00:00'
-   },
-   {
-     id: this.createEventId(),
-     title: 'Timed event',
-     start: this.TODAY_STR + 'T12:00:00',
-     end: this.TODAY_STR + 'T15:00:00'
-   }
- ];
- 
-  createEventId() {
-   return String(this.eventGuid++);
- }
 
- calendarOptions: CalendarOptions = {
-   plugins: [
- 
-     dayGridPlugin,
-     interactionPlugin
-   ],
-   headerToolbar: {
-     left: 'prev,next today',
-     center: 'title',
-     right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-   },
-   initialView: 'dayGridMonth',
-   initialEvents: this.INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
-   weekends: true,
-   editable: true,
-   selectable: true,
-   selectMirror: true,
-   dayMaxEvents: true,
-   select: this.handleDateSelect.bind(this),
-   eventClick: this.handleEventClick.bind(this),
-   eventsSet: this.handleEvents.bind(this)
-   /* you can update a remote database when these fire:
-   eventAdd:
-   eventChange:
-   eventRemove:
-   */
- };
- calendarVisible: boolean=true;
- currentEvents: EventApi[]=[];
+dates=[]
 
- handleCalendarToggle() {
-   this.calendarVisible = !this.calendarVisible;
- }
+initiateDate(event){
+this.dates=event
+//this.datesGenerated.emit(event)
+}
+  isList:boolean=true
+rdvs = [];
+rdv = {
+  patient: null,
+  date: null,
+  heure: null,
+  statut: null,medcin:null
+};
 
- handleWeekendsToggle() {
-   const { calendarOptions } = this;
-   calendarOptions.weekends = !calendarOptions.weekends;
- }
- constructor(private changeDetector: ChangeDetectorRef) {
- }
-  ngOnInit(): void {
+calendarObject:any
+inputValue: string;
+inputValueSubject = new Subject<string>();
+isSearch: boolean = false;
 
+constructor(private clientHttp: GenericClientService) {}
+
+initiateRdv() {
+  if (this.isSearch) {
+    this.isSearch = false;
+    Object.keys(this.rdv).forEach((s) => (this.rdv[s] = null));
+    console.log(this.rdv);
+    this.inputValueSubject.next("");
+  } else {
+    this.isSearch = true;
   }
- handleDateSelect(selectInfo: DateSelectArg) {
-   const title = prompt('Please enter a new title for your event');
-   const calendarApi = selectInfo.view.calendar;
+}
 
-   calendarApi.unselect(); // clear date selection
+ngOnInit(): void {
+  this.clientHttp.get('rdv').subscribe((data) => (this.rdvs = data));
+  this.inputValueSubject.pipe(debounceTime(300)).subscribe((value) =>
+    this.clientHttp
+      .post('rdv/search', this.rdv)
+      .subscribe((data) => (this.rdvs = data))
+  );
+this.testDistinctDates()}
+confirmer(rdv){
+this.clientHttp.post('rdv/confirmer',rdv).subscribe(
+  data=>{
+    this.clientHttp.get('rdv').subscribe(
+      res=>this.rdvs=res
+    )
+  }
+)
+}
+annuler(rdv){
+  
+  this.clientHttp.post('rdv/annuler',rdv).subscribe(
+    data=>{
+      this.clientHttp.get('rdv').subscribe(
+        res=>this.rdvs=res
+      )}
+  )
+  }
 
-   if (title) {
-     calendarApi.addEvent({
-       id: '65665666',
-       title,
-       start: selectInfo.startStr,
-       end: selectInfo.endStr,
-       allDay: selectInfo.allDay
-     });
-   }
- }
-
- handleEventClick(clickInfo: EventClickArg) {
-   if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-     clickInfo.event.remove();
-   }
- }
-
- handleEvents(events: EventApi[]) {
-   this.currentEvents = events;
-   this.changeDetector.detectChanges();
- }
+callApi(value: string) {
+  this.clientHttp.get('rdv').subscribe((response) => {
+    this.rdvs = response;
+  });
+}
+testDistinctDates(){
+  this.clientHttp.get('rdv/distinct-date').subscribe(
+    data=>this.calendarObject=data
+  )
+}
 
 }

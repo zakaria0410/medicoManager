@@ -8,6 +8,8 @@ import com.medicoManager.settingsservice.repository.GenericSearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +22,7 @@ public abstract class BaseService<E extends BaseEntity, D extends BaseDTO> {
 
     protected abstract Class<E> getEntityClass();
 
-    public abstract List<D> mapJsonToDto(MultipartFile file);
+    public abstract List<D> mapJsonToDto(MultipartFile file) ;
 
     @Autowired
     private BaseRepository<E> repository;
@@ -74,6 +76,7 @@ repository.saveAll(entities);
     public List<D> getAll() {
         List<E> entities = repository.findAll();
         return entities.stream()
+                .sorted(Comparator.comparing(E::getId).reversed())
                 .map(entity -> entityMapperService.toDto(entity))
                 .collect(Collectors.toList());
     }

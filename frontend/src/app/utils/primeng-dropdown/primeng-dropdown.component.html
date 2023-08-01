@@ -1,0 +1,13 @@
+<p-dropdown (onChange)="log($event)" styleClass="w-100" [options]="list"  [(ngModel)]="selected">
+    <ng-template pTemplate="selectedItem">
+        <div class="flex align-items-center gap-2" *ngIf="selected">
+           <div>{{ selected.nom }}</div>
+        </div>
+    </ng-template>
+    <ng-template let-city pTemplate="item">
+      <div class="custom-dropdown-item">
+        <span>{{ city.nom }} {{city.civilite}}</span>
+          </div>
+    </ng-template>
+  </p-dropdown>
+  

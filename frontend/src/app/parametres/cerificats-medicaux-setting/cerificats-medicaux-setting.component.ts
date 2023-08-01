@@ -11,14 +11,24 @@ export class CerificatsMedicauxSettingComponent implements OnInit {
   constructor(private httpClient:GenericClientService) {}
 certificats=[]
 selectedCertificat=null
+delete(id){
+  this.httpClient.delete(id,'certificat-medical-type').subscribe(
+    data=>{
+      this.fetchCertificatsType()      
+    }
+  )
+}
+fetchCertificatsType(){
+  
+  this.httpClient.get('certificat-medical-type').subscribe(
+    data=>{this.certificats=data.map(c=>{return Object.assign(c,{active:false})})
+  this.selectedCertificat=this.certificats[0]
+this.selectedCertificat.active=true}
+  )
+}
   ngOnInit() {
  
-    this.httpClient.get('certificat-medical-type').subscribe(
-      data=>{this.certificats=data.map(c=>{return Object.assign(c,{active:false})})
-    this.selectedCertificat=this.certificats[0]
-  this.selectedCertificat.active=true}
-    )
-    
+   this.fetchCertificatsType() 
     //  this.certificats = this.certificatService.getCertificats();
   }
   selectCertificat(i,object){

@@ -1,0 +1,7 @@
+<div class="row text-center">
+    <label class="col-sm-3">Date </label>
+  
+    <input class="col-sm-3" type="date"  [(ngModel)]="today" (change)="generateDateArray()" />
+    <label class="col-sm-3">Nombre de jours:</label>
+    <input class="col-sm-3" type="number" [(ngModel)]="numberOfDays" (change)="generateDateArray()" />
+  </div>

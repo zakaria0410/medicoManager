@@ -11,13 +11,13 @@
 
       <div class="d-flex">
         <app-madal
-        [title]="'Nouveau certificat'"
-        [component]="'certificat-type'"
-        [modalStyle]="{ size: 'lg' }"
-        [icon]="'plus'"
-        [classButton]="'btn mr-2 h-50 btn-primary'"
-        (actionAcomplished)="ngOnInit()"
-      ></app-madal>
+          [title]="'Nouveau certificat'"
+          [component]="'certificat-type'"
+          [modalStyle]="{ size: 'lg' }"
+          [icon]="'plus'"
+          [classButton]="'btn mr-2 h-50 btn-primary'"
+          (actionAcomplished)="ngOnInit()"
+        ></app-madal>
         <button class="h-50 btn btn-secondary btn-sm mr-2 p-2">
           <i class="fas fa-sync mr-1"></i>Import Ceritifcat
         </button>
@@ -25,22 +25,46 @@
     </div>
     .
   </div>
-  <div *ngIf="certificats.length<=0" style="height: 200px; overflow-y: auto" class="row bg-white text-center py-5">
- <b>Aucun certificats paramétré</b> 
+  <div
+    *ngIf="certificats.length <= 0"
+    style="height: 200px; overflow-y: auto"
+    class="row bg-white text-center py-5"
+  >
+    <b>Aucun certificats paramétré</b>
   </div>
-  <div *ngIf="certificats.length>0" style="height: calc(100vh - 150px); overflow-y: auto" class="row">
+  <div
+    *ngIf="certificats.length > 0"
+    style="height: calc(100vh - 150px); overflow-y: auto"
+    class="row"
+  >
     <div class="col-md-4 mt-2">
-
       <ul class="list-group">
-        <li *ngFor="let certificat of certificats;let i=index" (click)="selectCertificat(i,certificat)" [ngClass]="certificat.active==true ? 'active':''" class="list-group-item">{{certificat.name}}</li>
+        <li
+          *ngFor="let certificat of certificats; let i = index"
+          (click)="selectCertificat(i, certificat)"
+          [ngClass]="certificat.active == true ? 'active' : ''"
+         style="cursor: pointer;" class="list-group-item d-flex justify-content-between"
+        >
+          <div class="w-75">
+            <div class="col-sm-12">
+              {{ certificat.name }}
+            </div>
+            <div class="col-sm-12">
+              {{ certificat.description }}
+            </div>
+          </div>
+          <div class="w-25 text-end align-items-center">
+            <button (click)="delete(certificat.id)" class="btn btn icon bg-white text-primary">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </li>
       </ul>
     </div>
-    <div
-    
-      class="col-md-8 mt-2"
-    >
-  
-<app-certificat-detail [certificat]="selectedCertificat"></app-certificat-detail>
+    <div class="col-md-8 mt-2">
+      <app-certificat-detail
+        [certificat]="selectedCertificat"
+      ></app-certificat-detail>
     </div>
   </div>
 </div>

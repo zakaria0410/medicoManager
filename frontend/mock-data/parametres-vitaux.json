@@ -1,0 +1,150 @@
+ [
+    {
+      "name": "Fréquence cardiaque",
+      "description": "Nombre de battements cardiaques par minute",
+      "valeurMin": 60,
+      "valeurMax": 100,
+      "uniteMesure": "bpm"
+    },
+    {
+      "name": "Tension artérielle",
+      "description": "Force exercée par le sang sur les parois des artères",
+      "valeurMin": 90,
+      "valeurMax": 120,
+      "uniteMesure": "mmHg"
+    },
+    {
+      "name": "Température corporelle",
+      "description": "Mesure de la chaleur interne du corps",
+      "valeurMin": 36.5,
+      "valeurMax": 37.5,
+      "uniteMesure": "°C"
+    },
+    {
+      "name": "Fréquence respiratoire",
+      "description": "Nombre de respirations complètes par minute",
+      "valeurMin": 12,
+      "valeurMax": 20,
+      "uniteMesure": "rpm"
+    },
+    {
+      "name": "Saturation en oxygène",
+      "description": "Pourcentage d'oxygène présent dans le sang",
+      "valeurMin": 95,
+      "valeurMax": 100,
+      "uniteMesure": "%"
+    },
+    {
+      "name": "Niveau de conscience",
+      "description": "Évaluation de l'état de conscience du patient",
+      "valeurMin": 3,
+      "valeurMax": 15,
+      "uniteMesure": "échelle"
+    },
+    {
+      "name": "Glycémie",
+      "description": "Niveau de glucose dans le sang",
+      "valeurMin": 70,
+      "valeurMax": 110,
+      "uniteMesure": "mg/dL"
+    },
+    {
+      "name": "Système respiratoire",
+      "description": "Évaluation du fonctionnement du système respiratoire",
+      "valeurMin": 80,
+      "valeurMax": 100,
+      "uniteMesure": "%"
+    },
+    {
+      "name": "Indice de masse corporelle",
+      "description": "Mesure de l'état de corpulence",
+      "valeurMin": 18.5,
+      "valeurMax": 24.9,
+      "uniteMesure": "kg/m²"
+    },
+    {
+      "name": "Pression artérielle systolique",
+      "description": "Pression maximale exercée par le sang sur les parois des artères",
+      "valeurMin": 90,
+      "valeurMax": 140,
+      "uniteMesure": "mmHg"
+    },
+    {
+      "name": "Pression artérielle diastolique",
+      "description": "Pression minimale exercée par le sang sur les parois des artères",
+      "valeurMin": 60,
+      "valeurMax": 90,
+      "uniteMesure": "mmHg"
+    },
+    {
+      "name": "Volume expiratoire maximal par seconde",
+      "description": "Mesure du débit d'air maximal lors d'une expiration forcée",
+      "valeurMin": 70,
+      "valeurMax": 100,
+      "uniteMesure": "L/min"
+    },
+    {
+      "name": "Niveau de douleur",
+      "description": "Évaluation de l'intensité de la douleur ressentie par le patient",
+      "valeurMin": 0,
+      "valeurMax": 10,
+      "uniteMesure": "échelle"
+    },
+    {
+      "name": "Niveau de stress",
+      "description": "Évaluation du niveau de stress du patient",
+      "valeurMin": 0,
+      "valeurMax": 100,
+      "uniteMesure": "%"
+    },
+    {
+      "name": "Capacité vitale forcée",
+      "description": "Mesure du volume maximal d'air que l'on peut expirer après une inspiration forcée",
+      "valeurMin": 3.5,
+      "valeurMax": 5.5,
+      "uniteMesure": "L"
+    },
+    {
+      "name": "Hémoglobine",
+      "description": "Concentration d'hémoglobine dans le sang",
+      "valeurMin": 12,
+      "valeurMax": 16,
+      "uniteMesure": "g/dL"
+    },
+    {
+      "name": "Fréquence des mouvements intestinaux",
+      "description": "Nombre de mouvements intestinaux par jour",
+      "valeurMin": 1,
+      "valeurMax": 3,
+      "uniteMesure": "fois"
+    },
+    {
+      "name": "Indice de performance physique",
+      "description": "Évaluation de la performance physique du patient",
+      "valeurMin": 0,
+      "valeurMax": 100,
+      "uniteMesure": "%"
+    },
+    {
+      "name": "Niveau d'hydratation",
+      "description": "Évaluation du niveau d'hydratation du patient",
+      "valeurMin": 0,
+      "valeurMax": 10,
+      "uniteMesure": "échelle"
+    },
+    {
+      "name": "Volume sanguin circulant",
+      "description": "Volume total de sang présent dans la circulation sanguine",
+      "valeurMin": 4.5,
+      "valeurMax": 6.0,
+      "uniteMesure": "L"
+    },
+    {
+      "name": "Volume téléexpiratoire",
+      "description": "Volume d'air expiré après une expiration normale",
+      "valeurMin": 1,
+      "valeurMax": 1.5,
+      "uniteMesure": "L"
+    }
+  ]
+

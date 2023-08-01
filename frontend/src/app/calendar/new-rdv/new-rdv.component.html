@@ -1,37 +1,42 @@
-<div class="container-fluid">
-    <form class="row">
-      <input type="text" id="medicament" class="form-control" [(ngModel)]="selectedMedicament"
-      [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter"
-      placeholder="Sélectionnez un médicament...">
-      <div class="col-sm-3 mb-3">
-          <label for="nom" class="form-label">Nom</label>
-          <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom" required>
-        </div>
-        <div class="col-sm-3 mb-3">
-          <label for="prenom" class="form-label">Prénom</label>
-          <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
-        </div>
-        <div class="col-sm-3 mb-3">
-          <label for="tel" class="form-label">Téléphone</label>
-          <input type="tel" class="form-control" id="tel" name="tel" placeholder="Entrez votre numéro de téléphone" required>
-        </div>
-        <div class="col-sm-3 mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre adresse email" required>
-        </div>
-        <div class="col-sm-3 mb-3">
-          <label for="date" class="form-label">Date du rendez-vous</label>
-          <input type="date" class="form-control" id="date" name="date" required>
-        </div>
-        <div class="col-sm-3 mb-3">
-          <label for="heure" class="form-label">Heure du rendez-vous</label>
-          <input type="time" class="form-control" id="heure" name="heure" required>
-        </div>
-        <div class="col-sm-3 mb-3">
-          <label for="commentaires" class="form-label">Commentaires</label>
-          <textarea class="form-control" id="commentaires" name="commentaires" rows="3"></textarea>
-        </div>
-      
-      </form>
-      
+<div class="col-md-12">
+  <form [formGroup]="rdvForm" (ngSubmit)="onSubmit()" class="p-4">
+    
+<div class="form-group mb-2">
+  <label for="patient">Patient:</label>
+  <app-primeng-dropdown (changed)="changeMedcin($event)" [url]="'users/medcin'"></app-primeng-dropdown>
+</div>    
+  
+
+    <div class="form-group mb-2">
+      <label for="patient">Patient:</label>
+      <input autocomplete="off"
+        placeholder="Rechercher Patient....."
+        type="text"
+        class="form-control"
+        id="medicament"
+        formControlName="patientName"
+      />
+      <ul class="list-group mb-3" style="max-height: 100px; overflow-y: auto;">
+        <li class="list-group-item" *ngFor="let medicament of filteredPatients">
+          <a (click)="selectPatient(medicament)">
+            {{ medicament.nom }} {{ medicament.prenom }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="date" formControlName="date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="heure">Heure:</label>
+      <input type="time" class="form-control" id="heure" formControlName="heure" required>
+    </div>
+<div class="form-group mt-2 text-center">
+  <button type="submit" class="btn btn-primary">Créer Rendez-Vous</button>
+</div>
+
+  </form>
 </div>

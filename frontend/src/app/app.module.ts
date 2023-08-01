@@ -78,6 +78,14 @@ import { ParametrageCertificatMedicalComponent } from './parametres/parametrage-
 import { ViewCertificatTemplateComponent } from './parametres/cerificats-medicaux-setting/view-certificat-template/view-certificat-template.component';
 import { AddNewCertificatComponent } from './parametres/cerificats-medicaux-setting/view-certificat-template/add-new-certificat/add-new-certificat.component';
 import { CertificatDetailComponent } from './parametres/cerificats-medicaux-setting/certificat-detail/certificat-detail.component';
+import { NewParametreVitauxComponent } from './parametres/parametres-vitaux/new-parametre-vitaux/new-parametre-vitaux.component';
+import { CalendarOptionsComponent } from './calendar/table-calendar/calendar-options/calendar-options.component';
+import { HomeTrialComponent } from './home-trial/home-trial.component';
+import { HomeTrialStatisticsComponent } from './home-trial/home-trial-statistics/home-trial-statistics.component';
+import { CardStatisticsComponent } from './home/card-statistics/card-statistics.component';
+import { DropdownModule } from 'primeng/dropdown';
+import { PrimengDropdownComponent } from './utils/primeng-dropdown/primeng-dropdown.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -147,9 +155,16 @@ import { CertificatDetailComponent } from './parametres/cerificats-medicaux-sett
     ViewCertificatTemplateComponent,
     AddNewCertificatComponent,
     CertificatDetailComponent,
+    NewParametreVitauxComponent,
+    CalendarOptionsComponent,
+    HomeTrialComponent,
+    HomeTrialStatisticsComponent,
+    CardStatisticsComponent,
+    PrimengDropdownComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FullCalendarModule,
@@ -161,7 +176,8 @@ import { CertificatDetailComponent } from './parametres/cerificats-medicaux-sett
     NgChartsModule,
     HttpClientModule,
     NgbTypeaheadModule,
-    TypeaheadModule
+    TypeaheadModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

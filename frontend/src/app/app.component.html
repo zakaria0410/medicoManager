@@ -1,5 +1,5 @@
-<app-main-menu></app-main-menu>
-<div class="container-fluid mt-2" style="max-height: calc(100vh - 60px);position: fixed;margin-top: 69px !important;overflow-y: none;">
+<app-main-menu (showMenu)="isShowMenu=!isShowMenu"></app-main-menu>
+<div class="container-fluid mt-2" [ngClass]="{'d-none':isShowMenu}" style="z-index:10;max-height: calc(100vh - 60px);position: fixed;margin-top: 69px !important;overflow-y: auto;">
 
 <router-outlet></router-outlet>
 </div>

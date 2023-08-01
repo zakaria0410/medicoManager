@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,7 +7,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './madal.component.html',
   styleUrls: ['./madal.component.scss']
 })
-export class MadalComponent implements OnInit {
+export class MadalComponent implements OnInit,OnChanges {
 	closeResult = '';
 	@Input() title
 	@Input() component
@@ -16,8 +16,14 @@ export class MadalComponent implements OnInit {
 	@Input() classButton
 	@Input() urlExport
 	@Input() object
+	@Input() supplement_object=null
 	@Output() actionAcomplished=new EventEmitter
 	constructor(private modalService: NgbModal) {}
+	ngOnChanges(changes: SimpleChanges): void {
+	if(changes["supplement_object"]){
+		if(this.object)this.object=Object.assign(this.object,this.supplement_object)
+	else this.object=this.supplement_object}
+	}
 	ngOnInit(): void {
 		//throw new Error('Method not implemented.');
 	}
@@ -36,7 +42,9 @@ closeModal(content) {
 			},
 		);
 	}
-
+	logAction(s:string){
+console.log(s)
+	}
 	private getDismissReason(reason: any): string {
 		if (reason === ModalDismissReasons.ESC) {
 			return 'by pressing ESC';

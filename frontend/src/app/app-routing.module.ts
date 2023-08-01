@@ -32,6 +32,7 @@ import { FormComponent } from './utils/form/form.component';
 import { OrdonanceTypeComponent } from './parametres/ordonance-type/ordonance-type.component';
 import { DispositifMedicalComponent } from './parametres/dispositif-medical/dispositif-medical.component';
 import { MatierePremiereComponent } from './parametres/matiere-premiere/matiere-premiere.component';
+import { HomeTrialComponent } from './home-trial/home-trial.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

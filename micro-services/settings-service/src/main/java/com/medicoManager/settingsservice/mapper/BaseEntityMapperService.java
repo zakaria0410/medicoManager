@@ -27,7 +27,9 @@ public abstract class BaseEntityMapperService<E extends BaseEntity, D extends Ba
 
 
     public D toDto(E e) {
+
         D dto=instanciateDto();
+
         dto.setId(e.getId());
         return dto;
     }
